@@ -6,25 +6,56 @@ const path = require('path');
 const { supabase } = require('./database');
 
 const app = express();
-
 app.use(cors());
 app.use(bodyParser.json());
 
-// Load words dictionary
-const wordsPath = path.resolve(__dirname, 'words.json');
-let wordsData = [];
-try {
-    wordsData = JSON.parse(fs.readFileSync(wordsPath, 'utf8'));
-    console.log('Successfully loaded words.json');
-} catch (err) {
-    console.error('Error loading words.json:', err.message);
-}
+// Load words dictionary - using multiple path strategies for bundle compatibility
+const getWordsData = () => {
+    try {
+        const paths = [
+            path.join(__dirname, 'words.json'),
+            path.join(process.cwd(), 'api', 'words.json'),
+            path.join(process.cwd(), 'words.json')
+        ];
+        for (const p of paths) {
+            if (fs.existsSync(p)) {
+                return JSON.parse(fs.readFileSync(p, 'utf8'));
+            }
+        }
+        return [];
+    } catch (err) {
+        console.error('Failed to load words.json:', err.message);
+        return [];
+    }
+};
 
-// Simple ping at the root of the app
-app.get('/api/ping', (req, res) => res.json({ message: 'pong', time: new Date().toISOString() }));
+const wordsData = getWordsData();
 
-// API Routes
-app.post('/api/login', async (req, res) => {
+const router = express.Router();
+
+router.get('/ping', (req, res) => res.json({
+    message: 'pong',
+    supabaseConnected: !!supabase,
+    wordsLoaded: wordsData.length
+}));
+
+router.get('/user/:initials', async (req, res) => {
+    if (!supabase) return res.status(500).json({ error: 'Database client not initialized. Check Vercel Env Vars.' });
+
+    const { initials } = req.params;
+    const upperInitials = initials.toUpperCase();
+    try {
+        const { data: user, error: userError } = await supabase.from('users').select('*').eq('initials', upperInitials).single();
+        if (userError || !user) return res.status(404).json({ error: 'User not found' });
+
+        const { count: masteredCount, error: countError } = await supabase.from('word_status').select('*', { count: 'exact', head: true }).eq('user_initials', upperInitials).eq('status', 2);
+
+        res.json({ ...user, masteredCount: masteredCount || 0, totalWords: wordsData.length });
+    } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+router.post('/login', async (req, res) => {
+    if (!supabase) return res.status(500).json({ error: 'Database client not initialized.' });
     const { initials } = req.body;
     if (!initials || initials.length !== 3) return res.status(400).json({ error: 'Initials must be 3 characters' });
     const upperInitials = initials.toUpperCase();
@@ -34,37 +65,23 @@ app.post('/api/login', async (req, res) => {
             await supabase.from('users').insert({ initials: upperInitials });
         }
         const { data: updatedUser, error: finalFetchError } = await supabase.from('users').select('*').eq('initials', upperInitials).single();
-        if (finalFetchError) throw finalFetchError;
         res.json(updatedUser);
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-app.get('/api/user/:initials', async (req, res) => {
-    const { initials } = req.params;
-    const upperInitials = initials.toUpperCase();
-    try {
-        const { data: user, error: userError } = await supabase.from('users').select('*').eq('initials', upperInitials).single();
-        if (userError || !user) return res.status(404).json({ error: 'User not found' });
-        const { count: masteredCount, error: countError } = await supabase.from('word_status').select('*', { count: 'exact', head: true }).eq('user_initials', upperInitials).eq('status', 2);
-        if (countError) throw countError;
-        res.json({ ...user, masteredCount: masteredCount || 0, totalWords: wordsData.length });
-    } catch (err) { res.status(500).json({ error: err.message }); }
-});
-
-app.get('/api/words/chunk', async (req, res) => {
+router.get('/words/chunk', async (req, res) => {
+    if (!supabase) return res.status(500).json({ error: 'Database client not initialized.' });
     const { initials, size, mode } = req.query;
     const chunkSize = parseInt(size) || 10;
     const userInitials = initials.toUpperCase();
     try {
         const { data: masteredRows, error: masteredError } = await supabase.from('word_status').select('word').eq('user_initials', userInitials).eq('status', 2);
-        if (masteredError) throw masteredError;
-        const masteredSet = new Set(masteredRows.map(row => row.word));
+        const masteredSet = new Set(masteredRows?.map(row => row.word) || []);
         const chunk = [];
         let startIndex = -1;
         if (mode === 'review') {
-            const { data: rows, error: reviewError } = await supabase.from('word_status').select('word').eq('user_initials', userInitials).eq('status', 2).order('last_reviewed', { ascending: true }).limit(chunkSize);
-            if (reviewError) throw reviewError;
-            const reviewWords = rows.map(r => r.word);
+            const { data: rows } = await supabase.from('word_status').select('word').eq('user_initials', userInitials).eq('status', 2).order('last_reviewed', { ascending: true }).limit(chunkSize);
+            const reviewWords = rows?.map(r => r.word) || [];
             wordsData.forEach((w, i) => { if (reviewWords.includes(w.word)) chunk.push({ ...w, id: i, index: i }); });
         } else {
             for (let i = 0; i < wordsData.length; i++) {
@@ -79,7 +96,8 @@ app.get('/api/words/chunk', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-app.post('/api/progress', async (req, res) => {
+router.post('/progress', async (req, res) => {
+    if (!supabase) return res.status(500).json({ error: 'Database client not initialized.' });
     const { initials, results } = req.body;
     const userInitials = initials.toUpperCase();
     try {
@@ -93,9 +111,7 @@ app.post('/api/progress', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-// Fallback for any other /api routes
-app.all('/api/*', (req, res) => {
-    res.status(404).json({ error: 'Endpoint not found', path: req.path });
-});
+app.use('/api', router);
+app.use('/', router);
 
 module.exports = app;
