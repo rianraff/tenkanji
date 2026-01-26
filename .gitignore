@@ -28,5 +28,4 @@ dist-ssr
 *.db
 
 # Downloaded files
-jlpt-kanji-dictionary-main/
 japandict_page.html
