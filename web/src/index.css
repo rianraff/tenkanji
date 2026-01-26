@@ -32,9 +32,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg-app);
   color: var(--text-primary);
-  min-height: 100dvh;
+  height: 100vh;
   width: 100vw;
-  /* Support for modern mobile dynamic viewport height */
+  overflow: hidden;
+  /* No scroll on body */
   display: flex;
   justify-content: center;
   align-items: center;

@@ -194,7 +194,7 @@ export default function Session() {
             {/* Header / Progress */}
             <div style={{
                 position: 'absolute',
-                top: 'calc(1rem + env(safe-area-inset-top, 0px))',
+                top: '2rem',
                 right: '1rem',
                 left: '1rem',
                 display: 'flex',

@@ -52,28 +52,29 @@ export default function Dashboard() {
                 }}
                 style={{
                     position: 'absolute',
-                    top: '0.75rem',
+                    top: '2rem',
                     right: '1rem',
                     background: isHovered ? '#ef4444' : 'var(--col-white)',
                     color: isHovered ? 'white' : 'var(--col-black)',
                     border: '2px solid var(--col-black)',
-                    padding: '0.4rem 0.6rem',
+                    padding: '0.4rem 0.8rem',
                     borderRadius: '8px',
                     fontWeight: 'bold',
-                    boxShadow: '2px 2px 0px 0px var(--col-black)',
+                    boxShadow: '4px 4px 0px 0px var(--col-black)',
                     zIndex: 20,
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
+                    minWidth: '100px',
                     textAlign: 'center',
-                    fontSize: '0.75rem'
+                    fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)'
                 }}
             >
-                {isHovered ? 'LOGOUT' : (window.innerWidth < 450 ? user.initials : `WELCOME, ${user.initials}`)}
+                {isHovered ? 'LOGOUT' : `WELCOME, ${user.initials}`}
             </div>
 
-            <div style={{ textAlign: 'center', marginBottom: '2rem', marginTop: '1rem' }}>
-                <h1 className="word-heading" style={{ fontSize: 'clamp(3rem, 15vw, 5.5rem)', marginBottom: '0.5rem' }}>TenKanji</h1>
-                <p className="sub-heading" style={{ justifyContent: 'center', fontSize: 'clamp(1.2rem, 6vw, 2rem)', fontWeight: 'bold' }}>てんかんじ</p>
+            <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                <h1 className="word-heading" style={{ fontSize: 'clamp(3.5rem, 15vw, 5.5rem)', marginBottom: '0.5rem' }}>TenKanji</h1>
+                <p className="sub-heading" style={{ justifyContent: 'center', fontSize: 'clamp(1.5rem, 6vw, 2rem)', fontWeight: 'bold' }}>てんかんじ</p>
             </div>
 
             <div className="flashcard" style={{
