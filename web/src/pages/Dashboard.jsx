@@ -52,7 +52,7 @@ export default function Dashboard() {
                 }}
                 style={{
                     position: 'absolute',
-                    top: '1.5rem',
+                    top: 'calc(1rem + env(safe-area-inset-top, 0px))',
                     right: '1.5rem',
                     background: isHovered ? '#ef4444' : 'var(--col-white)',
                     color: isHovered ? 'white' : 'var(--col-black)',
