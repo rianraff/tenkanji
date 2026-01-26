@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Session from './pages/Session';
 import Summary from './pages/Summary';
+import TenKanji from './pages/TenKanji';
 import Loading from './components/Loading';
 import './App.css';
 
@@ -40,6 +41,14 @@ function AppContent() {
         element={
           <ProtectedRoute>
             <Summary />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/ten-kanji"
+        element={
+          <ProtectedRoute>
+            <TenKanji />
           </ProtectedRoute>
         }
       />

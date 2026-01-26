@@ -65,7 +65,7 @@ export default function Summary() {
     };
 
     return (
-        <div className="app-container">
+        <div className="app-container" style={{ padding: '1rem', overflowY: 'auto', justifyContent: 'flex-start' }}>
             {saving && (
                 <div style={{
                     position: 'absolute',
@@ -80,22 +80,22 @@ export default function Summary() {
                     <Loading message="Saving Progress..." />
                 </div>
             )}
-            <div className="flashcard" style={{ height: 'auto', gap: '2rem', width: '1200px', maxWidth: '95vw', padding: '3rem' }}>
+            <div className="flashcard" style={{ height: 'auto', gap: '2rem', width: 'min(1200px, 95vw)', padding: 'min(3rem, 5vw)', margin: '2rem 0' }}>
 
                 {/* Header Section: Horizontal Layout */}
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                        <h1 className="word-heading" style={{ fontSize: '3.5rem', margin: 0 }}>
-                            {isPerfect ? 'Perfect!' : 'Session Complete'}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', flexWrap: 'wrap', gap: '1rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: '1 1 300px' }}>
+                        <h1 className="word-heading" style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)', margin: 0 }}>
+                            {isPerfect ? 'Perfect!' : 'Complete!'}
                         </h1>
-                        {isPerfect && <span style={{ fontSize: '3.5rem' }}>🎉</span>}
+                        {isPerfect && <span style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)' }}>🎉</span>}
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-end', gap: '1rem' }}>
-                        <p className="sub-heading" style={{ fontSize: '1.5rem', margin: 0, justifyContent: 'flex-end' }}>
+                        <p className="sub-heading" style={{ fontSize: 'clamp(1rem, 4vw, 1.5rem)', margin: 0, justifyContent: 'flex-end' }}>
                             SCORE: {correctCount} / {results.length}
                         </p>
-                        <p className="sub-heading" style={{ fontSize: '1.5rem', margin: 0, fontWeight: '800', justifyContent: 'flex-end', color: isPerfect ? '#22c55e' : 'var(--text-secondary)' }}>
+                        <p className="sub-heading" style={{ fontSize: 'clamp(1rem, 4vw, 1.5rem)', margin: 0, fontWeight: '800', justifyContent: 'flex-end', color: isPerfect ? '#22c55e' : 'var(--text-secondary)' }}>
                             ({accuracy}%)
                         </p>
                     </div>

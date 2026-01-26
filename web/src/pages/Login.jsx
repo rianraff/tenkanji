@@ -41,9 +41,16 @@ export default function Login() {
 
     return (
         <div className="app-container">
-            <div className="flashcard" style={{ height: 'auto', minHeight: '300px', width: '400px', padding: '3rem', flexDirection: 'column', gap: '2rem' }}>
+            <div className="flashcard" style={{
+                height: 'auto',
+                minHeight: '300px',
+                width: 'min(400px, 90vw)',
+                padding: 'min(3rem, 5vw)',
+                flexDirection: 'column',
+                gap: '2rem'
+            }}>
                 <div style={{ textAlign: 'center' }}>
-                    <h1 className="word-heading" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>TenKanji</h1>
+                    <h1 className="word-heading" style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', marginBottom: '0.5rem' }}>TenKanji</h1>
                     <p className="sub-heading" style={{ justifyContent: 'center', fontSize: '1rem', fontWeight: 'bold' }}>てんかんじ</p>
                 </div>
 
@@ -61,17 +68,18 @@ export default function Login() {
                                 placeholder="ABC"
                                 disabled={status === 'checking'}
                                 style={{
-                                    fontSize: '2rem',
+                                    fontSize: 'clamp(1.5rem, 6vw, 2rem)',
                                     textAlign: 'center',
-                                    padding: '1rem',
+                                    padding: 'clamp(0.6rem, 3vw, 1rem)',
                                     borderRadius: '12px',
                                     border: '2px solid var(--col-black)',
                                     background: 'var(--col-white)',
                                     color: 'var(--col-black)',
-                                    width: '100%',
+                                    width: 'min(100%, 250px)',
                                     fontWeight: '800',
                                     letterSpacing: '0.5rem',
-                                    boxShadow: 'inset 4px 4px 0px 0px rgba(0,0,0,0.05)'
+                                    boxShadow: 'inset 4px 4px 0px 0px rgba(0,0,0,0.05)',
+                                    outline: 'none'
                                 }}
                             />
                         </div>
@@ -80,9 +88,10 @@ export default function Login() {
                             className="see-more-btn"
                             disabled={initials.length !== 3 || status === 'checking'}
                             style={{
-                                width: '100%',
-                                fontSize: '1.2rem',
-                                marginTop: '0.5rem',
+                                width: 'min(100%, 250px)',
+                                fontSize: 'clamp(1rem, 4vw, 1.2rem)',
+                                padding: '0.6rem 1rem',
+                                marginTop: '0.2rem',
                                 opacity: (initials.length === 3 && status !== 'checking') ? 1 : 0.5,
                                 cursor: (initials.length === 3 && status !== 'checking') ? 'pointer' : 'not-allowed',
                                 display: 'flex',

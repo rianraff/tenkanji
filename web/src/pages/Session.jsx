@@ -21,6 +21,8 @@ export default function Session() {
     const [phase, setPhase] = useState('learning'); // 'learning' | 'practice'
     const [isFlipped, setIsFlipped] = useState(false);
     const [sessionResults, setSessionResults] = useState([]); // [{ word: '...', isCorrect: true }]
+    const [touchStartX, setTouchStartX] = useState(null);
+    const [touchStartY, setTouchStartY] = useState(null);
 
     // Load Words on Mount
     useEffect(() => {
@@ -111,6 +113,38 @@ export default function Session() {
         setIsFlipped(false);
     };
 
+
+    const handleTouchStart = (e) => {
+        setTouchStartX(e.targetTouches[0].clientX);
+        setTouchStartY(e.targetTouches[0].clientY);
+    };
+
+    const handleTouchEnd = (e) => {
+        if (!touchStartX || !touchStartY) return;
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+
+        const diffX = touchStartX - touchEndX;
+        const diffY = touchStartY - touchEndY;
+
+        // Vertical Swipe (Practice Mode)
+        if (phase === 'practice' && diffY > 50 && Math.abs(diffX) < 50) {
+            setIsFlipped(prev => !prev);
+        }
+
+        // Horizontal Swipe (Learning Mode)
+        if (phase === 'learning' && Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+                handleNext();
+            } else {
+                handlePrev();
+            }
+        }
+
+        setTouchStartX(null);
+        setTouchStartY(null);
+    };
+
     const handlePracticeAnswer = (isCorrect) => {
         const result = { word: currentWord.word, isCorrect };
         const newResults = [...sessionResults, result];
@@ -156,9 +190,20 @@ export default function Session() {
     );
 
     return (
-        <div className="app-container">
+        <div className="app-container" style={{ padding: '1rem', overflowY: 'auto', justifyContent: 'center' }}>
             {/* Header / Progress */}
-            <div style={{ position: 'absolute', top: '1rem', right: '2rem', color: 'var(--text-secondary)', fontWeight: 'bold' }}>
+            <div style={{
+                position: 'absolute',
+                top: '2rem',
+                right: '1rem',
+                left: '1rem',
+                display: 'flex',
+                justifyContent: 'center',
+                color: 'var(--text-secondary)',
+                fontWeight: 'bold',
+                fontSize: '0.8rem',
+                zIndex: 20
+            }}>
                 {phase === 'learning' ? 'LEARNING MODE' : `PRACTICE: ${currentIndex + 1} / ${words.length}`}
             </div>
 
@@ -171,13 +216,15 @@ export default function Session() {
                     onClick={() => {
                         if (phase === 'practice') setIsFlipped(prev => !prev);
                     }}
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
                     style={{ cursor: phase === 'practice' ? 'pointer' : 'default' }}
                 >
                     <div className="flashcard-inner">
                         {/* FRONT FACE: The Question (Large Kanji) */}
                         <div className="flashcard-front">
                             <h1 style={{
-                                fontSize: '8rem',
+                                fontSize: 'clamp(4rem, 20vw, 8rem)',
                                 margin: 0,
                                 lineHeight: 1,
                                 fontWeight: '800'

@@ -111,6 +111,66 @@ router.post('/progress', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
+// Load kanji data for filtering
+const getKanjiData = () => {
+    try {
+        const paths = [
+            path.join(__dirname, 'jlpt-kanji.json'),
+            path.join(process.cwd(), 'api', 'jlpt-kanji.json'),
+            path.join(process.cwd(), 'web', 'src', 'data', 'jlpt-kanji.json')
+        ];
+        for (const p of paths) {
+            if (fs.existsSync(p)) {
+                return JSON.parse(fs.readFileSync(p, 'utf8'));
+            }
+        }
+        return [];
+    } catch (err) {
+        return [];
+    }
+};
+
+const kanjiData = getKanjiData();
+
+// Daily Challenge Endpoint
+router.get('/daily', async (req, res) => {
+    const { initials } = req.query;
+    if (!initials) return res.status(400).json({ error: 'Initials required' });
+
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+
+    // Simple deterministic seed from date
+    let hash = 0;
+    for (let i = 0; i < today.length; i++) {
+        hash = ((hash << 5) - hash) + today.charCodeAt(i);
+        hash |= 0;
+    }
+    const seed = Math.abs(hash);
+
+    // Filter words that have at least one kanji in our database
+    const validWords = wordsData.filter(wordObj => {
+        if (!wordObj.word) return false;
+        return wordObj.word.split('').some(char =>
+            kanjiData.some(k => k.kanji === char)
+        );
+    });
+
+    // Deterministic shuffle
+    const shuffled = [...validWords];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = (seed + i) % (i + 1);
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    const chunk = shuffled.slice(0, 10).map((w, i) => ({ ...w, id: i, index: i }));
+
+    res.json({
+        date: today,
+        chunk,
+        totalWords: validWords.length
+    });
+});
+
 app.use('/api', router);
 app.use('/', router);
 

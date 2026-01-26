@@ -115,12 +115,6 @@
 /* Hover Effect (only elevate the whole unit, don't flip yet) */
 /* REMOVED: .flashcard:hover { transform: translateY(-4px); } - Per user request for dashboard stability */
 
-.flashcard:hover .flashcard-inner {
-  /* Optional: keep shadow or remove? User "only the button". 
-      Let's keep shadow for depth but no movement. */
-  /* box-shadow: var(--shadow-hover); */
-}
-
 /* JS toggles this class to flip */
 .flashcard.flipped .flashcard-inner {
   transform: rotateY(180deg);
@@ -145,11 +139,6 @@
   box-sizing: border-box;
   color: var(--text-primary);
   overflow: hidden;
-}
-
-/* Front: The "Question" - Large Kanji */
-.flashcard-front {
-  /* Default state: facing user */
 }
 
 /* Back: The "Answer" - Details */
@@ -393,10 +382,6 @@
   box-sizing: border-box;
 }
 
-.kanji-card-front {
-  /* Default */
-}
-
 .kanji-card-back {
   transform: rotateY(180deg);
   background: var(--col-white);
@@ -441,15 +426,40 @@
 }
 
 @media (max-width: 768px) {
+  .app-container {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+    justify-content: center;
+    overflow: hidden;
+  }
+
   .flashcard {
     width: 90vw;
     height: auto;
-    min-height: 380px;
-    padding: 2rem;
+    min-height: 260px;
+    padding: 0;
+    margin-top: 0;
   }
 
   .word-heading {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+  }
+
+  .flashcard-front h1.main-kanji-display {
+    font-size: 5rem !important;
+  }
+
+  .kanji-grid {
+    gap: 1rem;
+  }
+
+  .kanji-card {
+    width: 120px;
+    height: 120px;
+  }
+
+  .kanji-card-front h2 {
+    font-size: 3rem !important;
   }
 
   .controls {
@@ -458,9 +468,35 @@
     left: auto;
     transform: none;
     width: 100%;
-    margin-top: -1rem;
+    margin-top: 1rem;
     pointer-events: auto;
     max-width: none;
     justify-content: center;
+    gap: 1rem;
+  }
+
+  .nav-button {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flashcard-front h1.main-kanji-display {
+    font-size: 4rem !important;
+  }
+
+  .kanji-card {
+    width: 100px;
+    height: 100px;
+  }
+
+  .kanji-card-front h2 {
+    font-size: 2.5rem !important;
+  }
+
+  .sub-heading {
+    font-size: 0.9rem;
+    flex-wrap: wrap;
   }
 }
