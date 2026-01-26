@@ -142,7 +142,6 @@ export default function Dashboard() {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                                 gap: '0.5rem',
-                                background: 'var(--col-white)', /* Make it distinct or orange? Usually Start is primary. */
                                 background: 'var(--col-black)',
                                 color: 'var(--col-white)'
                             }}
