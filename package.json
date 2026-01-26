@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "build": "cd web && npm install && npm run build && mv dist ../dist",
+    "build": "cd web && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

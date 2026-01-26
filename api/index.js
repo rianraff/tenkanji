@@ -11,14 +11,20 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Load words dictionary
-const wordsPath = path.join(__dirname, 'words.json');
-const wordsData = JSON.parse(fs.readFileSync(wordsPath, 'utf8'));
+const wordsPath = path.resolve(__dirname, 'words.json');
+let wordsData = [];
+try {
+    wordsData = JSON.parse(fs.readFileSync(wordsPath, 'utf8'));
+    console.log('Successfully loaded words.json');
+} catch (err) {
+    console.error('Error loading words.json:', err.message);
+}
 
-const router = express.Router();
+// Simple ping at the root of the app
+app.get('/api/ping', (req, res) => res.json({ message: 'pong', time: new Date().toISOString() }));
 
-router.get('/health', (req, res) => res.json({ status: 'ok', time: new Date() }));
-
-router.post('/login', async (req, res) => {
+// API Routes
+app.post('/api/login', async (req, res) => {
     const { initials } = req.body;
     if (!initials || initials.length !== 3) return res.status(400).json({ error: 'Initials must be 3 characters' });
     const upperInitials = initials.toUpperCase();
@@ -33,7 +39,7 @@ router.post('/login', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-router.get('/user/:initials', async (req, res) => {
+app.get('/api/user/:initials', async (req, res) => {
     const { initials } = req.params;
     const upperInitials = initials.toUpperCase();
     try {
@@ -45,17 +51,7 @@ router.get('/user/:initials', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-router.put('/user/:initials/settings', async (req, res) => {
-    const { initials } = req.params;
-    const { chunkSize } = req.body;
-    try {
-        const { error } = await supabase.from('users').update({ chunk_size: chunkSize }).eq('initials', initials.toUpperCase());
-        if (error) throw error;
-        res.json({ success: true });
-    } catch (err) { res.status(500).json({ error: err.message }); }
-});
-
-router.get('/words/chunk', async (req, res) => {
+app.get('/api/words/chunk', async (req, res) => {
     const { initials, size, mode } = req.query;
     const chunkSize = parseInt(size) || 10;
     const userInitials = initials.toUpperCase();
@@ -83,33 +79,10 @@ router.get('/words/chunk', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-router.get('/words/status', async (req, res) => {
-    const { initials } = req.query;
-    const userInitials = initials.toUpperCase();
-    try {
-        const { data: statusRows, error } = await supabase.from('word_status').select('word, status').eq('user_initials', userInitials);
-        if (error) throw error;
-        const statusMap = {};
-        statusRows.forEach(row => { statusMap[row.word] = row.status; });
-        const wordsWithStatus = wordsData.map(w => ({ word: w.word, status: statusMap[w.word] || 0 }));
-        res.json(wordsWithStatus);
-    } catch (err) { res.status(500).json({ error: err.message }); }
-});
-
-router.post('/progress', async (req, res) => {
+app.post('/api/progress', async (req, res) => {
     const { initials, results } = req.body;
     const userInitials = initials.toUpperCase();
     try {
-        const today = new Date().toISOString().split('T')[0];
-        const { data: user, error: userError } = await supabase.from('users').select('last_active_date, streak').eq('initials', userInitials).single();
-        if (userError) throw userError;
-        if (user && user.last_active_date !== today) {
-            let newStreak = user.streak || 0;
-            const yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1);
-            const yesterdayStr = yesterday.toISOString().split('T')[0];
-            if (user.last_active_date === yesterdayStr) newStreak += 1; else newStreak = 1;
-            await supabase.from('users').update({ streak: newStreak, last_active_date: today }).eq('initials', userInitials);
-        }
         for (const result of results) {
             const { data: currentStatus } = await supabase.from('word_status').select('correct_count, wrong_count').eq('user_initials', userInitials).eq('word', result.word).single();
             const cCount = (currentStatus?.correct_count || 0) + (result.isCorrect ? 1 : 0);
@@ -120,17 +93,9 @@ router.post('/progress', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-// Use the router for ANY path that hits this function
-app.use('/api', router);
-app.use('/', router);
-
-// Catch-all for Express 404s
-app.use((req, res) => {
-    res.status(404).json({
-        error: 'Backend route not found',
-        url: req.url,
-        path: req.path
-    });
+// Fallback for any other /api routes
+app.all('/api/*', (req, res) => {
+    res.status(404).json({ error: 'Endpoint not found', path: req.path });
 });
 
 module.exports = app;
