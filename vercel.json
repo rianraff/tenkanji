@@ -6,15 +6,8 @@
             "destination": "/server.js"
         },
         {
-            "source": "/(.*)",
-            "destination": "/web/dist/$1"
-        }
-    ],
-    "redirects": [
-        {
-            "source": "/",
-            "destination": "/web/dist/index.html",
-            "permanent": false
+            "source": "/((?!api/).*)",
+            "destination": "/web/dist/index.html"
         }
     ]
 }
