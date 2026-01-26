@@ -5,11 +5,12 @@ import { BookOpen, RotateCcw } from 'lucide-react';
 import Loading from '../components/Loading';
 
 export default function Dashboard() {
-    const { user, updateSettings } = useContext(UserContext);
+    const { user, logout, updateSettings } = useContext(UserContext);
     const navigate = useNavigate();
     const [mode, setMode] = useState('new'); // 'new' | 'review'
     const [masteredCount, setMasteredCount] = useState(0);
     const [loadingStats, setLoadingStats] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
 
     // Forced chunk size 10 per requirements
     const chunkSize = 10;
@@ -42,19 +43,32 @@ export default function Dashboard() {
     return (
         <div className="app-container">
             {/* User Badge */}
-            <div style={{
-                position: 'absolute',
-                top: '2rem',
-                right: '2rem',
-                background: 'var(--col-white)',
-                border: '2px solid var(--col-black)',
-                padding: '0.5rem 1rem',
-                borderRadius: '8px',
-                fontWeight: 'bold',
-                boxShadow: '4px 4px 0px 0px var(--col-black)',
-                zIndex: 20
-            }}>
-                WELCOME, {user.initials}
+            <div
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                onClick={() => {
+                    logout();
+                    navigate('/');
+                }}
+                style={{
+                    position: 'absolute',
+                    top: '2rem',
+                    right: '2rem',
+                    background: isHovered ? '#ef4444' : 'var(--col-white)',
+                    color: isHovered ? 'white' : 'var(--col-black)',
+                    border: '2px solid var(--col-black)',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '8px',
+                    fontWeight: 'bold',
+                    boxShadow: '4px 4px 0px 0px var(--col-black)',
+                    zIndex: 20,
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    minWidth: '120px',
+                    textAlign: 'center'
+                }}
+            >
+                {isHovered ? 'LOGOUT' : `WELCOME, ${user.initials}`}
             </div>
 
             <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
