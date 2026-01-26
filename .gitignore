@@ -24,8 +24,5 @@ dist-ssr
 *.sw?
 .vercel
 
-# Database
-*.db
-
 # Downloaded files
 japandict_page.html
