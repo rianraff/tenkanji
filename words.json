@@ -1,0 +1,7257 @@
+[
+    {
+        "word": "意味",
+        "hiragana": "いみ",
+        "romaji": "imi",
+        "meanings": [
+            "meaning, significance, sense"
+        ],
+        "page": 1
+    },
+    {
+        "word": "一つ",
+        "hiragana": "ひとつ",
+        "romaji": "hitotsu",
+        "meanings": [
+            "one",
+            "for one thing",
+            "only",
+            "(not) even",
+            "just (e.g. \"just try it\")",
+            "some kind of, one type of"
+        ],
+        "page": 1
+    },
+    {
+        "word": "一番",
+        "hiragana": "いちばん",
+        "romaji": "ichiban",
+        "meanings": [
+            "number one, first, first place",
+            "best, most",
+            "game, round, bout",
+            "as a test, as an experiment, by way of experiment, by way of trial, tentatively",
+            "song (e.g. in noh), piece"
+        ],
+        "page": 1
+    },
+    {
+        "word": "右",
+        "hiragana": "みぎ",
+        "romaji": "migi",
+        "meanings": [
+            "right, right-hand side",
+            "right hand",
+            "the above (in a piece of vertical writing), above-mentioned",
+            "the right (wing), rightist",
+            "the better (of two)"
+        ],
+        "page": 1
+    },
+    {
+        "word": "映画",
+        "hiragana": "えいが",
+        "romaji": "eiga",
+        "meanings": [
+            "movie, film, motion picture"
+        ],
+        "page": 1
+    },
+    {
+        "word": "音楽",
+        "hiragana": "おんがく",
+        "romaji": "ongaku",
+        "meanings": [
+            "music"
+        ],
+        "page": 1
+    },
+    {
+        "word": "夏",
+        "hiragana": "なつ",
+        "romaji": "natsu",
+        "meanings": [
+            "summer"
+        ],
+        "page": 1
+    },
+    {
+        "word": "家族",
+        "hiragana": "かぞく",
+        "romaji": "kazoku",
+        "meanings": [
+            "family"
+        ],
+        "page": 1
+    },
+    {
+        "word": "家庭",
+        "hiragana": "かてい",
+        "romaji": "katei",
+        "meanings": [
+            "home, household, family, hearth"
+        ],
+        "page": 1
+    },
+    {
+        "word": "花",
+        "hiragana": "はな",
+        "romaji": "hana",
+        "meanings": [
+            "flower, blossom, bloom, petal",
+            "cherry blossom",
+            "beauty",
+            "blooming (esp. of cherry blossoms)",
+            "ikebana",
+            "hanafuda",
+            "(the) best",
+            "glorious, lovely"
+        ],
+        "page": 1
+    },
+    {
+        "word": "会社",
+        "hiragana": "かいしゃ",
+        "romaji": "kaisha",
+        "meanings": [
+            "company, corporation, firm",
+            "one's workplace"
+        ],
+        "page": 2
+    },
+    {
+        "word": "外国",
+        "hiragana": "がいこく",
+        "romaji": "gaikoku",
+        "meanings": [
+            "foreign country"
+        ],
+        "page": 2
+    },
+    {
+        "word": "外国人",
+        "hiragana": "がいこくじん",
+        "romaji": "gaikokujin",
+        "meanings": [
+            "foreigner, foreign citizen, foreign national, alien, non-Japanese"
+        ],
+        "page": 2
+    },
+    {
+        "word": "学校",
+        "hiragana": "がっこう",
+        "romaji": "gakkou",
+        "meanings": [
+            "school"
+        ],
+        "page": 2
+    },
+    {
+        "word": "学生",
+        "hiragana": "がくせい",
+        "romaji": "gakusei",
+        "meanings": [
+            "student (esp. a university student)"
+        ],
+        "page": 2
+    },
+    {
+        "word": "銀行",
+        "hiragana": "ぎんこう",
+        "romaji": "ginkou",
+        "meanings": [
+            "bank, banking institution"
+        ],
+        "page": 2
+    },
+    {
+        "word": "言葉",
+        "hiragana": "ことば",
+        "romaji": "kotoba",
+        "meanings": [
+            "language, dialect",
+            "word, phrase, expression, term",
+            "speech, (manner of) speaking, (use of) language",
+            "words, remark, statement, comment",
+            "learning to speak, language acquisition"
+        ],
+        "page": 2
+    },
+    {
+        "word": "五",
+        "hiragana": "ご",
+        "romaji": "go",
+        "meanings": [
+            "five, 5"
+        ],
+        "page": 2
+    },
+    {
+        "word": "午後",
+        "hiragana": "ごご",
+        "romaji": "gogo",
+        "meanings": [
+            "afternoon, p.m."
+        ],
+        "page": 2
+    },
+    {
+        "word": "午前",
+        "hiragana": "ごぜん",
+        "romaji": "gozen",
+        "meanings": [
+            "morning, a.m."
+        ],
+        "page": 2
+    },
+    {
+        "word": "後",
+        "hiragana": "あと",
+        "romaji": "ato",
+        "meanings": [
+            "behind, rear",
+            "after, later",
+            "remainder, the rest",
+            "more (e.g. five more minutes), left",
+            "also, in addition",
+            "descendant, successor, heir",
+            "after one's death",
+            "past, previous"
+        ],
+        "page": 3
+    },
+    {
+        "word": "今月",
+        "hiragana": "こんげつ",
+        "romaji": "kongetsu",
+        "meanings": [
+            "this month"
+        ],
+        "page": 3
+    },
+    {
+        "word": "左",
+        "hiragana": "ひだり",
+        "romaji": "hidari",
+        "meanings": [
+            "left, left-hand side",
+            "left hand",
+            "the left (wing), leftist",
+            "fondness for alcohol, drinker"
+        ],
+        "page": 3
+    },
+    {
+        "word": "仕事",
+        "hiragana": "しごと",
+        "romaji": "shigoto",
+        "meanings": [
+            "work, job, labor, labour, business, task, assignment, occupation, employment",
+            "work"
+        ],
+        "page": 3
+    },
+    {
+        "word": "子供",
+        "hiragana": "こども",
+        "romaji": "kodomo",
+        "meanings": [
+            "child, children"
+        ],
+        "page": 3
+    },
+    {
+        "word": "私",
+        "hiragana": "わたし",
+        "romaji": "watashi",
+        "meanings": [
+            "I, me"
+        ],
+        "page": 3
+    },
+    {
+        "word": "時間",
+        "hiragana": "じかん",
+        "romaji": "jikan",
+        "meanings": [
+            "time",
+            "hour",
+            "period, class, lesson"
+        ],
+        "page": 3
+    },
+    {
+        "word": "自動車",
+        "hiragana": "じどうしゃ",
+        "romaji": "jidousha",
+        "meanings": [
+            "car, automobile, motorcar, motor vehicle, auto"
+        ],
+        "page": 3
+    },
+    {
+        "word": "自分",
+        "hiragana": "じぶん",
+        "romaji": "jibun",
+        "meanings": [
+            "myself, yourself, oneself, himself, herself",
+            "I, me",
+            "you"
+        ],
+        "page": 3
+    },
+    {
+        "word": "質問",
+        "hiragana": "しつもん",
+        "romaji": "shitsumon",
+        "meanings": [
+            "question, inquiry, enquiry"
+        ],
+        "page": 3
+    },
+    {
+        "word": "写真",
+        "hiragana": "しゃしん",
+        "romaji": "shashin",
+        "meanings": [
+            "photograph, photo, picture, photography",
+            "moving picture, movie"
+        ],
+        "page": 4
+    },
+    {
+        "word": "車",
+        "hiragana": "くるま",
+        "romaji": "kuruma",
+        "meanings": [
+            "car, automobile, vehicle",
+            "wheel, castor, caster"
+        ],
+        "page": 4
+    },
+    {
+        "word": "手",
+        "hiragana": "て",
+        "romaji": "te",
+        "meanings": [
+            "hand, arm",
+            "forepaw, foreleg",
+            "handle",
+            "hand, worker, help",
+            "trouble, care, effort",
+            "means, way, trick, move, technique, workmanship",
+            "hand, handwriting",
+            "kind, type, sort",
+            "one's hands, one's possession",
+            "ability to cope",
+            "hand (of cards)",
+            "direction",
+            "move (in go, shogi, etc.)"
+        ],
+        "page": 4
+    },
+    {
+        "word": "秋",
+        "hiragana": "あき",
+        "romaji": "aki",
+        "meanings": [
+            "autumn, fall"
+        ],
+        "page": 4
+    },
+    {
+        "word": "春",
+        "hiragana": "はる",
+        "romaji": "haru",
+        "meanings": [
+            "spring, springtime",
+            "New Year",
+            "prime (of life), height (of one's prosperity), heyday",
+            "adolescence, puberty",
+            "sexuality, sexual desire"
+        ],
+        "page": 4
+    },
+    {
+        "word": "少し",
+        "hiragana": "すこし",
+        "romaji": "sukoshi",
+        "meanings": [
+            "a little, a bit, a small amount, a few, some, slightly, somewhat",
+            "a little while, a short time, a moment, a minute",
+            "a little way, a short distance"
+        ],
+        "page": 4
+    },
+    {
+        "word": "新聞",
+        "hiragana": "しんぶん",
+        "romaji": "shinbun",
+        "meanings": [
+            "newspaper"
+        ],
+        "page": 4
+    },
+    {
+        "word": "水",
+        "hiragana": "みず",
+        "romaji": "mizu",
+        "meanings": [
+            "water (esp. cool or cold)",
+            "fluid (esp. in an animal tissue), liquid",
+            "flood, floodwaters",
+            "water offered to wrestlers just prior to a bout",
+            "break granted to wrestlers engaged in a prolonged bout"
+        ],
+        "page": 4
+    },
+    {
+        "word": "声",
+        "hiragana": "こえ",
+        "romaji": "koe",
+        "meanings": [
+            "voice",
+            "singing (of a bird), chirping (of an insect), hoot",
+            "voice, opinion (as expressed in words), view, wish, attitude, will",
+            "sound",
+            "sense (of something's arrival), feeling",
+            "voice, voiced sound"
+        ],
+        "page": 4
+    },
+    {
+        "word": "千",
+        "hiragana": "せん",
+        "romaji": "sen",
+        "meanings": [
+            "thousand, 1,000"
+        ],
+        "page": 4
+    },
+    {
+        "word": "足",
+        "hiragana": "あし",
+        "romaji": "ashi",
+        "meanings": [
+            "foot, paw, arm (of an octopus, squid, etc.)",
+            "leg",
+            "gait",
+            "pace",
+            "lower radical of a kanji",
+            "means of transportation, (one's) ride",
+            "money, coin"
+        ],
+        "page": 5
+    },
+    {
+        "word": "大学",
+        "hiragana": "だいがく",
+        "romaji": "daigaku",
+        "meanings": [
+            "university, college",
+            "former imperial university of Japan (established under the ritsuryō system for the training of government administrators)",
+            "the Great Learning (one of the Four Books)"
+        ],
+        "page": 5
+    },
+    {
+        "word": "男",
+        "hiragana": "おとこ",
+        "romaji": "otoko",
+        "meanings": [
+            "man, male",
+            "fellow, guy, chap, bloke",
+            "male lover, boyfriend, man",
+            "manliness, manly honor, manly honour, manly reputation"
+        ],
+        "page": 5
+    },
+    {
+        "word": "電話",
+        "hiragana": "でんわ",
+        "romaji": "denwa",
+        "meanings": [
+            "telephone call, phone call",
+            "telephone (device), phone"
+        ],
+        "page": 5
+    },
+    {
+        "word": "東",
+        "hiragana": "ひがし",
+        "romaji": "higashi",
+        "meanings": [
+            "east"
+        ],
+        "page": 5
+    },
+    {
+        "word": "道",
+        "hiragana": "みち",
+        "romaji": "michi",
+        "meanings": [
+            "road, path, street, lane, passage",
+            "route, way",
+            "distance, journey",
+            "road (e.g. to victory), course",
+            "way (of living, proper conduct, etc.), moral principles",
+            "teachings (esp. Confucian or Buddhist), dogma",
+            "field (e.g. of medicine), subject, speciality",
+            "means, way, method"
+        ],
+        "page": 5
+    },
+    {
+        "word": "南",
+        "hiragana": "みなみ",
+        "romaji": "minami",
+        "meanings": [
+            "south"
+        ],
+        "page": 5
+    },
+    {
+        "word": "二",
+        "hiragana": "に",
+        "romaji": "ni",
+        "meanings": [
+            "two, 2"
+        ],
+        "page": 5
+    },
+    {
+        "word": "百",
+        "hiragana": "ひゃく",
+        "romaji": "hyaku",
+        "meanings": [
+            "hundred, 100"
+        ],
+        "page": 5
+    },
+    {
+        "word": "病院",
+        "hiragana": "びょういん",
+        "romaji": "byouin",
+        "meanings": [
+            "hospital, clinic, doctor's office, doctor's surgery, infirmary"
+        ],
+        "page": 5
+    },
+    {
+        "word": "北",
+        "hiragana": "きた",
+        "romaji": "kita",
+        "meanings": [
+            "north",
+            "the North, northern territories",
+            "North Korea",
+            "north wind"
+        ],
+        "page": 6
+    },
+    {
+        "word": "毎日",
+        "hiragana": "まいにち",
+        "romaji": "mainichi",
+        "meanings": [
+            "every day"
+        ],
+        "page": 6
+    },
+    {
+        "word": "木",
+        "hiragana": "き",
+        "romaji": "ki",
+        "meanings": [
+            "tree, shrub, bush",
+            "wood, timber",
+            "wooden clappers (signalling the beginning or end of a performance)"
+        ],
+        "page": 6
+    },
+    {
+        "word": "問題",
+        "hiragana": "もんだい",
+        "romaji": "mondai",
+        "meanings": [
+            "question (e.g. on a test), problem",
+            "problem (e.g. societal, political), question, issue, subject (e.g. of research), case, matter",
+            "question (i.e. doubt)",
+            "public discussion, controversy",
+            "trouble, problem, inconvenience, difficulty"
+        ],
+        "page": 6
+    },
+    {
+        "word": "来年",
+        "hiragana": "らいねん",
+        "romaji": "rainen",
+        "meanings": [
+            "next year"
+        ],
+        "page": 6
+    },
+    {
+        "word": "今年",
+        "hiragana": "ことし",
+        "romaji": "kotoshi",
+        "meanings": [
+            "this year"
+        ],
+        "page": 6
+    },
+    {
+        "word": "三",
+        "hiragana": "さん",
+        "romaji": "san",
+        "meanings": [
+            "three, 3"
+        ],
+        "page": 6
+    },
+    {
+        "word": "二人",
+        "hiragana": "ふたり",
+        "romaji": "futari",
+        "meanings": [
+            "two persons, two people, pair, couple"
+        ],
+        "page": 6
+    },
+    {
+        "word": "八",
+        "hiragana": "はち",
+        "romaji": "hachi",
+        "meanings": [
+            "eight, 8"
+        ],
+        "page": 6
+    },
+    {
+        "word": "六",
+        "hiragana": "ろく",
+        "romaji": "roku",
+        "meanings": [
+            "six, 6"
+        ],
+        "page": 6
+    },
+    {
+        "word": "言う",
+        "hiragana": "いう",
+        "romaji": "iu",
+        "meanings": [
+            "to say, to utter, to declare",
+            "to name, to call",
+            "to go (e.g. \"the alarm went ping\"), to make a noise"
+        ],
+        "page": 7
+    },
+    {
+        "word": "国",
+        "hiragana": "くに",
+        "romaji": "kuni",
+        "meanings": [
+            "country, state",
+            "region",
+            "national government, central government",
+            "home (i.e. hometown, home country)",
+            "province (of Japan)",
+            "land, earth"
+        ],
+        "page": 7
+    },
+    {
+        "word": "話",
+        "hiragana": "はなし",
+        "romaji": "hanashi",
+        "meanings": [
+            "talk, speech, chat, conversation",
+            "topic, subject",
+            "discussions, negotiation, argument",
+            "rumor, talk, hearsay",
+            "tale, story, fable",
+            "circumstances, particulars"
+        ],
+        "page": 7
+    },
+    {
+        "word": "一緒",
+        "hiragana": "いっしょ",
+        "romaji": "issho",
+        "meanings": [
+            "(doing) together",
+            "one lump, one mixture, the same category",
+            "the same, identical",
+            "(at) the same time"
+        ],
+        "page": 7
+    },
+    {
+        "word": "雨",
+        "hiragana": "あめ",
+        "romaji": "ame",
+        "meanings": [
+            "rain",
+            "rainy day, rainy weather",
+            "the November suit (in hanafuda)"
+        ],
+        "page": 7
+    },
+    {
+        "word": "英語",
+        "hiragana": "えいご",
+        "romaji": "eigo",
+        "meanings": [
+            "English (language)"
+        ],
+        "page": 7
+    },
+    {
+        "word": "歌",
+        "hiragana": "うた",
+        "romaji": "uta",
+        "meanings": [
+            "song, singing",
+            "classical Japanese poem (esp. tanka)",
+            "modern poetry"
+        ],
+        "page": 7
+    },
+    {
+        "word": "海",
+        "hiragana": "うみ",
+        "romaji": "umi",
+        "meanings": [
+            "sea, ocean, waters"
+        ],
+        "page": 7
+    },
+    {
+        "word": "外",
+        "hiragana": "そと",
+        "romaji": "soto",
+        "meanings": [
+            "outside, exterior",
+            "the open (air)",
+            "other place, somewhere else, outside one's group (family, company, etc.)"
+        ],
+        "page": 7
+    },
+    {
+        "word": "結婚",
+        "hiragana": "けっこん",
+        "romaji": "kekkon",
+        "meanings": [
+            "marriage"
+        ],
+        "page": 7
+    },
+    {
+        "word": "呼ぶ",
+        "hiragana": "よぶ",
+        "romaji": "yobu",
+        "meanings": [
+            "to call out (to), to call, to invoke",
+            "to summon (a doctor, etc.)",
+            "to invite",
+            "to designate, to name, to brand",
+            "to garner (support, etc.), to gather",
+            "to take as one's wife"
+        ],
+        "page": 8
+    },
+    {
+        "word": "公園",
+        "hiragana": "こうえん",
+        "romaji": "kouen",
+        "meanings": [
+            "(public) park"
+        ],
+        "page": 8
+    },
+    {
+        "word": "口",
+        "hiragana": "くち",
+        "romaji": "kuchi",
+        "meanings": [
+            "mouth",
+            "opening, hole, gap, orifice",
+            "mouth (of a bottle), spout, nozzle, mouthpiece",
+            "gate, door, entrance, exit",
+            "speaking, speech, talk (i.e. gossip)",
+            "taste, palate",
+            "mouth (to feed)",
+            "opening (i.e. vacancy), available position",
+            "invitation, summons",
+            "kind, sort, type",
+            "opening (i.e. beginning)",
+            "counter for mouthfuls, shares (of money), stove burners, and swords"
+        ],
+        "page": 8
+    },
+    {
+        "word": "雑誌",
+        "hiragana": "ざっし",
+        "romaji": "zasshi",
+        "meanings": [
+            "magazine, journal, periodical"
+        ],
+        "page": 8
+    },
+    {
+        "word": "山",
+        "hiragana": "やま",
+        "romaji": "yama",
+        "meanings": [
+            "mountain, hill",
+            "mine",
+            "(mountain) forest",
+            "heap, pile, stack, mountain",
+            "protruding or high part of an object, crown (of a hat), thread (of a screw), tread (of a tire)",
+            "climax, peak, critical point",
+            "guess, speculation, gamble",
+            "(criminal) case, crime",
+            "mountain climbing, mountaineering",
+            "festival float (esp. one mounted with a decorative halberd)",
+            "deck (from which players draw cards), draw pile, stock",
+            "wall, wall tile",
+            "wild"
+        ],
+        "page": 8
+    },
+    {
+        "word": "使う",
+        "hiragana": "つかう",
+        "romaji": "tsukau",
+        "meanings": [
+            "to use (a tool, method, etc.), to make use of, to put to use",
+            "to use (a person, animal, puppet, etc.), to employ, to handle, to manage, to manipulate",
+            "to use (time, money, etc.), to spend, to consume",
+            "to use (language), to speak"
+        ],
+        "page": 8
+    },
+    {
+        "word": "女",
+        "hiragana": "おんな",
+        "romaji": "onna",
+        "meanings": [
+            "woman, female",
+            "female lover, girlfriend, mistress, (someone's) woman"
+        ],
+        "page": 8
+    },
+    {
+        "word": "色",
+        "hiragana": "いろ",
+        "romaji": "iro",
+        "meanings": [
+            "colour, color, hue, tint, tinge, shade",
+            "complexion, skin colour, skin color",
+            "look (on one's face), expression",
+            "appearance, air, feeling",
+            "personality, character",
+            "tone (of one's voice, etc.), tune, sound, ring",
+            "love, lust, sensuality, love affair",
+            "lover, paramour",
+            "beauty, sexiness, physical appeal",
+            "kind, type, variety"
+        ],
+        "page": 8
+    },
+    {
+        "word": "生徒",
+        "hiragana": "せいと",
+        "romaji": "seito",
+        "meanings": [
+            "pupil, student, schoolchild"
+        ],
+        "page": 8
+    },
+    {
+        "word": "西",
+        "hiragana": "にし",
+        "romaji": "nishi",
+        "meanings": [
+            "west"
+        ],
+        "page": 8
+    },
+    {
+        "word": "先月",
+        "hiragana": "せんげつ",
+        "romaji": "sengetsu",
+        "meanings": [
+            "last month"
+        ],
+        "page": 9
+    },
+    {
+        "word": "先生",
+        "hiragana": "せんせい",
+        "romaji": "sensei",
+        "meanings": [
+            "teacher, instructor, master",
+            "sensei, title or form of address for a teacher, master, doctor, lawyer, etc.",
+            "intimate or teasing form of address",
+            "one's elder"
+        ],
+        "page": 9
+    },
+    {
+        "word": "体",
+        "hiragana": "からだ",
+        "romaji": "karada",
+        "meanings": [
+            "body",
+            "torso, trunk",
+            "build, physique, frame, figure",
+            "health, constitution"
+        ],
+        "page": 9
+    },
+    {
+        "word": "大切",
+        "hiragana": "たいせつ",
+        "romaji": "taisetsu",
+        "meanings": [
+            "important, significant, serious, crucial",
+            "precious, valuable, dear, cherished, beloved",
+            "careful"
+        ],
+        "page": 9
+    },
+    {
+        "word": "大変",
+        "hiragana": "たいへん",
+        "romaji": "taihen",
+        "meanings": [
+            "very, greatly, terribly, awfully",
+            "immense, enormous, great",
+            "serious, grave, dreadful, terrible",
+            "difficult, hard, challenging",
+            "major incident, disaster"
+        ],
+        "page": 9
+    },
+    {
+        "word": "知る",
+        "hiragana": "しる",
+        "romaji": "shiru",
+        "meanings": [
+            "to know, to be aware (of), to be conscious (of), to learn (of), to find out, to discover",
+            "to sense, to feel, to notice, to realize",
+            "to understand, to comprehend, to grasp, to appreciate",
+            "to remember, to be familiar with, to be acquainted with",
+            "to experience, to go through, to know (e.g. hardship)",
+            "to get acquainted with (a person), to get to know",
+            "to have to do with, to be concerned with, to be one's concern, to be one's responsibility"
+        ],
+        "page": 9
+    },
+    {
+        "word": "電気",
+        "hiragana": "でんき",
+        "romaji": "denki",
+        "meanings": [
+            "electricity",
+            "(electric) light"
+        ],
+        "page": 9
+    },
+    {
+        "word": "動物",
+        "hiragana": "どうぶつ",
+        "romaji": "doubutsu",
+        "meanings": [
+            "animal"
+        ],
+        "page": 9
+    },
+    {
+        "word": "二つ",
+        "hiragana": "ふたつ",
+        "romaji": "futatsu",
+        "meanings": [
+            "two"
+        ],
+        "page": 9
+    },
+    {
+        "word": "年",
+        "hiragana": "とし",
+        "romaji": "toshi",
+        "meanings": [
+            "year",
+            "age, years",
+            "past one's prime, old age"
+        ],
+        "page": 9
+    },
+    {
+        "word": "半分",
+        "hiragana": "はんぶん",
+        "romaji": "hanbun",
+        "meanings": [
+            "half"
+        ],
+        "page": 10
+    },
+    {
+        "word": "病気",
+        "hiragana": "びょうき",
+        "romaji": "byouki",
+        "meanings": [
+            "illness (usu. excluding minor ailments, e.g. common cold), disease, sickness",
+            "bad habit, bad behaviour, weakness, failing",
+            "crazy, insane, disturbed, sick in the head"
+        ],
+        "page": 10
+    },
+    {
+        "word": "部屋",
+        "hiragana": "へや",
+        "romaji": "heya",
+        "meanings": [
+            "room, chamber",
+            "apartment, flat, pad",
+            "stable"
+        ],
+        "page": 10
+    },
+    {
+        "word": "本当",
+        "hiragana": "ほんとう",
+        "romaji": "hontou",
+        "meanings": [
+            "truth, reality, actuality, fact",
+            "proper, right, correct, official",
+            "genuine, authentic, real, natural, veritable"
+        ],
+        "page": 10
+    },
+    {
+        "word": "名前",
+        "hiragana": "なまえ",
+        "romaji": "namae",
+        "meanings": [
+            "name",
+            "given name, first name"
+        ],
+        "page": 10
+    },
+    {
+        "word": "夜",
+        "hiragana": "よる",
+        "romaji": "yoru",
+        "meanings": [
+            "night, evening",
+            "dinner"
+        ],
+        "page": 10
+    },
+    {
+        "word": "旅行",
+        "hiragana": "りょこう",
+        "romaji": "ryokou",
+        "meanings": [
+            "travel, trip, journey, excursion, tour"
+        ],
+        "page": 10
+    },
+    {
+        "word": "料理",
+        "hiragana": "りょうり",
+        "romaji": "ryouri",
+        "meanings": [
+            "cooking, cookery, cuisine, food, dish",
+            "dealing with (skillfully), handling (well), managing"
+        ],
+        "page": 10
+    },
+    {
+        "word": "練習",
+        "hiragana": "れんしゅう",
+        "romaji": "renshuu",
+        "meanings": [
+            "practice, training, drill, (an) exercise, workout"
+        ],
+        "page": 10
+    },
+    {
+        "word": "一昨年",
+        "hiragana": "おととし",
+        "romaji": "ototoshi",
+        "meanings": [
+            "year before last"
+        ],
+        "page": 10
+    },
+    {
+        "word": "一人",
+        "hiragana": "ひとり",
+        "romaji": "hitori",
+        "meanings": [
+            "one person",
+            "being alone, being by oneself",
+            "being single, being unmarried",
+            "by oneself, alone",
+            "just, only, simply"
+        ],
+        "page": 11
+    },
+    {
+        "word": "今日",
+        "hiragana": "きょう",
+        "romaji": "kyou",
+        "meanings": [
+            "today, this day",
+            "these days, recently, nowadays"
+        ],
+        "page": 11
+    },
+    {
+        "word": "町",
+        "hiragana": "まち",
+        "romaji": "machi",
+        "meanings": [
+            "town, block, neighbourhood, neighborhood",
+            "downtown, main street",
+            "street, road"
+        ],
+        "page": 11
+    },
+    {
+        "word": "絵",
+        "hiragana": "え",
+        "romaji": "e",
+        "meanings": [
+            "picture, drawing, painting, sketch",
+            "image (TV, film, etc.), picture, footage"
+        ],
+        "page": 11
+    },
+    {
+        "word": "魚",
+        "hiragana": "さかな",
+        "romaji": "sakana",
+        "meanings": [
+            "fish"
+        ],
+        "page": 11
+    },
+    {
+        "word": "横",
+        "hiragana": "よこ",
+        "romaji": "yoko",
+        "meanings": [
+            "horizontal (as opposed to vertical)",
+            "side-to-side (as opposed to front-to-back), width, breadth",
+            "side (of a box, etc.)",
+            "beside, aside, next to",
+            "unconnected"
+        ],
+        "page": 11
+    },
+    {
+        "word": "教室",
+        "hiragana": "きょうしつ",
+        "romaji": "kyoushitsu",
+        "meanings": [
+            "classroom, lecture room",
+            "department (in a university)",
+            "class, lessons, course",
+            "school (for a particular discipline), teaching establishment"
+        ],
+        "page": 11
+    },
+    {
+        "word": "建物",
+        "hiragana": "たてもの",
+        "romaji": "tatemono",
+        "meanings": [
+            "building"
+        ],
+        "page": 11
+    },
+    {
+        "word": "犬",
+        "hiragana": "いぬ",
+        "romaji": "inu",
+        "meanings": [
+            "dog (Canis (lupus) familiaris)",
+            "squealer, rat, snitch, informer, informant, spy",
+            "loser, asshole",
+            "counterfeit, inferior, useless, wasteful"
+        ],
+        "page": 11
+    },
+    {
+        "word": "黒",
+        "hiragana": "くろ",
+        "romaji": "kuro",
+        "meanings": [
+            "black",
+            "black stone",
+            "guilt, guilty person"
+        ],
+        "page": 11
+    },
+    {
+        "word": "三つ",
+        "hiragana": "みっつ",
+        "romaji": "mittsu",
+        "meanings": [
+            "three",
+            "three years of age"
+        ],
+        "page": 12
+    },
+    {
+        "word": "紙",
+        "hiragana": "かみ",
+        "romaji": "kami",
+        "meanings": [
+            "paper"
+        ],
+        "page": 12
+    },
+    {
+        "word": "耳",
+        "hiragana": "みみ",
+        "romaji": "mimi",
+        "meanings": [
+            "ear",
+            "hearing",
+            "ear (for music, etc.)",
+            "edge, crust, heel (of bread or cheese), selvedge (of woven fabric), selvage",
+            "ear (of a pot, jug, etc.), handle"
+        ],
+        "page": 12
+    },
+    {
+        "word": "手紙",
+        "hiragana": "てがみ",
+        "romaji": "tegami",
+        "meanings": [
+            "letter, note"
+        ],
+        "page": 12
+    },
+    {
+        "word": "授業",
+        "hiragana": "じゅぎょう",
+        "romaji": "jugyou",
+        "meanings": [
+            "lesson, class, teaching, instruction, classwork, schoolwork"
+        ],
+        "page": 12
+    },
+    {
+        "word": "出す",
+        "hiragana": "だす",
+        "romaji": "dasu",
+        "meanings": [
+            "to take out, to get out",
+            "to put out, to reveal, to show",
+            "to submit (e.g. thesis), to turn in",
+            "to publish, to make public",
+            "to send (e.g. letter)",
+            "to produce (a sound), to start (fire)",
+            "to serve (food)",
+            "... out (e.g. to jump out, to carry out)",
+            "to begin ..., to start to ..., to burst into ..."
+        ],
+        "page": 12
+    },
+    {
+        "word": "青",
+        "hiragana": "あお",
+        "romaji": "ao",
+        "meanings": [
+            "blue, azure",
+            "green",
+            "green light (traffic)",
+            "black (horse coat color)",
+            "blue 5-point card",
+            "immature, unripe, young"
+        ],
+        "page": 12
+    },
+    {
+        "word": "雪",
+        "hiragana": "ゆき",
+        "romaji": "yuki",
+        "meanings": [
+            "snow, snowfall"
+        ],
+        "page": 12
+    },
+    {
+        "word": "川",
+        "hiragana": "かわ",
+        "romaji": "kawa",
+        "meanings": [
+            "river, stream",
+            "River, the ... river"
+        ],
+        "page": 12
+    },
+    {
+        "word": "全部",
+        "hiragana": "ぜんぶ",
+        "romaji": "zenbu",
+        "meanings": [
+            "all, entire, whole, altogether"
+        ],
+        "page": 12
+    },
+    {
+        "word": "側",
+        "hiragana": "そば",
+        "romaji": "soba",
+        "meanings": [
+            "near, close, beside, vicinity, proximity, besides, while",
+            "third person"
+        ],
+        "page": 13
+    },
+    {
+        "word": "村",
+        "hiragana": "むら",
+        "romaji": "mura",
+        "meanings": [
+            "village"
+        ],
+        "page": 13
+    },
+    {
+        "word": "大使館",
+        "hiragana": "たいしかん",
+        "romaji": "taishikan",
+        "meanings": [
+            "embassy"
+        ],
+        "page": 13
+    },
+    {
+        "word": "大人",
+        "hiragana": "おとな",
+        "romaji": "otona",
+        "meanings": [
+            "adult, grown-up"
+        ],
+        "page": 13
+    },
+    {
+        "word": "冬",
+        "hiragana": "ふゆ",
+        "romaji": "fuyu",
+        "meanings": [
+            "winter"
+        ],
+        "page": 13
+    },
+    {
+        "word": "白",
+        "hiragana": "しろ",
+        "romaji": "shiro",
+        "meanings": [
+            "white",
+            "innocence, innocent person",
+            "blank space",
+            "white stone",
+            "white dragon tile",
+            "skewered grilled pig intestine"
+        ],
+        "page": 13
+    },
+    {
+        "word": "半",
+        "hiragana": "はん",
+        "romaji": "han",
+        "meanings": [
+            "half, semi-, partial",
+            "half-past",
+            "odd number",
+            "han (unit of land area, approx. 595.8 m^2)"
+        ],
+        "page": 13
+    },
+    {
+        "word": "番号",
+        "hiragana": "ばんごう",
+        "romaji": "bangou",
+        "meanings": [
+            "number, series of digits"
+        ],
+        "page": 13
+    },
+    {
+        "word": "勉強",
+        "hiragana": "べんきょう",
+        "romaji": "benkyou",
+        "meanings": [
+            "study",
+            "diligence, working hard",
+            "experience, lesson (for the future)",
+            "discount, price reduction"
+        ],
+        "page": 13
+    },
+    {
+        "word": "野菜",
+        "hiragana": "やさい",
+        "romaji": "yasai",
+        "meanings": [
+            "vegetable",
+            "marijuana, cannabis"
+        ],
+        "page": 13
+    },
+    {
+        "word": "有名",
+        "hiragana": "ゆうめい",
+        "romaji": "yuumei",
+        "meanings": [
+            "famous, well-known"
+        ],
+        "page": 14
+    },
+    {
+        "word": "来月",
+        "hiragana": "らいげつ",
+        "romaji": "raigetsu",
+        "meanings": [
+            "next month"
+        ],
+        "page": 14
+    },
+    {
+        "word": "緑",
+        "hiragana": "みどり",
+        "romaji": "midori",
+        "meanings": [
+            "green",
+            "greenery, verdure"
+        ],
+        "page": 14
+    },
+    {
+        "word": "毎年",
+        "hiragana": "まいとし",
+        "romaji": "maitoshi",
+        "meanings": [
+            "every year, yearly, annually"
+        ],
+        "page": 14
+    },
+    {
+        "word": "門",
+        "hiragana": "もん",
+        "romaji": "mon",
+        "meanings": [
+            "gate",
+            "branch of learning based on the teachings of a single master",
+            "division, phylum",
+            "counter for cannons"
+        ],
+        "page": 14
+    },
+    {
+        "word": "両親",
+        "hiragana": "りょうしん",
+        "romaji": "ryoushin",
+        "meanings": [
+            "parents, both parents"
+        ],
+        "page": 14
+    },
+    {
+        "word": "お金",
+        "hiragana": "おかね",
+        "romaji": "okane",
+        "meanings": [
+            "money"
+        ],
+        "page": 14
+    },
+    {
+        "word": "広い",
+        "hiragana": "ひろい",
+        "romaji": "hiroi",
+        "meanings": [
+            "spacious, vast, wide"
+        ],
+        "page": 14
+    },
+    {
+        "word": "自転車",
+        "hiragana": "じてんしゃ",
+        "romaji": "jitensha",
+        "meanings": [
+            "bicycle, bike"
+        ],
+        "page": 14
+    },
+    {
+        "word": "窓",
+        "hiragana": "まど",
+        "romaji": "mado",
+        "meanings": [
+            "window"
+        ],
+        "page": 14
+    },
+    {
+        "word": "大勢",
+        "hiragana": "おおぜい",
+        "romaji": "oozei",
+        "meanings": [
+            "crowd of people, great number of people",
+            "in great numbers"
+        ],
+        "page": 15
+    },
+    {
+        "word": "昼",
+        "hiragana": "ひる",
+        "romaji": "hiru",
+        "meanings": [
+            "noon, midday",
+            "daytime",
+            "lunch"
+        ],
+        "page": 15
+    },
+    {
+        "word": "鳥",
+        "hiragana": "とり",
+        "romaji": "tori",
+        "meanings": [
+            "bird",
+            "bird meat (esp. chicken meat), fowl, poultry"
+        ],
+        "page": 15
+    },
+    {
+        "word": "電車",
+        "hiragana": "でんしゃ",
+        "romaji": "densha",
+        "meanings": [
+            "train, electric train"
+        ],
+        "page": 15
+    },
+    {
+        "word": "服",
+        "hiragana": "ふく",
+        "romaji": "fuku",
+        "meanings": [
+            "clothes (esp. Western clothes), clothing, dress, costume, suit, outfit",
+            "counter for doses of medicine, gulps of tea, puffs of a cigarette, etc."
+        ],
+        "page": 15
+    },
+    {
+        "word": "薬",
+        "hiragana": "くすり",
+        "romaji": "kusuri",
+        "meanings": [
+            "medicine, pharmaceuticals, (legal) drugs, pill, ointment, salve",
+            "efficacious chemical (gunpowder, pesticide, etc.)",
+            "(pottery) glaze",
+            "(illegal) drug, narcotic",
+            "small bribe"
+        ],
+        "page": 15
+    },
+    {
+        "word": "隣",
+        "hiragana": "となり",
+        "romaji": "tonari",
+        "meanings": [
+            "next (to), adjoining, adjacent",
+            "house next door, neighbouring house, next-door neighbour, next-door neighbor"
+        ],
+        "page": 15
+    },
+    {
+        "word": "弟",
+        "hiragana": "おとうと",
+        "romaji": "otouto",
+        "meanings": [
+            "younger brother, little brother, kid brother",
+            "brother-in-law (spouse's younger brother or younger sister's husband)",
+            "pupil, apprentice"
+        ],
+        "page": 15
+    },
+    {
+        "word": "作る",
+        "hiragana": "つくる",
+        "romaji": "tsukuru",
+        "meanings": [
+            "to make, to produce, to manufacture, to build, to construct",
+            "to prepare (food), to brew (alcohol)",
+            "to raise, to grow, to cultivate, to train",
+            "to till",
+            "to draw up (a document), to make out, to prepare, to write",
+            "to create (an artistic work, etc.), to compose",
+            "to coin (a phrase), to organize, to organise, to establish, to found",
+            "to have (a child)",
+            "to make up (one's face, etc.)",
+            "to fabricate (an excuse, etc.)",
+            "to give a (false) appearance, to feign (a smile, etc.), to put on a show of emotion",
+            "to form (a line, etc.)",
+            "to set (a record)",
+            "to commit (a sin, etc.)"
+        ],
+        "page": 15
+    },
+    {
+        "word": "大きな",
+        "hiragana": "おおきな",
+        "romaji": "ookina",
+        "meanings": [
+            "big, large, great"
+        ],
+        "page": 15
+    },
+    {
+        "word": "お母さん",
+        "hiragana": "おかあさん",
+        "romaji": "okaasan",
+        "meanings": [
+            "mother, mom, mum, ma",
+            "wife",
+            "you (of an elderly person older than the speaker), she, her"
+        ],
+        "page": 16
+    },
+    {
+        "word": "駅",
+        "hiragana": "えき",
+        "romaji": "eki",
+        "meanings": [
+            "railway station, train station",
+            "staging post on a highway (in pre-modern Japan)",
+            "counter for railway stations and bus stations"
+        ],
+        "page": 16
+    },
+    {
+        "word": "夏休み",
+        "hiragana": "なつやすみ",
+        "romaji": "natsuyasumi",
+        "meanings": [
+            "summer vacation, summer holiday"
+        ],
+        "page": 16
+    },
+    {
+        "word": "皆",
+        "hiragana": "みんな",
+        "romaji": "minna",
+        "meanings": [
+            "everyone, everybody, all",
+            "everything, all"
+        ],
+        "page": 16
+    },
+    {
+        "word": "休み",
+        "hiragana": "やすみ",
+        "romaji": "yasumi",
+        "meanings": [
+            "rest, recess, respite",
+            "vacation, holiday, absence, suspension",
+            "dormancy (of a silkworm prior to moulting)"
+        ],
+        "page": 16
+    },
+    {
+        "word": "橋",
+        "hiragana": "はし",
+        "romaji": "hashi",
+        "meanings": [
+            "bridge"
+        ],
+        "page": 16
+    },
+    {
+        "word": "兄",
+        "hiragana": "あに",
+        "romaji": "ani",
+        "meanings": [
+            "older brother, elder brother",
+            "brother-in-law (spouse's older brother or older sister's husband)"
+        ],
+        "page": 16
+    },
+    {
+        "word": "兄弟",
+        "hiragana": "きょうだい",
+        "romaji": "kyoudai",
+        "meanings": [
+            "siblings, brothers and sisters",
+            "brothers",
+            "siblings-in-law, brothers-in-law, sisters-in-law",
+            "mate, friend"
+        ],
+        "page": 16
+    },
+    {
+        "word": "警官",
+        "hiragana": "けいかん",
+        "romaji": "keikan",
+        "meanings": [
+            "police officer, policeman, constable"
+        ],
+        "page": 16
+    },
+    {
+        "word": "玄関",
+        "hiragana": "げんかん",
+        "romaji": "genkan",
+        "meanings": [
+            "entrance, front door, entryway, entranceway, entry hall, vestibule, porch, foyer, mud room"
+        ],
+        "page": 16
+    },
+    {
+        "word": "今週",
+        "hiragana": "こんしゅう",
+        "romaji": "konshuu",
+        "meanings": [
+            "this week"
+        ],
+        "page": 17
+    },
+    {
+        "word": "歯",
+        "hiragana": "は",
+        "romaji": "ha",
+        "meanings": [
+            "tooth, teeth",
+            "tooth (of a comb, saw, etc.), cog",
+            "support (of a geta)"
+        ],
+        "page": 17
+    },
+    {
+        "word": "図書館",
+        "hiragana": "としょかん",
+        "romaji": "toshokan",
+        "meanings": [
+            "library"
+        ],
+        "page": 17
+    },
+    {
+        "word": "静か",
+        "hiragana": "しずか",
+        "romaji": "shizuka",
+        "meanings": [
+            "quiet, silent",
+            "slow, unhurried",
+            "calm, peaceful"
+        ],
+        "page": 17
+    },
+    {
+        "word": "先週",
+        "hiragana": "せんしゅう",
+        "romaji": "senshuu",
+        "meanings": [
+            "last week, the week before"
+        ],
+        "page": 17
+    },
+    {
+        "word": "地下鉄",
+        "hiragana": "ちかてつ",
+        "romaji": "chikatetsu",
+        "meanings": [
+            "subway, metro, underground (railway)"
+        ],
+        "page": 17
+    },
+    {
+        "word": "地図",
+        "hiragana": "ちず",
+        "romaji": "chizu",
+        "meanings": [
+            "map, atlas, chart, plan"
+        ],
+        "page": 17
+    },
+    {
+        "word": "池",
+        "hiragana": "いけ",
+        "romaji": "ike",
+        "meanings": [
+            "pond"
+        ],
+        "page": 17
+    },
+    {
+        "word": "肉",
+        "hiragana": "にく",
+        "romaji": "niku",
+        "meanings": [
+            "flesh",
+            "meat",
+            "flesh (of a fruit), pulp",
+            "the physical body (as opposed to the spirit), flesh",
+            "thickness",
+            "content, substance, flesh",
+            "ink pad"
+        ],
+        "page": 17
+    },
+    {
+        "word": "飛行機",
+        "hiragana": "ひこうき",
+        "romaji": "hikouki",
+        "meanings": [
+            "airplane, aeroplane, plane, aircraft"
+        ],
+        "page": 17
+    },
+    {
+        "word": "文章",
+        "hiragana": "ぶんしょう",
+        "romaji": "bunshou",
+        "meanings": [
+            "writing, composition, essay, article, passage, prose, (writing) style",
+            "sentence"
+        ],
+        "page": 18
+    },
+    {
+        "word": "毎週",
+        "hiragana": "まいしゅう",
+        "romaji": "maishuu",
+        "meanings": [
+            "every week"
+        ],
+        "page": 18
+    },
+    {
+        "word": "友達",
+        "hiragana": "ともだち",
+        "romaji": "tomodachi",
+        "meanings": [
+            "friend, companion"
+        ],
+        "page": 18
+    },
+    {
+        "word": "卵",
+        "hiragana": "たまご",
+        "romaji": "tamago",
+        "meanings": [
+            "eggs, egg, spawn, roe",
+            "(hen's) egg",
+            "a ... in the making, future (lawyer, doctor, etc.), budding ...",
+            "beginning, origin, infancy"
+        ],
+        "page": 18
+    },
+    {
+        "word": "留学生",
+        "hiragana": "りゅうがくせい",
+        "romaji": "ryuugakusei",
+        "meanings": [
+            "overseas student, exchange student"
+        ],
+        "page": 18
+    },
+    {
+        "word": "入り口",
+        "hiragana": "いりぐち",
+        "romaji": "iriguchi",
+        "meanings": [
+            "entrance, entry, gate, approach, mouth"
+        ],
+        "page": 18
+    },
+    {
+        "word": "毎月",
+        "hiragana": "まいつき",
+        "romaji": "maitsuki",
+        "meanings": [
+            "every month, each month, monthly"
+        ],
+        "page": 18
+    },
+    {
+        "word": "明日",
+        "hiragana": "あした",
+        "romaji": "ashita",
+        "meanings": [
+            "tomorrow",
+            "near future"
+        ],
+        "page": 18
+    },
+    {
+        "word": "お茶",
+        "hiragana": "おちゃ",
+        "romaji": "ocha",
+        "meanings": [
+            "tea (esp. green or barley)",
+            "tea break (at work)",
+            "tea ceremony"
+        ],
+        "page": 18
+    },
+    {
+        "word": "医者",
+        "hiragana": "いしゃ",
+        "romaji": "isha",
+        "meanings": [
+            "doctor, physician"
+        ],
+        "page": 18
+    },
+    {
+        "word": "皆さん",
+        "hiragana": "みなさん",
+        "romaji": "minasan",
+        "meanings": [
+            "all, everyone, everybody"
+        ],
+        "page": 19
+    },
+    {
+        "word": "角",
+        "hiragana": "かど",
+        "romaji": "kado",
+        "meanings": [
+            "corner, edge",
+            "(street) corner, turning",
+            "rough edges (of one's character, words, etc.), abrasiveness, harshness, sharpness"
+        ],
+        "page": 19
+    },
+    {
+        "word": "靴",
+        "hiragana": "くつ",
+        "romaji": "kutsu",
+        "meanings": [
+            "shoe, shoes, boots, footwear, footgear"
+        ],
+        "page": 19
+    },
+    {
+        "word": "元気",
+        "hiragana": "げんき",
+        "romaji": "genki",
+        "meanings": [
+            "lively, full of spirit, energetic, vigorous, vital, spirited",
+            "healthy, well, fit, in good health"
+        ],
+        "page": 19
+    },
+    {
+        "word": "後ろ",
+        "hiragana": "うしろ",
+        "romaji": "ushiro",
+        "meanings": [
+            "back, behind, rear"
+        ],
+        "page": 19
+    },
+    {
+        "word": "四つ",
+        "hiragana": "よっつ",
+        "romaji": "yottsu",
+        "meanings": [
+            "four, 4",
+            "four years of age",
+            "ten o'clock (in the old time system)",
+            "burakumin",
+            "cross grips"
+        ],
+        "page": 19
+    },
+    {
+        "word": "取る",
+        "hiragana": "とる",
+        "romaji": "toru",
+        "meanings": [
+            "to take, to pick up, to grab, to catch, to hold",
+            "to pass, to hand, to give",
+            "to get, to obtain, to acquire, to win, to receive, to earn, to take (e.g. a vacation)",
+            "to adopt (a method, proposal, etc.), to take (a measure, attitude, etc.), to choose",
+            "to remove, to get rid of, to take off",
+            "to take away, to steal, to rob",
+            "to eat, to have (e.g. lunch), to take (e.g. vitamins)",
+            "to pick (e.g. flowers), to gather, to extract (e.g. juice), to catch (e.g. fish), to harvest (a crop)",
+            "to take up (time, space), to occupy, to spare, to set aside",
+            "to secure, to reserve, to save, to put aside, to keep",
+            "to take (e.g. a joke), to interpret, to understand, to make out, to grasp",
+            "to record, to take down",
+            "to subscribe to (e.g. a newspaper), to take, to buy, to get",
+            "to order, to have delivered",
+            "to charge, to fine, to take (tax)",
+            "to take (e.g. a wife), to take on (e.g. an apprentice), to adopt, to accept",
+            "to take control of, to take (the rudder)",
+            "to compete (in sumo, cards, etc.), to play"
+        ],
+        "page": 19
+    },
+    {
+        "word": "女の子",
+        "hiragana": "おんなのこ",
+        "romaji": "onnanoko",
+        "meanings": [
+            "girl, daughter, baby girl",
+            "young woman"
+        ],
+        "page": 19
+    },
+    {
+        "word": "大丈夫",
+        "hiragana": "だいじょうぶ",
+        "romaji": "daijoubu",
+        "meanings": [
+            "safe, secure, sound, problem-free, without fear, all right, alright, OK, okay",
+            "certainly, surely, undoubtedly",
+            "no thanks, I'm good, that's alright",
+            "great man, fine figure of a man"
+        ],
+        "page": 19
+    },
+    {
+        "word": "庭",
+        "hiragana": "にわ",
+        "romaji": "niwa",
+        "meanings": [
+            "garden, yard, courtyard",
+            "field (of action), area"
+        ],
+        "page": 19
+    },
+    {
+        "word": "天気",
+        "hiragana": "てんき",
+        "romaji": "tenki",
+        "meanings": [
+            "weather",
+            "fair weather, fine weather"
+        ],
+        "page": 20
+    },
+    {
+        "word": "便利",
+        "hiragana": "べんり",
+        "romaji": "benri",
+        "meanings": [
+            "convenient, handy, useful"
+        ],
+        "page": 20
+    },
+    {
+        "word": "妹",
+        "hiragana": "いもうと",
+        "romaji": "imouto",
+        "meanings": [
+            "younger sister"
+        ],
+        "page": 20
+    },
+    {
+        "word": "来週",
+        "hiragana": "らいしゅう",
+        "romaji": "raishuu",
+        "meanings": [
+            "next week"
+        ],
+        "page": 20
+    },
+    {
+        "word": "立派",
+        "hiragana": "りっぱ",
+        "romaji": "rippa",
+        "meanings": [
+            "splendid, fine, handsome, elegant, imposing, prominent, impressive",
+            "praiseworthy, creditable, worthy",
+            "legal, legitimate, lawful",
+            "undeniable (e.g. crime), indisputable, solid"
+        ],
+        "page": 20
+    },
+    {
+        "word": "塩",
+        "hiragana": "しお",
+        "romaji": "shio",
+        "meanings": [
+            "salt, common salt, table salt, sodium chloride",
+            "hardship, toil, trouble",
+            "saltiness",
+            "cold, unwelcoming, indifferent"
+        ],
+        "page": 20
+    },
+    {
+        "word": "買い物",
+        "hiragana": "かいもの",
+        "romaji": "kaimono",
+        "meanings": [
+            "shopping, purchased goods"
+        ],
+        "page": 20
+    },
+    {
+        "word": "お父さん",
+        "hiragana": "おとうさん",
+        "romaji": "otousan",
+        "meanings": [
+            "father, dad, papa, pa, pop, daddy, dada",
+            "husband",
+            "you (of an elderly person older than the speaker), he, him"
+        ],
+        "page": 20
+    },
+    {
+        "word": "階段",
+        "hiragana": "かいだん",
+        "romaji": "kaidan",
+        "meanings": [
+            "stairs, stairway, staircase"
+        ],
+        "page": 20
+    },
+    {
+        "word": "漢字",
+        "hiragana": "かんじ",
+        "romaji": "kanji",
+        "meanings": [
+            "kanji, Chinese character"
+        ],
+        "page": 20
+    },
+    {
+        "word": "机",
+        "hiragana": "つくえ",
+        "romaji": "tsukue",
+        "meanings": [
+            "desk"
+        ],
+        "page": 21
+    },
+    {
+        "word": "戸",
+        "hiragana": "と",
+        "romaji": "to",
+        "meanings": [
+            "door (esp. Japanese-style)",
+            "shutter, window shutter",
+            "entrance (to a home)",
+            "narrows"
+        ],
+        "page": 21
+    },
+    {
+        "word": "今",
+        "hiragana": "いま",
+        "romaji": "ima",
+        "meanings": [
+            "now, the present time, just now, soon, immediately",
+            "another, more"
+        ],
+        "page": 21
+    },
+    {
+        "word": "姉",
+        "hiragana": "あね",
+        "romaji": "ane",
+        "meanings": [
+            "older sister, elder sister"
+        ],
+        "page": 21
+    },
+    {
+        "word": "時計",
+        "hiragana": "とけい",
+        "romaji": "tokei",
+        "meanings": [
+            "clock, watch, timepiece"
+        ],
+        "page": 21
+    },
+    {
+        "word": "台所",
+        "hiragana": "だいどころ",
+        "romaji": "daidokoro",
+        "meanings": [
+            "kitchen",
+            "financial situation, finances"
+        ],
+        "page": 21
+    },
+    {
+        "word": "男の子",
+        "hiragana": "おとこのこ",
+        "romaji": "otokonoko",
+        "meanings": [
+            "boy, son, baby boy",
+            "young man"
+        ],
+        "page": 21
+    },
+    {
+        "word": "難しい",
+        "hiragana": "むずかしい",
+        "romaji": "muzukashii",
+        "meanings": [
+            "difficult, hard, troublesome, complicated, serious (disease, problem, etc.)",
+            "impossible, unfeasible",
+            "fussy, particular, fastidious, hard to please, displeased",
+            "gloomy, glum, sullen, serious (look)",
+            "dirty, unclean, filthy, detestable",
+            "unpleasant, uncomfortable, creepy, spooky"
+        ],
+        "page": 21
+    },
+    {
+        "word": "猫",
+        "hiragana": "ねこ",
+        "romaji": "neko",
+        "meanings": [
+            "cat (esp. the domestic cat, Felis catus)",
+            "shamisen",
+            "geisha",
+            "wheelbarrow",
+            "clay bed-warmer",
+            "bottom (submissive partner of a homosexual relationship)"
+        ],
+        "page": 21
+    },
+    {
+        "word": "晩",
+        "hiragana": "ばん",
+        "romaji": "ban",
+        "meanings": [
+            "evening, night",
+            "dinner, evening meal",
+            "counter for nights"
+        ],
+        "page": 21
+    },
+    {
+        "word": "郵便局",
+        "hiragana": "ゆうびんきょく",
+        "romaji": "yuubinkyoku",
+        "meanings": [
+            "post office"
+        ],
+        "page": 22
+    },
+    {
+        "word": "夕方",
+        "hiragana": "ゆうがた",
+        "romaji": "yuugata",
+        "meanings": [
+            "early evening (usu. from 3pm to 6pm), dusk"
+        ],
+        "page": 22
+    },
+    {
+        "word": "嫌",
+        "hiragana": "いや",
+        "romaji": "iya",
+        "meanings": [
+            "disliking, not wanting, unwilling (to do), reluctant",
+            "unpleasant, disagreeable, nasty, horrible, disgusting, undesirable, unwelcome",
+            "no!, quit it!, stop!"
+        ],
+        "page": 22
+    },
+    {
+        "word": "大きい",
+        "hiragana": "おおきい",
+        "romaji": "ookii",
+        "meanings": [
+            "big, large, great",
+            "loud",
+            "extensive, spacious",
+            "important, decisive, valuable",
+            "older, grown up"
+        ],
+        "page": 22
+    },
+    {
+        "word": "時々",
+        "hiragana": "ときどき",
+        "romaji": "tokidoki",
+        "meanings": [
+            "sometimes, occasionally, at times, from time to time, now and then, once in a while, at intervals",
+            "seasonal, of the season, appropriate (for the season or occasion)"
+        ],
+        "page": 22
+    },
+    {
+        "word": "押す",
+        "hiragana": "おす",
+        "romaji": "osu",
+        "meanings": [
+            "to push, to thrust, to shove",
+            "to press (down), to push (e.g. a button), to exert pressure on",
+            "to stamp (e.g. one's name), to affix (a seal)",
+            "to affix (e.g. gold leaf)",
+            "to push (someone for something), to press, to put pressure on (someone)",
+            "to overwhelm, to overpower, to put (someone) under pressure, to be superior to",
+            "to push ahead (with a policy, plan, etc.), to proceed, to stick to",
+            "to do ... in spite of ..., to defy, to brave, to push aside",
+            "to make sure",
+            "to fall behind schedule"
+        ],
+        "page": 22
+    },
+    {
+        "word": "牛肉",
+        "hiragana": "ぎゅうにく",
+        "romaji": "gyuuniku",
+        "meanings": [
+            "beef"
+        ],
+        "page": 22
+    },
+    {
+        "word": "牛乳",
+        "hiragana": "ぎゅうにゅう",
+        "romaji": "gyuunyuu",
+        "meanings": [
+            "(cow's) milk"
+        ],
+        "page": 22
+    },
+    {
+        "word": "結構",
+        "hiragana": "けっこう",
+        "romaji": "kekkou",
+        "meanings": [
+            "splendid, nice, wonderful, delightful, lovely, excellent, fine",
+            "sufficient, satisfactory, enough, fine, all right, OK",
+            "not needing (any more of something), (already) having enough, fine (as in \"I'm fine\"), no, thank you",
+            "rather, quite, fairly, pretty, surprisingly, quite a bit, fairly well",
+            "structure, construction, framework, architecture"
+        ],
+        "page": 22
+    },
+    {
+        "word": "嫌い",
+        "hiragana": "きらい",
+        "romaji": "kirai",
+        "meanings": [
+            "disliked, hated, disagreeable",
+            "tendency, smack (of), touch (of)",
+            "distinction, discrimination"
+        ],
+        "page": 22
+    },
+    {
+        "word": "高い",
+        "hiragana": "たかい",
+        "romaji": "takai",
+        "meanings": [
+            "high, tall",
+            "expensive, high-priced",
+            "high (level), above average (in degree, quality, etc.)",
+            "loud",
+            "high-pitched, shrill"
+        ],
+        "page": 23
+    },
+    {
+        "word": "砂糖",
+        "hiragana": "さとう",
+        "romaji": "satou",
+        "meanings": [
+            "sugar"
+        ],
+        "page": 23
+    },
+    {
+        "word": "持つ",
+        "hiragana": "もつ",
+        "romaji": "motsu",
+        "meanings": [
+            "to hold (in one's hand), to take, to carry",
+            "to possess, to have, to own",
+            "to maintain, to keep",
+            "to last, to be durable, to keep, to survive",
+            "to take charge of, to be in charge of",
+            "to hold (meeting, etc.), to have (opportunity, etc.)",
+            "to have \"it\", to have that special something, to be blessed with good luck"
+        ],
+        "page": 23
+    },
+    {
+        "word": "縦",
+        "hiragana": "たて",
+        "romaji": "tate",
+        "meanings": [
+            "the vertical, height",
+            "front-to-back, length",
+            "north-to-south",
+            "vertical (relationship), hierarchy",
+            "(weaving) warp"
+        ],
+        "page": 23
+    },
+    {
+        "word": "出口",
+        "hiragana": "でぐち",
+        "romaji": "deguchi",
+        "meanings": [
+            "exit, way out",
+            "outlet, vent"
+        ],
+        "page": 23
+    },
+    {
+        "word": "食べ物",
+        "hiragana": "たべもの",
+        "romaji": "tabemono",
+        "meanings": [
+            "food"
+        ],
+        "page": 23
+    },
+    {
+        "word": "食堂",
+        "hiragana": "しょくどう",
+        "romaji": "shokudou",
+        "meanings": [
+            "dining room, dining hall, cafeteria, canteen, messroom",
+            "restaurant, eatery, snack bar, diner"
+        ],
+        "page": 23
+    },
+    {
+        "word": "新しい",
+        "hiragana": "あたらしい",
+        "romaji": "atarashii",
+        "meanings": [
+            "new, novel, fresh, recent, latest, up-to-date, modern"
+        ],
+        "page": 23
+    },
+    {
+        "word": "切手",
+        "hiragana": "きって",
+        "romaji": "kitte",
+        "meanings": [
+            "stamp (postage), merchandise certificate"
+        ],
+        "page": 23
+    },
+    {
+        "word": "大好き",
+        "hiragana": "だいすき",
+        "romaji": "daisuki",
+        "meanings": [
+            "liking very much, loving (something or someone), adoring, being very fond of"
+        ],
+        "page": 23
+    },
+    {
+        "word": "売る",
+        "hiragana": "うる",
+        "romaji": "uru",
+        "meanings": [
+            "to sell",
+            "to betray, to sell out (one's friend, country, etc.)",
+            "to make (oneself) known, to establish (a reputation) for oneself",
+            "to pick (a fight, quarrel, etc.), to provoke, to force on someone"
+        ],
+        "page": 24
+    },
+    {
+        "word": "鼻",
+        "hiragana": "はな",
+        "romaji": "hana",
+        "meanings": [
+            "nose"
+        ],
+        "page": 24
+    },
+    {
+        "word": "頼む",
+        "hiragana": "たのむ",
+        "romaji": "tanomu",
+        "meanings": [
+            "to request, to beg, to ask",
+            "to call, to order, to reserve",
+            "to entrust to",
+            "to rely on",
+            "please, please do"
+        ],
+        "page": 24
+    },
+    {
+        "word": "冷蔵庫",
+        "hiragana": "れいぞうこ",
+        "romaji": "reizouko",
+        "meanings": [
+            "refrigerator, fridge"
+        ],
+        "page": 24
+    },
+    {
+        "word": "映画館",
+        "hiragana": "えいがかん",
+        "romaji": "eigakan",
+        "meanings": [
+            "movie theatre, movie theater, cinema"
+        ],
+        "page": 24
+    },
+    {
+        "word": "果物",
+        "hiragana": "くだもの",
+        "romaji": "kudamono",
+        "meanings": [
+            "fruit"
+        ],
+        "page": 24
+    },
+    {
+        "word": "荷物",
+        "hiragana": "にもつ",
+        "romaji": "nimotsu",
+        "meanings": [
+            "luggage, baggage, package",
+            "burden",
+            "payload (of a packet, cell, etc.)"
+        ],
+        "page": 24
+    },
+    {
+        "word": "五つ",
+        "hiragana": "いつつ",
+        "romaji": "itsutsu",
+        "meanings": [
+            "five",
+            "five years of age",
+            "eight o'clock (old time system)"
+        ],
+        "page": 24
+    },
+    {
+        "word": "作文",
+        "hiragana": "さくぶん",
+        "romaji": "sakubun",
+        "meanings": [
+            "writing (an essay, prose, etc.), composition",
+            "formal writing with little real meaning"
+        ],
+        "page": 24
+    },
+    {
+        "word": "洗濯",
+        "hiragana": "せんたく",
+        "romaji": "sentaku",
+        "meanings": [
+            "washing, laundry",
+            "relaxation, rejuvenation, melting away (of worries, fatigue, etc.)"
+        ],
+        "page": 24
+    },
+    {
+        "word": "掃除",
+        "hiragana": "そうじ",
+        "romaji": "souji",
+        "meanings": [
+            "cleaning, sweeping, dusting, scrubbing"
+        ],
+        "page": 25
+    },
+    {
+        "word": "朝",
+        "hiragana": "あさ",
+        "romaji": "asa",
+        "meanings": [
+            "morning",
+            "breakfast"
+        ],
+        "page": 25
+    },
+    {
+        "word": "帽子",
+        "hiragana": "ぼうし",
+        "romaji": "boushi",
+        "meanings": [
+            "hat, cap"
+        ],
+        "page": 25
+    },
+    {
+        "word": "明るい",
+        "hiragana": "あかるい",
+        "romaji": "akarui",
+        "meanings": [
+            "light, bright, well-lit, well-lighted",
+            "bright (colour)",
+            "cheerful, bright, spirited, sunny (e.g. disposition)",
+            "bright (future, prospects, etc.), rosy, encouraging, promising",
+            "knowledgeable (about), familiar (with), well versed (in), well acquainted (with)",
+            "fair (e.g. politics), clean, impartial"
+        ],
+        "page": 25
+    },
+    {
+        "word": "浴びる",
+        "hiragana": "あびる",
+        "romaji": "abiru",
+        "meanings": [
+            "to dash over oneself (e.g. water), to take (e.g. shower), to bask in (e.g. the sun), to bathe in, to be flooded with (e.g. light), to be covered in",
+            "to suffer (e.g. an attack), to draw (e.g. criticism, attention, praise), to have heaped upon, to be showered with"
+        ],
+        "page": 25
+    },
+    {
+        "word": "風邪",
+        "hiragana": "かぜ",
+        "romaji": "kaze",
+        "meanings": [
+            "(common) cold, influenza, flu, ague, inflammatory respiratory system illness (in general)"
+        ],
+        "page": 25
+    },
+    {
+        "word": "箱",
+        "hiragana": "はこ",
+        "romaji": "hako",
+        "meanings": [
+            "box, case, chest, package, pack, crate",
+            "car (of a train, etc.)",
+            "shamisen case, shamisen",
+            "public building, community building",
+            "man who carries a geisha's shamisen",
+            "receptacle for human waste, feces (faeces)",
+            "counter for boxes (or boxed objects)"
+        ],
+        "page": 25
+    },
+    {
+        "word": "喫茶店",
+        "hiragana": "きっさてん",
+        "romaji": "kissaten",
+        "meanings": [
+            "coffee shop, tearoom, coffee lounge, coffeehouse, cafe"
+        ],
+        "page": 25
+    },
+    {
+        "word": "去年",
+        "hiragana": "きょねん",
+        "romaji": "kyonen",
+        "meanings": [
+            "last year"
+        ],
+        "page": 25
+    },
+    {
+        "word": "財布",
+        "hiragana": "さいふ",
+        "romaji": "saifu",
+        "meanings": [
+            "wallet, purse, coin purse, billfold, pocketbook"
+        ],
+        "page": 25
+    },
+    {
+        "word": "散歩",
+        "hiragana": "さんぽ",
+        "romaji": "sanpo",
+        "meanings": [
+            "walk, stroll"
+        ],
+        "page": 26
+    },
+    {
+        "word": "辞書",
+        "hiragana": "じしょ",
+        "romaji": "jisho",
+        "meanings": [
+            "dictionary, lexicon",
+            "letter of resignation"
+        ],
+        "page": 26
+    },
+    {
+        "word": "切符",
+        "hiragana": "きっぷ",
+        "romaji": "kippu",
+        "meanings": [
+            "ticket"
+        ],
+        "page": 26
+    },
+    {
+        "word": "走る",
+        "hiragana": "はしる",
+        "romaji": "hashiru",
+        "meanings": [
+            "to run",
+            "to run (of a vehicle), to drive, to travel, to move, to sail",
+            "to rush (to), to dash, to race",
+            "to retreat, to flee, to defect (to)",
+            "to run away, to abscond, to elope",
+            "to flash (of lightning), to streak, to shoot (through; e.g. of pain), to run (through), to flare, to flit (e.g. across one's face), to spread quickly (of news, shock, etc.)",
+            "to go (e.g. bad, to extremes), to become, to turn, to take to (e.g. crime), to get carried away by (e.g. one's emotions), to get involved in, to get wrapped up in",
+            "to run (through; of a road, street, etc.), to extend (e.g. of a mountain range), to stretch, to lie"
+        ],
+        "page": 26
+    },
+    {
+        "word": "買う",
+        "hiragana": "かう",
+        "romaji": "kau",
+        "meanings": [
+            "to buy, to purchase",
+            "to value (highly), to think highly of, to have a high opinion of, to appreciate, to recognize",
+            "to incur (someone's anger, displeasure, etc.), to elicit (e.g. sneers), to invite (e.g. scorn), to evoke, to arouse, to win (someone's favour)",
+            "to accept, to take on, to take up",
+            "to pay for (a prostitute, geisha, etc.)"
+        ],
+        "page": 26
+    },
+    {
+        "word": "辺",
+        "hiragana": "へん",
+        "romaji": "hen",
+        "meanings": [
+            "area, vicinity, region",
+            "side, edge",
+            "circumstances"
+        ],
+        "page": 26
+    },
+    {
+        "word": "廊下",
+        "hiragana": "ろうか",
+        "romaji": "rouka",
+        "meanings": [
+            "corridor, hallway, passageway"
+        ],
+        "page": 26
+    },
+    {
+        "word": "昨日",
+        "hiragana": "きのう",
+        "romaji": "kinou",
+        "meanings": [
+            "yesterday"
+        ],
+        "page": 26
+    },
+    {
+        "word": "いいえ",
+        "hiragana": "",
+        "romaji": "iie",
+        "meanings": [
+            "no",
+            "you're welcome, not at all, don't mention it"
+        ],
+        "page": 26
+    },
+    {
+        "word": "降りる",
+        "hiragana": "おりる",
+        "romaji": "oriru",
+        "meanings": [
+            "to descend (e.g. a mountain), to go down, to come down",
+            "to alight (e.g. from bus), to get off, to disembark, to dismount",
+            "to step down, to retire, to give up, to quit, to fold",
+            "to be granted, to be issued, to be given",
+            "to form (of frost, dew, mist, etc.)",
+            "to be passed (from the body; e.g. of a roundworm)"
+        ],
+        "page": 26
+    },
+    {
+        "word": "傘",
+        "hiragana": "かさ",
+        "romaji": "kasa",
+        "meanings": [
+            "umbrella, parasol",
+            "something shaped like an umbrella or a conical hat, shade (of a lamp), mushroom cap, pileus"
+        ],
+        "page": 27
+    },
+    {
+        "word": "切る",
+        "hiragana": "きる",
+        "romaji": "kiru",
+        "meanings": [
+            "to cut, to cut through, to perform (surgery)",
+            "to sever (connections, ties)",
+            "to turn off (e.g. the light)",
+            "to terminate (e.g. a conversation), to hang up (the phone), to disconnect",
+            "to punch (a ticket), to tear off (a stub)",
+            "to open (something sealed)",
+            "to start",
+            "to set (a limit), to do (something) in less or within a certain time, to issue (cheques, vouchers, etc.)",
+            "to reduce, to decrease, to discount",
+            "to shake off (water, etc.), to let drip-dry, to let drain",
+            "to cross, to traverse",
+            "to criticize sharply",
+            "to act decisively, to do (something noticeable), to go first, to make (certain facial expressions, in kabuki)",
+            "to turn (vehicle, steering wheel, etc.)",
+            "to curl (a ball), to bend, to cut",
+            "to shuffle (cards)",
+            "to discard a tile",
+            "to dismiss, to sack, to let go, to expel, to excommunicate",
+            "to dig (a groove), to cut (a stencil, on a mimeograph)",
+            "to trump",
+            "to cut (the connection between two groups)",
+            "to start a fire (with wood-wood friction or by striking a metal against stone)",
+            "to draw (a shape) in the air (with a sword, etc.)",
+            "to do completely, to finish doing",
+            "to be completely ..., to be totally ..., to be terribly ...",
+            "to do clearly, to do decisively, to do firmly"
+        ],
+        "page": 27
+    },
+    {
+        "word": "渡す",
+        "hiragana": "わたす",
+        "romaji": "watasu",
+        "meanings": [
+            "to ferry across (e.g. a river), to carry across, to traverse",
+            "to lay across, to build across",
+            "to hand over, to hand in, to pass, to give, to transfer"
+        ],
+        "page": 27
+    },
+    {
+        "word": "封筒",
+        "hiragana": "ふうとう",
+        "romaji": "fuutou",
+        "meanings": [
+            "envelope"
+        ],
+        "page": 27
+    },
+    {
+        "word": "毎朝",
+        "hiragana": "まいあさ",
+        "romaji": "maiasa",
+        "meanings": [
+            "every morning"
+        ],
+        "page": 27
+    },
+    {
+        "word": "洋服",
+        "hiragana": "ようふく",
+        "romaji": "youfuku",
+        "meanings": [
+            "Western-style clothes (cf. traditional Japanese clothes)"
+        ],
+        "page": 27
+    },
+    {
+        "word": "黄色",
+        "hiragana": "きいろ",
+        "romaji": "kiiro",
+        "meanings": [
+            "yellow, amber"
+        ],
+        "page": 27
+    },
+    {
+        "word": "終わる",
+        "hiragana": "おわる",
+        "romaji": "owaru",
+        "meanings": [
+            "to end, to come to an end, to finish, to close, to be over",
+            "to finish, to complete, to conclude",
+            "to finish doing",
+            "to be past its (one's) prime",
+            "to be awful, to be terrible, to suck, to be hopeless"
+        ],
+        "page": 27
+    },
+    {
+        "word": "交差点",
+        "hiragana": "こうさてん",
+        "romaji": "kousaten",
+        "meanings": [
+            "crossing, intersection"
+        ],
+        "page": 27
+    },
+    {
+        "word": "鉛筆",
+        "hiragana": "えんぴつ",
+        "romaji": "enpitsu",
+        "meanings": [
+            "pencil"
+        ],
+        "page": 27
+    },
+    {
+        "word": "出る",
+        "hiragana": "でる",
+        "romaji": "deru",
+        "meanings": [
+            "to leave, to exit, to go out, to come out, to get out",
+            "to leave (on a journey), to depart, to start out, to set out",
+            "to move forward",
+            "to come to, to get to, to lead to, to reach",
+            "to appear, to come out, to emerge, to surface, to come forth, to turn up, to be found, to be detected, to be discovered, to be exposed, to show, to be exhibited, to be on display",
+            "to appear (in print), to be published, to be announced, to be issued, to be listed, to come out",
+            "to attend, to participate, to take part, to enter (an event), to play in, to perform",
+            "to be stated, to be expressed, to come up, to be brought up, to be raised",
+            "to sell",
+            "to exceed, to go over",
+            "to stick out, to protrude",
+            "to break out, to occur, to start, to originate",
+            "to be produced",
+            "to come from, to be derived from",
+            "to be given, to get, to receive, to be offered, to be provided, to be presented, to be submitted, to be handed in, to be turned in, to be paid",
+            "to answer (phone, door, etc.), to get",
+            "to assume (an attitude), to act, to behave",
+            "to pick up (speed, etc.), to gain",
+            "to flow (e.g. tears), to run, to bleed",
+            "to graduate",
+            "to ejaculate, to cum"
+        ],
+        "page": 28
+    },
+    {
+        "word": "上手",
+        "hiragana": "じょうず",
+        "romaji": "jouzu",
+        "meanings": [
+            "skillful, skilled, proficient, good (at), adept, clever",
+            "flattery"
+        ],
+        "page": 28
+    },
+    {
+        "word": "読む",
+        "hiragana": "よむ",
+        "romaji": "yomu",
+        "meanings": [
+            "to read",
+            "to recite (e.g. a sutra), to chant",
+            "to predict, to guess, to forecast, to read (someone's thoughts), to see (e.g. into someone's heart), to divine",
+            "to pronounce, to read (e.g. a kanji)",
+            "to decipher, to read (a meter, graph, music, etc.), to tell (the time)",
+            "to count, to estimate",
+            "to read (a kanji) with its native Japanese reading"
+        ],
+        "page": 28
+    },
+    {
+        "word": "背広",
+        "hiragana": "せびろ",
+        "romaji": "sebiro",
+        "meanings": [
+            "business suit"
+        ],
+        "page": 28
+    },
+    {
+        "word": "紅茶",
+        "hiragana": "こうちゃ",
+        "romaji": "koucha",
+        "meanings": [
+            "black tea"
+        ],
+        "page": 28
+    },
+    {
+        "word": "止まる",
+        "hiragana": "とまる",
+        "romaji": "tomaru",
+        "meanings": [
+            "to stop (moving), to come to a stop",
+            "to stop (doing, working, being supplied), to come to a halt, to cease, to be stopped, to be suspended",
+            "to alight, to perch on"
+        ],
+        "page": 28
+    },
+    {
+        "word": "七つ",
+        "hiragana": "ななつ",
+        "romaji": "nanatsu",
+        "meanings": [
+            "seven",
+            "seven years of age",
+            "four o'clock (old time system)"
+        ],
+        "page": 28
+    },
+    {
+        "word": "借りる",
+        "hiragana": "かりる",
+        "romaji": "kariru",
+        "meanings": [
+            "to borrow",
+            "to rent, to hire",
+            "to make use of (another's help, wisdom, etc.), to obtain, to receive",
+            "to use (for another purpose), to put to a different use"
+        ],
+        "page": 28
+    },
+    {
+        "word": "宿題",
+        "hiragana": "しゅくだい",
+        "romaji": "shukudai",
+        "meanings": [
+            "homework, assignment",
+            "pending issue, unresolved problem, open question"
+        ],
+        "page": 28
+    },
+    {
+        "word": "多分",
+        "hiragana": "たぶん",
+        "romaji": "tabun",
+        "meanings": [
+            "probably, likely, perhaps, maybe",
+            "a lot of, much, many, considerable, large (amount), generous"
+        ],
+        "page": 28
+    },
+    {
+        "word": "誰",
+        "hiragana": "だれ",
+        "romaji": "dare",
+        "meanings": [
+            "who"
+        ],
+        "page": 29
+    },
+    {
+        "word": "着る",
+        "hiragana": "きる",
+        "romaji": "kiru",
+        "meanings": [
+            "to wear (from the shoulders down), to put on",
+            "to take (the blame, responsibility), to bear"
+        ],
+        "page": 29
+    },
+    {
+        "word": "張る",
+        "hiragana": "はる",
+        "romaji": "haru",
+        "meanings": [
+            "to stick, to paste, to affix",
+            "to stretch, to spread, to strain, to tighten, to put up (e.g. a tent)",
+            "to form (e.g. ice on a pond)",
+            "to fill, to swell",
+            "to stick out, to push out",
+            "to post (a link, etc. online)",
+            "to be expensive",
+            "to keep a watch on, to be on the lookout",
+            "to slap",
+            "to become one tile away from completion",
+            "to span, to generate"
+        ],
+        "page": 29
+    },
+    {
+        "word": "眼鏡",
+        "hiragana": "メガネ",
+        "romaji": "megane",
+        "meanings": [
+            "glasses, eyeglasses, spectacles",
+            "judgment, judgement, discrimination, discernment, insight",
+            "four-eyes"
+        ],
+        "page": 29
+    },
+    {
+        "word": "下さい",
+        "hiragana": "ください",
+        "romaji": "kudasai",
+        "meanings": [
+            "please (give me)",
+            "please (do for me)"
+        ],
+        "page": 29
+    },
+    {
+        "word": "見る",
+        "hiragana": "みる",
+        "romaji": "miru",
+        "meanings": [
+            "to see, to look, to watch, to view, to observe",
+            "to examine, to look over, to assess, to check, to judge",
+            "to look after, to attend to, to take care of, to keep an eye on",
+            "to experience, to meet with (misfortune, success, etc.)",
+            "to try ..., to have a go at ..., to give ... a try",
+            "to see (that) ..., to find (that) ..."
+        ],
+        "page": 29
+    },
+    {
+        "word": "低い",
+        "hiragana": "ひくい",
+        "romaji": "hikui",
+        "meanings": [
+            "low (rank, degree, value, content, quality, etc.)",
+            "low (position), close to the ground",
+            "short (height)",
+            "deep (voice), in a low key, low (volume)"
+        ],
+        "page": 29
+    },
+    {
+        "word": "熱い",
+        "hiragana": "あつい",
+        "romaji": "atsui",
+        "meanings": [
+            "hot (to the touch)",
+            "passionate (feelings, etc.), ardent, hot (e.g. gaze)",
+            "hot (e.g. temper)",
+            "zealous, enthusiastic, fired up",
+            "intense, severe, extreme",
+            "hot (topic), of interest"
+        ],
+        "page": 29
+    },
+    {
+        "word": "暇",
+        "hiragana": "ひま",
+        "romaji": "hima",
+        "meanings": [
+            "spare time, free time, leisure",
+            "time (it takes to do something), time required",
+            "time off, leave, vacation, holiday",
+            "dismissal, firing, severance, divorce",
+            "free, not busy, unoccupied, idle",
+            "slow (business), slack, dull",
+            "to be free, to be not busy, to be available, to be doing nothing"
+        ],
+        "page": 29
+    },
+    {
+        "word": "下手",
+        "hiragana": "へた",
+        "romaji": "heta",
+        "meanings": [
+            "unskillful, poor, awkward",
+            "imprudent, untactful"
+        ],
+        "page": 29
+    },
+    {
+        "word": "向こう",
+        "hiragana": "むこう",
+        "romaji": "mukou",
+        "meanings": [
+            "opposite side, other side",
+            "over there, ahead, beyond, (in the) distance, far away, far off",
+            "destination, there (somewhere distant, esp. abroad)",
+            "the other party, the other side",
+            "from now, next (e.g. two weeks), coming ..., from ... onwards"
+        ],
+        "page": 30
+    },
+    {
+        "word": "出来る",
+        "hiragana": "できる",
+        "romaji": "dekiru",
+        "meanings": [
+            "to be able to do, to be possible, to be permitted (to do)",
+            "to be good at, to do well, to be proficient (in), to be capable",
+            "to come into existence, to form, to appear, to come up (of a matter), to be born, to make (a friend), to get (a girlfriend, free time, etc.)",
+            "to be made, to be built, to be constructed, to be formed, to be established, to be set up",
+            "to be finished, to be completed, to be done, to be ready",
+            "to grow (of a crop), to be produced",
+            "to be mature and well-balanced, to be of fine character",
+            "to be by nature, to be born ...",
+            "to become (sexually) involved (with), to become intimate (with), to take up (with someone)",
+            "to get pregnant"
+        ],
+        "page": 30
+    },
+    {
+        "word": "寝る",
+        "hiragana": "ねる",
+        "romaji": "neru",
+        "meanings": [
+            "to sleep (lying down)",
+            "to go to bed, to lie in bed",
+            "to lie down",
+            "to sleep (with someone, i.e. have intercourse)",
+            "to lie flat (e.g. of hair)",
+            "to lie idle (of funds, stock, etc.)",
+            "to ferment (of soy sauce, miso, etc.)"
+        ],
+        "page": 30
+    },
+    {
+        "word": "晴れ",
+        "hiragana": "はれ",
+        "romaji": "hare",
+        "meanings": [
+            "clear weather, fine weather",
+            "formal, ceremonial, public",
+            "cleared of suspicion"
+        ],
+        "page": 30
+    },
+    {
+        "word": "赤い",
+        "hiragana": "あかい",
+        "romaji": "akai",
+        "meanings": [
+            "red, crimson, scarlet, vermilion",
+            "Red, communist"
+        ],
+        "page": 30
+    },
+    {
+        "word": "茶色",
+        "hiragana": "ちゃいろ",
+        "romaji": "chairo",
+        "meanings": [
+            "brown, light brown, tawny"
+        ],
+        "page": 30
+    },
+    {
+        "word": "長い",
+        "hiragana": "ながい",
+        "romaji": "nagai",
+        "meanings": [
+            "long (distance, length)",
+            "long (time), protracted, prolonged"
+        ],
+        "page": 30
+    },
+    {
+        "word": "丈夫",
+        "hiragana": "じょうぶ",
+        "romaji": "joubu",
+        "meanings": [
+            "healthy, robust, strong, solid, durable"
+        ],
+        "page": 30
+    },
+    {
+        "word": "余り",
+        "hiragana": "あまり",
+        "romaji": "amari",
+        "meanings": [
+            "remainder, remnant, rest, balance, surplus, remains (of a meal), leftovers",
+            "(not) very, (not) much",
+            "too much, excessively, overly",
+            "extreme, great, severe, tremendous, terrible",
+            "not very good, so-so, mediocre",
+            "more than, over"
+        ],
+        "page": 30
+    },
+    {
+        "word": "歌う",
+        "hiragana": "うたう",
+        "romaji": "utau",
+        "meanings": [
+            "to sing",
+            "to sing of (love, beauty, etc.) in a poem, to express in the form of a poem, to recite (a poem)"
+        ],
+        "page": 30
+    },
+    {
+        "word": "楽しい",
+        "hiragana": "たのしい",
+        "romaji": "tanoshii",
+        "meanings": [
+            "enjoyable, fun, pleasant, happy, delightful"
+        ],
+        "page": 31
+    },
+    {
+        "word": "幾つ",
+        "hiragana": "いくつ",
+        "romaji": "ikutsu",
+        "meanings": [
+            "how many",
+            "how old"
+        ],
+        "page": 31
+    },
+    {
+        "word": "古い",
+        "hiragana": "ふるい",
+        "romaji": "furui",
+        "meanings": [
+            "old, aged, ancient, antiquated, antique, timeworn",
+            "long, since long ago, time-honored",
+            "of the distant past, long-ago",
+            "stale, threadbare, hackneyed, corny",
+            "old-fashioned, outmoded, out-of-date"
+        ],
+        "page": 31
+    },
+    {
+        "word": "細い",
+        "hiragana": "ほそい",
+        "romaji": "hosoi",
+        "meanings": [
+            "thin, slender, fine",
+            "unlucky"
+        ],
+        "page": 31
+    },
+    {
+        "word": "少ない",
+        "hiragana": "すくない",
+        "romaji": "sukunai",
+        "meanings": [
+            "few, little, small (amount), low, scarce, insufficient, seldom, rare"
+        ],
+        "page": 31
+    },
+    {
+        "word": "早い",
+        "hiragana": "はやい",
+        "romaji": "hayai",
+        "meanings": [
+            "fast, quick, rapid, swift, speedy, brisk, prompt",
+            "early, soon, earlier than usual",
+            "premature, too soon, too early",
+            "easy, simple, quick, fast",
+            "as soon as ..., the moment ..., the instant ..."
+        ],
+        "page": 31
+    },
+    {
+        "word": "痛い",
+        "hiragana": "いたい",
+        "romaji": "itai",
+        "meanings": [
+            "painful, sore",
+            "cringy, embarrassing"
+        ],
+        "page": 31
+    },
+    {
+        "word": "白い",
+        "hiragana": "しろい",
+        "romaji": "shiroi",
+        "meanings": [
+            "white"
+        ],
+        "page": 31
+    },
+    {
+        "word": "来る",
+        "hiragana": "くる",
+        "romaji": "kuru",
+        "meanings": [
+            "to come (spatially or temporally), to approach, to arrive",
+            "to come back, to do ... and come back",
+            "to come to be, to become, to get, to grow, to continue",
+            "to come from, to be caused by, to derive from",
+            "to come to (e.g. \"when it comes to spinach ...\")"
+        ],
+        "page": 31
+    },
+    {
+        "word": "火曜日",
+        "hiragana": "かようび",
+        "romaji": "kayoubi",
+        "meanings": [
+            "Tuesday"
+        ],
+        "page": 31
+    },
+    {
+        "word": "始め",
+        "hiragana": "はじめ",
+        "romaji": "hajime",
+        "meanings": [
+            "beginning, start, outset, opening",
+            "first (in line, etc.)",
+            "origin",
+            "such as ..., not to mention ..."
+        ],
+        "page": 32
+    },
+    {
+        "word": "豚肉",
+        "hiragana": "ぶたにく",
+        "romaji": "butaniku",
+        "meanings": [
+            "pork"
+        ],
+        "page": 32
+    },
+    {
+        "word": "上着",
+        "hiragana": "うわぎ",
+        "romaji": "uwagi",
+        "meanings": [
+            "coat, jacket, outerwear",
+            "top, upper-body garment"
+        ],
+        "page": 32
+    },
+    {
+        "word": "強い",
+        "hiragana": "つよい",
+        "romaji": "tsuyoi",
+        "meanings": [
+            "strong, potent, competent, domineering, tough",
+            "strong, brawny, powerful, healthy, rugged",
+            "good (at), skilled, knowledgeable",
+            "being able to handle, know how to deal (with), durable (against), resistant (to), resilient",
+            "firm, rigid, solid",
+            "intense, strong, fierce, high",
+            "dependable, trustworthy"
+        ],
+        "page": 32
+    },
+    {
+        "word": "鍵",
+        "hiragana": "かぎ",
+        "romaji": "kagi",
+        "meanings": [
+            "key",
+            "lock",
+            "key (to a problem, success, etc.), clue"
+        ],
+        "page": 32
+    },
+    {
+        "word": "交番",
+        "hiragana": "こうばん",
+        "romaji": "kouban",
+        "meanings": [
+            "police box, koban, small neighborhood police station",
+            "alternation",
+            "alternating (current, stress, etc.)"
+        ],
+        "page": 32
+    },
+    {
+        "word": "黒い",
+        "hiragana": "くろい",
+        "romaji": "kuroi",
+        "meanings": [
+            "black",
+            "dark, blackish, sun-tanned (skin)",
+            "suspicious, criminal, illicit",
+            "darkened and dirty, sooty, covered in dirt",
+            "evil, wicked, black-hearted",
+            "inauspicious, ill-boding, unlucky"
+        ],
+        "page": 32
+    },
+    {
+        "word": "待つ",
+        "hiragana": "まつ",
+        "romaji": "matsu",
+        "meanings": [
+            "to wait",
+            "to await, to look forward to, to anticipate",
+            "to depend on, to need"
+        ],
+        "page": 32
+    },
+    {
+        "word": "遅い",
+        "hiragana": "おそい",
+        "romaji": "osoi",
+        "meanings": [
+            "slow",
+            "late",
+            "too late"
+        ],
+        "page": 32
+    },
+    {
+        "word": "忙しい",
+        "hiragana": "いそがしい",
+        "romaji": "isogashii",
+        "meanings": [
+            "busy, occupied, hectic",
+            "restless, hurried, fidgety"
+        ],
+        "page": 32
+    },
+    {
+        "word": "毎晩",
+        "hiragana": "まいばん",
+        "romaji": "maiban",
+        "meanings": [
+            "every night"
+        ],
+        "page": 33
+    },
+    {
+        "word": "欲しい",
+        "hiragana": "ほしい",
+        "romaji": "hoshii",
+        "meanings": [
+            "wanting (to have), desiring, wishing for",
+            "I want (you, them, etc.) to (do)"
+        ],
+        "page": 33
+    },
+    {
+        "word": "甘い",
+        "hiragana": "あまい",
+        "romaji": "amai",
+        "meanings": [
+            "sweet-tasting, sweet, sugary, sugared",
+            "fragrant (smelling), sweet (music)",
+            "lightly salted, light in salt, not spicy",
+            "naive, overly optimistic, soft on, generous, indulgent, easy-going, lenient",
+            "half-hearted, not finished properly",
+            "insufficient, not satisfactory, inadequate, loose",
+            "mild",
+            "tempting, enticing, luring"
+        ],
+        "page": 33
+    },
+    {
+        "word": "靴下",
+        "hiragana": "くつした",
+        "romaji": "kutsushita",
+        "meanings": [
+            "socks, sock, stockings, stocking"
+        ],
+        "page": 33
+    },
+    {
+        "word": "箸",
+        "hiragana": "はし",
+        "romaji": "hashi",
+        "meanings": [
+            "chopsticks"
+        ],
+        "page": 33
+    },
+    {
+        "word": "面白い",
+        "hiragana": "おもしろい",
+        "romaji": "omoshiroi",
+        "meanings": [
+            "interesting, fascinating, intriguing, enthralling",
+            "amusing, funny, comical",
+            "enjoyable, fun, entertaining, pleasant, agreeable",
+            "good, satisfactory, favourable, desirable, encouraging"
+        ],
+        "page": 33
+    },
+    {
+        "word": "今朝",
+        "hiragana": "けさ",
+        "romaji": "kesa",
+        "meanings": [
+            "this morning"
+        ],
+        "page": 33
+    },
+    {
+        "word": "丸い",
+        "hiragana": "まるい",
+        "romaji": "marui",
+        "meanings": [
+            "round, circular, spherical",
+            "curved, smooth",
+            "harmonious, calm, peaceful, amiable, amicable"
+        ],
+        "page": 33
+    },
+    {
+        "word": "泳ぐ",
+        "hiragana": "およぐ",
+        "romaji": "oyogu",
+        "meanings": [
+            "to swim",
+            "to struggle through (a crowd)",
+            "to make one's way through the world, to get along (in life)",
+            "to totter, to lose one's balance"
+        ],
+        "page": 33
+    },
+    {
+        "word": "掛ける",
+        "hiragana": "かける",
+        "romaji": "kakeru",
+        "meanings": [
+            "to hang up (e.g. a coat, a picture on the wall), to let hang, to suspend (from), to hoist (e.g. sail), to raise (e.g. flag)",
+            "to put on (e.g. a blanket), to put on top of, to cover, to lay, to spread",
+            "to put on (glasses, etc.), to wear (a necklace, etc.)",
+            "to make (a call)",
+            "to spend (time, money), to expend, to use",
+            "to pour (liquid) onto, to sprinkle (powder or spices) onto, to splash, to throw (e.g. water) onto",
+            "to turn on (an engine, radio, etc.), to set (a dial, alarm clock, etc.), to put on (a DVD, song, etc.), to use (a device, implement, etc.)",
+            "to cause (someone inconvenience, trouble, etc.), to burden (someone), to impose",
+            "to multiply (arithmetic operation)",
+            "to secure (e.g. lock)",
+            "to take a seat, to sit, to rest (something on something else), to support (something on something else)",
+            "to bind",
+            "to wager, to bet, to risk, to stake, to gamble",
+            "to put an effect (spell, anaesthetic, etc.) on",
+            "to hold (a play, festival, etc.)",
+            "to hold an emotion for (pity, hope, etc.)",
+            "to argue (in court), to deliberate (in a meeting), to present (e.g. idea to a conference, etc.)",
+            "to increase further",
+            "to catch (in a trap, etc.)",
+            "to set atop",
+            "to erect (a makeshift building)",
+            "to apply (insurance)",
+            "to pun (on a word), to use (a word) as a pivot word, to play on words",
+            "to be partway doing ..., to begin (but not complete) ..., to be about to ...",
+            "to address (someone), to direct (something, to someone), to do (something, to someone)"
+        ],
+        "page": 33
+    },
+    {
+        "word": "休む",
+        "hiragana": "やすむ",
+        "romaji": "yasumu",
+        "meanings": [
+            "to be absent, to take a day off",
+            "to rest, to have a break",
+            "to go to bed, to (lie down to) sleep, to turn in, to retire",
+            "to stop doing some ongoing activity for a time, to suspend business"
+        ],
+        "page": 34
+    },
+    {
+        "word": "近い",
+        "hiragana": "ちかい",
+        "romaji": "chikai",
+        "meanings": [
+            "near, close, short (distance)",
+            "close (in time), soon",
+            "close (relationship), friendly, intimate",
+            "closely related",
+            "similar, almost the same, close to, nearly"
+        ],
+        "page": 34
+    },
+    {
+        "word": "太い",
+        "hiragana": "ふとい",
+        "romaji": "futoi",
+        "meanings": [
+            "fat, thick",
+            "deep (of a voice), thick, sonorous",
+            "daring, shameless, brazen, audacious"
+        ],
+        "page": 34
+    },
+    {
+        "word": "薄い",
+        "hiragana": "うすい",
+        "romaji": "usui",
+        "meanings": [
+            "thin (of an object)",
+            "pale, light, faint",
+            "watery, thin, diluted",
+            "weak (taste, etc.), little (affection, etc.), not much (of a presence)",
+            "slim (probability, etc.), small",
+            "sparse, patchy, scattered"
+        ],
+        "page": 34
+    },
+    {
+        "word": "返す",
+        "hiragana": "かえす",
+        "romaji": "kaesu",
+        "meanings": [
+            "to return (something), to restore, to put back",
+            "to turn over, to turn upside down, to overturn",
+            "to pay back, to retaliate, to reciprocate",
+            "to respond (with), to retort, to reply, to say back",
+            "to do ... back (e.g. speak back, throw back)",
+            "to do again, to do repeatedly"
+        ],
+        "page": 34
+    },
+    {
+        "word": "万年筆",
+        "hiragana": "まんねんひつ",
+        "romaji": "mannenhitsu",
+        "meanings": [
+            "fountain pen"
+        ],
+        "page": 34
+    },
+    {
+        "word": "曇り",
+        "hiragana": "くもり",
+        "romaji": "kumori",
+        "meanings": [
+            "cloudiness, cloudy weather",
+            "fog (on a mirror, glasses, etc.), cloud (e.g. in marble), blur, mist, shadow, dimness",
+            "gloom, dejection"
+        ],
+        "page": 34
+    },
+    {
+        "word": "飲み物",
+        "hiragana": "のみもの",
+        "romaji": "nomimono",
+        "meanings": [
+            "drink, beverage"
+        ],
+        "page": 34
+    },
+    {
+        "word": "灰皿",
+        "hiragana": "はいざら",
+        "romaji": "haizara",
+        "meanings": [
+            "ashtray"
+        ],
+        "page": 34
+    },
+    {
+        "word": "九つ",
+        "hiragana": "ここのつ",
+        "romaji": "kokonotsu",
+        "meanings": [
+            "nine",
+            "nine years of age",
+            "twelve o'clock (old time system)"
+        ],
+        "page": 34
+    },
+    {
+        "word": "乗る",
+        "hiragana": "のる",
+        "romaji": "noru",
+        "meanings": [
+            "to get on (train, plane, bus, ship, etc.), to get in, to board, to take, to embark",
+            "to get on (e.g. a footstool), to step on, to jump on, to sit on, to mount",
+            "to reach, to go over, to pass",
+            "to follow, to stay (on track), to go with (the times, etc.)",
+            "to take part, to participate, to join",
+            "to get into the swing (and sing, dance, etc.)",
+            "to be deceived, to be taken in",
+            "to be carried, to be spread, to be scattered",
+            "to stick, to attach, to take, to go on"
+        ],
+        "page": 35
+    },
+    {
+        "word": "昨夜",
+        "hiragana": "ゆうべ",
+        "romaji": "yuube",
+        "meanings": [
+            "last night, yesterday evening"
+        ],
+        "page": 35
+    },
+    {
+        "word": "話す",
+        "hiragana": "はなす",
+        "romaji": "hanasu",
+        "meanings": [
+            "to talk, to speak, to converse, to chat",
+            "to tell, to explain, to narrate, to mention, to describe, to discuss",
+            "to speak (a language)"
+        ],
+        "page": 35
+    },
+    {
+        "word": "立つ",
+        "hiragana": "たつ",
+        "romaji": "tatsu",
+        "meanings": [
+            "to stand (up), to rise, to get to one's feet, to stand on end (e.g. of hairs), to stick up",
+            "to stand (in a position; of a person, tree, building, etc.), to be situated (in, on)",
+            "to be (in difficulties, the lead, etc.), to put oneself (in a position or situation), to take up (a position, post, etc.), to position oneself",
+            "to leave (to do something)",
+            "to depart (on a journey, trip, etc.), to leave, to set off, to start",
+            "to get stuck (into; of an arrow, thorn etc.), to pierce",
+            "to develop (of a haze, waves, etc.), to form (of steam, bubbles, etc.), to appear (of a rainbow, clouds, etc.), to rise (of smoke, waves, etc.), to begin to blow (of a wind, breeze, etc.)",
+            "to spread (of a rumour, reputation, etc.), to be become widely known",
+            "to stand (for election), to run",
+            "to take action, to act, to rise (up), to rouse oneself",
+            "to have an erection, to become erect (e.g. of nipples)",
+            "to be established (of a policy, plan, objective, etc.), to be formed",
+            "to be valid (of an argument, logic, etc.), to hold up, to hold water, to stand up (e.g. of evidence), to be logical, to be reasonable",
+            "to be sustained (of a living, business, etc.), to be maintained, to survive, to be preserved (of one's reputation, honour, etc.), to be saved",
+            "to start (of a season), to begin",
+            "to be held (of a market)",
+            "to shut (of a door, shoji, etc.), to be shut, to be closed",
+            "to be (the result of a division)"
+        ],
+        "page": 35
+    },
+    {
+        "word": "椅子",
+        "hiragana": "いす",
+        "romaji": "isu",
+        "meanings": [
+            "chair, seat, stool, bench",
+            "post, position, seat, office"
+        ],
+        "page": 35
+    },
+    {
+        "word": "撮る",
+        "hiragana": "とる",
+        "romaji": "toru",
+        "meanings": [
+            "to take (a photograph)",
+            "to record (audio or video), to film, to shoot"
+        ],
+        "page": 35
+    },
+    {
+        "word": "締める",
+        "hiragana": "しめる",
+        "romaji": "shimeru",
+        "meanings": [
+            "to tie, to fasten, to tighten",
+            "to wear (necktie, belt), to put on",
+            "to total, to sum",
+            "to be strict with",
+            "to economize, to economise, to cut down on",
+            "to salt, to marinate, to pickle, to make sushi adding a mixture of vinegar and salt",
+            "to kill (fish, poultry, etc.)",
+            "to strongly press (someone), to crack down on, to keep under strict control"
+        ],
+        "page": 35
+    },
+    {
+        "word": "洗う",
+        "hiragana": "あらう",
+        "romaji": "arau",
+        "meanings": [
+            "to wash, to cleanse, to rinse",
+            "to inquire into, to investigate",
+            "to purify (one's heart)",
+            "to lave (e.g. shore), to wash over (e.g. deck), to sweep"
+        ],
+        "page": 35
+    },
+    {
+        "word": "風呂",
+        "hiragana": "ふろ",
+        "romaji": "furo",
+        "meanings": [
+            "bath, bathing, bathtub, bathroom",
+            "bathhouse, public bath",
+            "room for drying lacquerware",
+            "base (wooden joint connecting the blade of a hoe, spade, etc., to the handle)"
+        ],
+        "page": 35
+    },
+    {
+        "word": "有る",
+        "hiragana": "ある",
+        "romaji": "aru",
+        "meanings": [
+            "to be, to exist, to live",
+            "to have",
+            "to be located",
+            "to be equipped with",
+            "to happen, to come about",
+            "to exist (in a completed state), to be (something unchanged in its current state)"
+        ],
+        "page": 35
+    },
+    {
+        "word": "鶏肉",
+        "hiragana": "とりにく",
+        "romaji": "toriniku",
+        "meanings": [
+            "chicken meat",
+            "fowl, poultry, bird meat"
+        ],
+        "page": 36
+    },
+    {
+        "word": "弱い",
+        "hiragana": "よわい",
+        "romaji": "yowai",
+        "meanings": [
+            "weak, frail, delicate, tender, unskilled, weak (wine)"
+        ],
+        "page": 36
+    },
+    {
+        "word": "小さい",
+        "hiragana": "ちいさい",
+        "romaji": "chiisai",
+        "meanings": [
+            "small, little, tiny",
+            "slight, below average (in degree, amount, etc.), minor, small",
+            "low (e.g. sound), soft (e.g. voice)",
+            "unimportant, petty, insignificant, trifling, trivial",
+            "young, juvenile"
+        ],
+        "page": 36
+    },
+    {
+        "word": "辛い",
+        "hiragana": "からい",
+        "romaji": "karai",
+        "meanings": [
+            "spicy, hot",
+            "salty",
+            "harsh (criticism), severe (punishment), strict",
+            "painful, bitter, difficult, tough"
+        ],
+        "page": 36
+    },
+    {
+        "word": "座る",
+        "hiragana": "すわる",
+        "romaji": "suwaru",
+        "meanings": [
+            "to sit, to squat",
+            "to assume (a position)",
+            "to hold steady, to hold still"
+        ],
+        "page": 36
+    },
+    {
+        "word": "重い",
+        "hiragana": "おもい",
+        "romaji": "omoi",
+        "meanings": [
+            "heavy, weighty",
+            "heavy (feeling), depressed, gloomy, blue, uneasy",
+            "slow, sluggish, lumbering, ponderous, clumsy",
+            "important (position, responsibility, etc.), serious, grave",
+            "serious (punishment, illness, etc.), severe, critical",
+            "solid, established, dignified, sensible"
+        ],
+        "page": 36
+    },
+    {
+        "word": "食べる",
+        "hiragana": "たべる",
+        "romaji": "taberu",
+        "meanings": [
+            "to eat",
+            "to live on (e.g. a salary), to live off, to subsist on"
+        ],
+        "page": 36
+    },
+    {
+        "word": "青い",
+        "hiragana": "あおい",
+        "romaji": "aoi",
+        "meanings": [
+            "blue, azure",
+            "green",
+            "pale (facial color), gray, grey",
+            "unripe, inexperienced"
+        ],
+        "page": 36
+    },
+    {
+        "word": "短い",
+        "hiragana": "みじかい",
+        "romaji": "mijikai",
+        "meanings": [
+            "short",
+            "brief"
+        ],
+        "page": 36
+    },
+    {
+        "word": "入る",
+        "hiragana": "はいる",
+        "romaji": "hairu",
+        "meanings": [
+            "to enter, to come in, to go in, to get in, to arrive",
+            "to join (a club, company, etc.), to enter (a university, the army, etc.), to enroll (in), to go into (e.g. politics), to get into",
+            "to be contained (in), to be included (in), to be inside (e.g. a box), to come under (a heading), to belong (in a category)",
+            "to (be able to) fit (in a container, building, etc.), to be (able to be) held, to be (able to be) accommodated",
+            "to be introduced, to be brought in, to be installed",
+            "to be received, to be obtained",
+            "to be scored (of points), to be won (of votes)",
+            "to turn on, to start functioning, to start working",
+            "to enter (a month, season, etc.), to reach (e.g. a climax), to get to (e.g. the main topic), to enter into (e.g. negotiations), to start (doing), to begin",
+            "to form (of a crack, fissure, etc.), to develop",
+            "to be put in (of effort, spirit, feeling, etc.), to be applied (e.g. of strength)",
+            "to be ready (of tea, coffee, etc.), to be made",
+            "to enter the body (of alcohol), to become drunk"
+        ],
+        "page": 36
+    },
+    {
+        "word": "八百屋",
+        "hiragana": "やおや",
+        "romaji": "yaoya",
+        "meanings": [
+            "greengrocer, fruit and vegetable shop",
+            "jack of all trades"
+        ],
+        "page": 37
+    },
+    {
+        "word": "閉める",
+        "hiragana": "しめる",
+        "romaji": "shimeru",
+        "meanings": [
+            "to close, to shut"
+        ],
+        "page": 37
+    },
+    {
+        "word": "遊ぶ",
+        "hiragana": "あそぶ",
+        "romaji": "asobu",
+        "meanings": [
+            "to play (games, sports), to enjoy oneself, to have a good time",
+            "to mess about (with alcohol, gambling, philandery, etc.)",
+            "to be idle, to do nothing, to be unused",
+            "to meet up (with friends), to hang out",
+            "to give oneself up (to gambling, drinking, etc.)",
+            "to go to (for pleasure or for study)",
+            "to tease (someone), to play (with)",
+            "to intentionally throw a ball to lower the batter's concentration"
+        ],
+        "page": 37
+    },
+    {
+        "word": "会う",
+        "hiragana": "あう",
+        "romaji": "au",
+        "meanings": [
+            "to meet, to encounter, to see",
+            "to have an accident, to have a bad experience"
+        ],
+        "page": 37
+    },
+    {
+        "word": "覚える",
+        "hiragana": "おぼえる",
+        "romaji": "oboeru",
+        "meanings": [
+            "to memorize, to memorise, to commit to memory, to learn by heart, to bear in mind, to remember",
+            "to learn, to pick up, to acquire",
+            "to feel",
+            "to think, to regard"
+        ],
+        "page": 37
+    },
+    {
+        "word": "再来年",
+        "hiragana": "さらいねん",
+        "romaji": "sarainen",
+        "meanings": [
+            "year after next"
+        ],
+        "page": 37
+    },
+    {
+        "word": "晴れる",
+        "hiragana": "はれる",
+        "romaji": "hareru",
+        "meanings": [
+            "to clear up, to clear away, to be sunny, to stop raining",
+            "to refresh (e.g. spirits)",
+            "to be cleared (e.g. of a suspicion)",
+            "to be dispelled, to be banished"
+        ],
+        "page": 37
+    },
+    {
+        "word": "違う",
+        "hiragana": "ちがう",
+        "romaji": "chigau",
+        "meanings": [
+            "to differ (from), to be different, to be distinct, to be unlike, to vary, to disagree (with)",
+            "to be wrong, to be incorrect, to be mistaken",
+            "to become abnormal, to go wrong",
+            "isn't it?, wasn't it?"
+        ],
+        "page": 37
+    },
+    {
+        "word": "花瓶",
+        "hiragana": "かびん",
+        "romaji": "kabin",
+        "meanings": [
+            "(flower) vase"
+        ],
+        "page": 37
+    },
+    {
+        "word": "降る",
+        "hiragana": "ふる",
+        "romaji": "furu",
+        "meanings": [
+            "to fall (of rain, snow, ash, etc.), to come down",
+            "to form (of frost)",
+            "to beam down (of sunlight or moonlight), to pour in",
+            "to visit (of luck, misfortune, etc.), to come, to arrive"
+        ],
+        "page": 37
+    },
+    {
+        "word": "消す",
+        "hiragana": "けす",
+        "romaji": "kesu",
+        "meanings": [
+            "to erase, to rub out, to rub off, to cross out, to delete",
+            "to turn off (a light, TV, heater, etc.), to switch off",
+            "to extinguish (a fire, candle, etc.), to put out",
+            "to remove (a smell, pain, etc.), to eliminate, to get rid of, to relieve (pain, anxiety, etc.), to neutralize (poison)",
+            "to drown out (a sound), to deaden, to absorb, to muffle",
+            "to kill, to murder, to bump off, to rub out"
+        ],
+        "page": 38
+    },
+    {
+        "word": "本棚",
+        "hiragana": "ほんだな",
+        "romaji": "hondana",
+        "meanings": [
+            "bookshelves, bookshelf, bookcase"
+        ],
+        "page": 38
+    },
+    {
+        "word": "要る",
+        "hiragana": "いる",
+        "romaji": "iru",
+        "meanings": [
+            "to be needed, to be necessary, to be required, to be wanted, to need, to want"
+        ],
+        "page": 38
+    },
+    {
+        "word": "曲がる",
+        "hiragana": "まがる",
+        "romaji": "magaru",
+        "meanings": [
+            "to bend, to curve, to warp, to wind, to twist",
+            "to turn",
+            "to be awry, to be askew, to be crooked"
+        ],
+        "page": 38
+    },
+    {
+        "word": "始まる",
+        "hiragana": "はじまる",
+        "romaji": "hajimaru",
+        "meanings": [
+            "to begin, to start, to commence",
+            "to happen (again), to begin (anew)",
+            "to date (from), to originate (in)"
+        ],
+        "page": 38
+    },
+    {
+        "word": "冷たい",
+        "hiragana": "つめたい",
+        "romaji": "tsumetai",
+        "meanings": [
+            "cold (to the touch), chilly, icy, freezing",
+            "(emotionally) cold, coldhearted, unfeeling, indifferent, unfriendly, distant"
+        ],
+        "page": 38
+    },
+    {
+        "word": "何時",
+        "hiragana": "いつ",
+        "romaji": "itsu",
+        "meanings": [
+            "when, at what time, how soon",
+            "normal times, ordinary days"
+        ],
+        "page": 38
+    },
+    {
+        "word": "厚い",
+        "hiragana": "あつい",
+        "romaji": "atsui",
+        "meanings": [
+            "thick, deep, heavy",
+            "kind, cordial, hospitable, warm, faithful",
+            "serious (of an illness)",
+            "abundant"
+        ],
+        "page": 38
+    },
+    {
+        "word": "今晩",
+        "hiragana": "こんばん",
+        "romaji": "konban",
+        "meanings": [
+            "tonight, this evening"
+        ],
+        "page": 38
+    },
+    {
+        "word": "疲れる",
+        "hiragana": "つかれる",
+        "romaji": "tsukareru",
+        "meanings": [
+            "to get tired, to tire, to get fatigued, to become exhausted, to grow weary",
+            "to become worn out (of a well-used object)",
+            "to starve"
+        ],
+        "page": 38
+    },
+    {
+        "word": "並ぶ",
+        "hiragana": "ならぶ",
+        "romaji": "narabu",
+        "meanings": [
+            "to line up, to stand in a line",
+            "to rival, to match, to equal"
+        ],
+        "page": 39
+    },
+    {
+        "word": "困る",
+        "hiragana": "こまる",
+        "romaji": "komaru",
+        "meanings": [
+            "to be troubled, to have difficulty, to be in a fix, to be at a loss, to be stumped, to be embarrassed",
+            "to be bothered, to be inconvenienced, to be annoyed",
+            "to be badly off, to be hard up, to be in straitened circumstances"
+        ],
+        "page": 39
+    },
+    {
+        "word": "若い",
+        "hiragana": "わかい",
+        "romaji": "wakai",
+        "meanings": [
+            "young, youthful",
+            "immature, green",
+            "low (number), small"
+        ],
+        "page": 39
+    },
+    {
+        "word": "涼しい",
+        "hiragana": "すずしい",
+        "romaji": "suzushii",
+        "meanings": [
+            "cool, refreshing",
+            "clear (e.g. eyes), bright",
+            "clear, distinct",
+            "composed (facial expression), unruffled, unconcerned",
+            "pure, upright, innocent"
+        ],
+        "page": 39
+    },
+    {
+        "word": "起きる",
+        "hiragana": "おきる",
+        "romaji": "okiru",
+        "meanings": [
+            "to get up, to rise, to blaze up (fire)",
+            "to wake up, to be awake, to stay awake",
+            "to occur (usu. of unfavourable incidents), to happen, to take place"
+        ],
+        "page": 39
+    },
+    {
+        "word": "貸す",
+        "hiragana": "かす",
+        "romaji": "kasu",
+        "meanings": [
+            "to lend, to loan",
+            "to rent out, to hire out",
+            "to hand (over), to give"
+        ],
+        "page": 39
+    },
+    {
+        "word": "醤油",
+        "hiragana": "しょうゆ",
+        "romaji": "shouyu",
+        "meanings": [
+            "soy sauce, soya sauce, shoyu"
+        ],
+        "page": 39
+    },
+    {
+        "word": "石鹸",
+        "hiragana": "せっけん",
+        "romaji": "sekken",
+        "meanings": [
+            "soap"
+        ],
+        "page": 39
+    },
+    {
+        "word": "可愛い",
+        "hiragana": "かわいい",
+        "romaji": "kawaii",
+        "meanings": [
+            "cute, adorable, charming, lovely, pretty",
+            "dear, precious, darling, pet",
+            "innocent, childlike, childish, lovable",
+            "dainty, little, tiny"
+        ],
+        "page": 39
+    },
+    {
+        "word": "一",
+        "hiragana": "いち",
+        "romaji": "ichi",
+        "meanings": [
+            "one, 1",
+            "best",
+            "first, foremost",
+            "beginning, start",
+            "a (single), one (of many)",
+            "ace",
+            "bottom string (on a shamisen, etc.)"
+        ],
+        "page": 39
+    },
+    {
+        "word": "同じ",
+        "hiragana": "おなじ",
+        "romaji": "onaji",
+        "meanings": [
+            "same, identical, equal, alike, equivalent",
+            "anyway, in any case, if one must ..., if one has to ..., as long as ..."
+        ],
+        "page": 40
+    },
+    {
+        "word": "遠い",
+        "hiragana": "とおい",
+        "romaji": "tooi",
+        "meanings": [
+            "far, distant, far away, a long way off, in the distance",
+            "distant (past), remote (in time), remote, far-removed (in time)",
+            "distant (relationship or kinship), having little to do (with someone)",
+            "far (from something else in quality, degree, etc.), not similar, way off",
+            "hard (of hearing)",
+            "nearsighted"
+        ],
+        "page": 40
+    },
+    {
+        "word": "吸う",
+        "hiragana": "すう",
+        "romaji": "suu",
+        "meanings": [
+            "to smoke, to breathe in, to inhale",
+            "to suck, to sip, to slurp",
+            "to absorb, to soak up",
+            "to kiss"
+        ],
+        "page": 40
+    },
+    {
+        "word": "軽い",
+        "hiragana": "かるい",
+        "romaji": "karui",
+        "meanings": [
+            "light (i.e. not heavy), feeling light (i.e. offering little resistance, moving easily)",
+            "light (i.e. of foot), effortless, nimble, agile",
+            "non-serious, minor, unimportant, trivial",
+            "slight, small, gentle, soft, easy, lighthearted (e.g. joke)",
+            "easy, simple",
+            "indiscriminate"
+        ],
+        "page": 40
+    },
+    {
+        "word": "暑い",
+        "hiragana": "あつい",
+        "romaji": "atsui",
+        "meanings": [
+            "hot, warm, sultry, heated",
+            "passionate, impassioned, burning (desire, etc.)",
+            "on everybody's mind, on the radar, du jour, interested (gaze, etc.)"
+        ],
+        "page": 40
+    },
+    {
+        "word": "成る",
+        "hiragana": "なる",
+        "romaji": "naru",
+        "meanings": [
+            "to become, to get, to grow, to turn, to reach, to attain",
+            "to result in, to turn out, to end up, to prove (to be)",
+            "to consist of, to be composed of, to be made up of",
+            "to be completed, to be realized, to succeed, to be attained, to be accomplished",
+            "to change (into), to turn (into), to transform",
+            "to come (to do), to begin (to do), to grow (to do)",
+            "to come to, to amount to, to add up to, to make",
+            "to play (the part of), to act as",
+            "to be used for, to be useful for, to serve as",
+            "to be promoted",
+            "to do ..."
+        ],
+        "page": 40
+    },
+    {
+        "word": "答える",
+        "hiragana": "こたえる",
+        "romaji": "kotaeru",
+        "meanings": [
+            "to answer, to reply"
+        ],
+        "page": 40
+    },
+    {
+        "word": "飲む",
+        "hiragana": "のむ",
+        "romaji": "nomu",
+        "meanings": [
+            "to drink, to swallow, to take (medicine)",
+            "to smoke (tobacco)",
+            "to swallow up, to engulf",
+            "to suppress (one's anger, bitter feelings, etc.), to keep down, to hold back, to swallow (one's tears), to catch (one's breath)",
+            "to accept (a demand, conditions, etc.), to agree to",
+            "to make light of (someone), to think nothing of, to overwhelm, to overawe",
+            "to carry (a concealed dagger, etc.), to conceal (up one's sleeve, etc.)"
+        ],
+        "page": 40
+    },
+    {
+        "word": "汚い",
+        "hiragana": "きたない",
+        "romaji": "kitanai",
+        "meanings": [
+            "dirty, filthy, foul, unclean",
+            "disordered, messy, untidy, poor (e.g. handwriting)",
+            "indecent (language, etc.), dirty, vulgar, coarse",
+            "dastardly, mean, base, underhanded",
+            "stingy, greedy"
+        ],
+        "page": 40
+    },
+    {
+        "word": "見せる",
+        "hiragana": "みせる",
+        "romaji": "miseru",
+        "meanings": [
+            "to show, to display",
+            "to make (something or someone) look ..., to present an appearance of ...",
+            "to make (something) worth watching, to be entertaining",
+            "to have (something) looked at (by a specialist), to have (an antique, etc.) appraised",
+            "to have (an injury, person, etc.) looked at (by a doctor), to take (someone) to a doctor",
+            "to make a show of (doing), to do in a conspicuous manner, to do in view of others",
+            "to resolve to do, to do at any cost, to show others that one will ..."
+        ],
+        "page": 40
+    },
+    {
+        "word": "幾ら",
+        "hiragana": "いくら",
+        "romaji": "ikura",
+        "meanings": [
+            "how much",
+            "something over, and something, -odd",
+            "however (much), no matter how"
+        ],
+        "page": 41
+    },
+    {
+        "word": "帰る",
+        "hiragana": "かえる",
+        "romaji": "kaeru",
+        "meanings": [
+            "to return, to come home, to go home, to go back",
+            "to leave (of a guest, customer, etc.)",
+            "to get home, to get to home plate"
+        ],
+        "page": 41
+    },
+    {
+        "word": "零",
+        "hiragana": "れい",
+        "romaji": "rei",
+        "meanings": [
+            "zero, nought"
+        ],
+        "page": 41
+    },
+    {
+        "word": "教える",
+        "hiragana": "おしえる",
+        "romaji": "oshieru",
+        "meanings": [
+            "to teach, to instruct",
+            "to tell, to inform, to show",
+            "to preach"
+        ],
+        "page": 41
+    },
+    {
+        "word": "煙草",
+        "hiragana": "タバコ",
+        "romaji": "tabako",
+        "meanings": [
+            "tobacco, cigarette, cigar",
+            "tobacco plant (Nicotiana tabacum)"
+        ],
+        "page": 41
+    },
+    {
+        "word": "段々",
+        "hiragana": "だんだん",
+        "romaji": "dandan",
+        "meanings": [
+            "gradually, by degrees, little by little, more and more, increasingly",
+            "steps, stairs, staircase, terrace"
+        ],
+        "page": 41
+    },
+    {
+        "word": "易しい",
+        "hiragana": "やさしい",
+        "romaji": "yasashii",
+        "meanings": [
+            "easy, plain, simple"
+        ],
+        "page": 41
+    },
+    {
+        "word": "危ない",
+        "hiragana": "あぶない",
+        "romaji": "abunai",
+        "meanings": [
+            "dangerous, risky, hazardous, perilous, precarious",
+            "in danger, in jeopardy, critical, grave, at risk",
+            "uncertain, unreliable, insecure, unsteady, doubtful",
+            "close (call), narrow (escape)",
+            "look out!, watch out!, be careful!"
+        ],
+        "page": 41
+    },
+    {
+        "word": "消える",
+        "hiragana": "きえる",
+        "romaji": "kieru",
+        "meanings": [
+            "to disappear, to vanish, to go out of sight, to go away, to become lost",
+            "to go out (of a fire, light, etc.), to die, to turn off (e.g. of a TV screen)",
+            "to fade (of a feeling, impression, etc.), to vanish (e.g. of hope)",
+            "to go away (e.g. of a smell, itchiness, sleepiness), to disappear, to fade away (e.g. of footsteps)",
+            "to wear away (e.g. of an inscription), to rub out (of writing), to fade (e.g. of ink)",
+            "to be lost (e.g. of a tradition), to die out, to disappear"
+        ],
+        "page": 41
+    },
+    {
+        "word": "分かる",
+        "hiragana": "わかる",
+        "romaji": "wakaru",
+        "meanings": [
+            "to understand, to comprehend, to grasp, to see, to get, to follow",
+            "to become clear, to be known, to be discovered, to be realized, to be realised, to be found out",
+            "I know!, I think so too!"
+        ],
+        "page": 41
+    },
+    {
+        "word": "お巡りさん",
+        "hiragana": "おまわりさん",
+        "romaji": "omawarisan",
+        "meanings": [
+            "police officer"
+        ],
+        "page": 42
+    },
+    {
+        "word": "寒い",
+        "hiragana": "さむい",
+        "romaji": "samui",
+        "meanings": [
+            "cold (e.g. weather)",
+            "uninteresting (esp. joke), lame, dull, weak, corny"
+        ],
+        "page": 42
+    },
+    {
+        "word": "一昨日",
+        "hiragana": "おととい",
+        "romaji": "ototoi",
+        "meanings": [
+            "day before yesterday"
+        ],
+        "page": 42
+    },
+    {
+        "word": "夕飯",
+        "hiragana": "ゆうはん",
+        "romaji": "yuuhan",
+        "meanings": [
+            "evening meal, dinner, supper"
+        ],
+        "page": 42
+    },
+    {
+        "word": "黄色い",
+        "hiragana": "きいろい",
+        "romaji": "kiiroi",
+        "meanings": [
+            "yellow",
+            "high-pitched (voice), shrill"
+        ],
+        "page": 42
+    },
+    {
+        "word": "差す",
+        "hiragana": "さす",
+        "romaji": "sasu",
+        "meanings": [
+            "to shine",
+            "to be visible",
+            "to be tinged with",
+            "to rise (of water levels), to flow in",
+            "to be felt (i.e. as an emotion), to come over one",
+            "to hold up (an umbrella, etc.), to put up, to raise",
+            "to extend one's arm straight ahead (in dance)",
+            "to insert, to put in",
+            "to wear (a sword) in one's belt, to wear at one's side, to carry under one's arm",
+            "to insert one's arm under an opponent's arm",
+            "to pole (a boat)",
+            "to pour, to add (liquid), to serve (drinks)",
+            "to put on (lipstick, etc.), to apply, to colour, to dye",
+            "to light (a fire), to burn",
+            "to shut, to close, to lock, to fasten",
+            "to stop in the midst of, to leave undone"
+        ],
+        "page": 42
+    },
+    {
+        "word": "渡る",
+        "hiragana": "わたる",
+        "romaji": "wataru",
+        "meanings": [
+            "to cross over, to go across",
+            "to extend, to cover, to range, to span"
+        ],
+        "page": 42
+    },
+    {
+        "word": "暗い",
+        "hiragana": "くらい",
+        "romaji": "kurai",
+        "meanings": [
+            "dark, gloomy, murky",
+            "depressed, dispirited, down in the dumps, dark (mood)",
+            "dark (in colour), dull",
+            "ill-boding, dark (e.g. past), suspicious",
+            "unlikely (to succeed), hopeless, unpromising",
+            "unfamiliar (with), ignorant (of)"
+        ],
+        "page": 42
+    },
+    {
+        "word": "習う",
+        "hiragana": "ならう",
+        "romaji": "narau",
+        "meanings": [
+            "to take lessons in, to be taught, to learn (from a teacher), to study (under a teacher), to get training in"
+        ],
+        "page": 42
+    },
+    {
+        "word": "上げる",
+        "hiragana": "あげる",
+        "romaji": "ageru",
+        "meanings": [
+            "to raise, to elevate",
+            "to do up (one's hair)",
+            "to fly (a kite, etc.), to launch (fireworks, etc.), to surface (a submarine, etc.)",
+            "to land (a boat)",
+            "to deep-fry",
+            "to show someone (into a room)",
+            "to give",
+            "to send someone (away)",
+            "to enrol (one's child in school), to enroll",
+            "to increase (price, quality, status, etc.), to develop (talent, skill), to improve",
+            "to make (a loud sound), to raise (one's voice)",
+            "to earn (something desirable)",
+            "to praise",
+            "to give (an example, etc.), to cite",
+            "to summon up (all of one's energy, etc.)",
+            "to arrest",
+            "to nominate",
+            "to summon (for geishas, etc.)",
+            "to offer up (incense, a prayer, etc.) to the gods (or Buddha, etc.)",
+            "to bear (a child)",
+            "to conduct (a ceremony, esp. a wedding)",
+            "(of the tide) to come in",
+            "to vomit",
+            "to do for (the sake of someone else)",
+            "to complete ...",
+            "to humbly do ..."
+        ],
+        "page": 42
+    },
+    {
+        "word": "閉まる",
+        "hiragana": "しまる",
+        "romaji": "shimaru",
+        "meanings": [
+            "to be shut, to close, to be closed",
+            "to be firm (of a body, face, etc.), to be well-knit",
+            "to be locked",
+            "to tighten, to be tightened",
+            "to become sober, to become tense"
+        ],
+        "page": 43
+    },
+    {
+        "word": "沢山",
+        "hiragana": "たくさん",
+        "romaji": "takusan",
+        "meanings": [
+            "a lot, lots, plenty, many, a large number, much, a great deal, a good deal",
+            "enough, sufficient",
+            "enough, too many, too much"
+        ],
+        "page": 43
+    },
+    {
+        "word": "曇る",
+        "hiragana": "くもる",
+        "romaji": "kumoru",
+        "meanings": [
+            "to get cloudy, to cloud over, to become overcast",
+            "to cloud up, to fog up, to mist up, to become dim",
+            "to be gloomy, to be clouded (expression), to be downcast",
+            "to look slightly downward (of a noh mask; indicating sadness, grief, etc.)"
+        ],
+        "page": 43
+    },
+    {
+        "word": "色々",
+        "hiragana": "いろいろ",
+        "romaji": "iroiro",
+        "meanings": [
+            "various, a variety of, all sorts of, many (different)",
+            "variously, in various ways, in many ways",
+            "various things, this and that"
+        ],
+        "page": 43
+    },
+    {
+        "word": "飴",
+        "hiragana": "あめ",
+        "romaji": "ame",
+        "meanings": [
+            "(hard) candy, toffee",
+            "rice-sugar, sugar made from the starch of rice, potatoes, etc.",
+            "amber, yellowish-brown"
+        ],
+        "page": 43
+    },
+    {
+        "word": "多い",
+        "hiragana": "おおい",
+        "romaji": "ooi",
+        "meanings": [
+            "many, numerous, a lot",
+            "large amount of, large quantity of, a lot, much",
+            "frequent, common"
+        ],
+        "page": 43
+    },
+    {
+        "word": "脱ぐ",
+        "hiragana": "ぬぐ",
+        "romaji": "nugu",
+        "meanings": [
+            "to take off (clothes, shoes, etc.), to undress"
+        ],
+        "page": 43
+    },
+    {
+        "word": "死ぬ",
+        "hiragana": "しぬ",
+        "romaji": "shinu",
+        "meanings": [
+            "to die, to pass away",
+            "to lose spirit, to lose vigor, to look dead",
+            "to cease, to stop"
+        ],
+        "page": 43
+    },
+    {
+        "word": "安い",
+        "hiragana": "やすい",
+        "romaji": "yasui",
+        "meanings": [
+            "cheap, inexpensive",
+            "calm, peaceful, quiet"
+        ],
+        "page": 43
+    },
+    {
+        "word": "掛かる",
+        "hiragana": "かかる",
+        "romaji": "kakaru",
+        "meanings": [
+            "to take (a resource, e.g. time or money)",
+            "to hang",
+            "to come into view, to arrive",
+            "to come under (a contract, a tax)",
+            "to start (engines, motors)",
+            "to attend, to deal with, to handle",
+            "to have started to, to be on the verge of",
+            "to overlap (e.g. information in a manual), to cover",
+            "to (come) at",
+            "to be fastened",
+            "to be covered (e.g. with dust, a table-cloth, etc.)",
+            "to be caught in",
+            "to get a call",
+            "to depend on",
+            "to begin (a task), to set about (doing), to get down to"
+        ],
+        "page": 43
+    },
+    {
+        "word": "狭い",
+        "hiragana": "せまい",
+        "romaji": "semai",
+        "meanings": [
+            "narrow, confined, small, cramped",
+            "limited, narrow-minded, confining"
+        ],
+        "page": 44
+    },
+    {
+        "word": "住む",
+        "hiragana": "すむ",
+        "romaji": "sumu",
+        "meanings": [
+            "to live (of humans), to reside, to inhabit, to dwell, to abide"
+        ],
+        "page": 44
+    },
+    {
+        "word": "何処",
+        "hiragana": "どこ",
+        "romaji": "doko",
+        "meanings": [
+            "where, what place",
+            "how much (long, far), what extent"
+        ],
+        "page": 44
+    },
+    {
+        "word": "悪い",
+        "hiragana": "わるい",
+        "romaji": "warui",
+        "meanings": [
+            "bad, poor, undesirable",
+            "poor (quality), inferior, insufficient",
+            "evil, sinful",
+            "ugly, not beautiful",
+            "at fault, to blame, in the wrong",
+            "bad (at doing something)",
+            "unprofitable, unbeneficial",
+            "sorry, (my) bad, unforgivable"
+        ],
+        "page": 44
+    },
+    {
+        "word": "Ｙシャツ",
+        "hiragana": "ワイシャツ",
+        "romaji": "waishatsu",
+        "meanings": [
+            "(formal) shirt, dress shirt, business shirt, button-up shirt"
+        ],
+        "page": 44
+    },
+    {
+        "word": "アパート",
+        "hiragana": "",
+        "romaji": "apaato",
+        "meanings": [
+            "apartment building, apartment block, apartment house",
+            "apartment"
+        ],
+        "page": 44
+    },
+    {
+        "word": "エレベーター",
+        "hiragana": "",
+        "romaji": "erebeetaa",
+        "meanings": [
+            "elevator, lift",
+            "elevator"
+        ],
+        "page": 44
+    },
+    {
+        "word": "カップ",
+        "hiragana": "",
+        "romaji": "kappu",
+        "meanings": [
+            "cup (drinking vessel, measure, brassiere, prize, etc.)"
+        ],
+        "page": 44
+    },
+    {
+        "word": "カメラ",
+        "hiragana": "",
+        "romaji": "kamera",
+        "meanings": [
+            "camera"
+        ],
+        "page": 44
+    },
+    {
+        "word": "カレンダー",
+        "hiragana": "",
+        "romaji": "karendaa",
+        "meanings": [
+            "calendar",
+            "calender (machine for flattening things)"
+        ],
+        "page": 44
+    },
+    {
+        "word": "キロ",
+        "hiragana": "",
+        "romaji": "kiro",
+        "meanings": [
+            "kilo-, 1000",
+            "kilogram, kilogramme",
+            "kilometre, kilometer",
+            "kilo-, 1024, 2^10"
+        ],
+        "page": 45
+    },
+    {
+        "word": "ギター",
+        "hiragana": "",
+        "romaji": "gitaa",
+        "meanings": [
+            "guitar"
+        ],
+        "page": 45
+    },
+    {
+        "word": "クラス",
+        "hiragana": "",
+        "romaji": "kurasu",
+        "meanings": [
+            "class"
+        ],
+        "page": 45
+    },
+    {
+        "word": "コート",
+        "hiragana": "",
+        "romaji": "kooto",
+        "meanings": [
+            "coat",
+            "coating"
+        ],
+        "page": 45
+    },
+    {
+        "word": "シャツ",
+        "hiragana": "",
+        "romaji": "shatsu",
+        "meanings": [
+            "shirt (undergarment), undershirt, singlet",
+            "shirt (outerwear; usu. with collar and buttons)"
+        ],
+        "page": 45
+    },
+    {
+        "word": "シャワー",
+        "hiragana": "",
+        "romaji": "shawaa",
+        "meanings": [
+            "shower"
+        ],
+        "page": 45
+    },
+    {
+        "word": "スカート",
+        "hiragana": "",
+        "romaji": "sukaato",
+        "meanings": [
+            "skirt"
+        ],
+        "page": 45
+    },
+    {
+        "word": "ストーブ",
+        "hiragana": "",
+        "romaji": "sutoobu",
+        "meanings": [
+            "(room) heater, stove"
+        ],
+        "page": 45
+    },
+    {
+        "word": "スプーン",
+        "hiragana": "",
+        "romaji": "supuun",
+        "meanings": [
+            "spoon"
+        ],
+        "page": 45
+    },
+    {
+        "word": "スポーツ",
+        "hiragana": "",
+        "romaji": "supootsu",
+        "meanings": [
+            "sport, sports"
+        ],
+        "page": 45
+    },
+    {
+        "word": "スリッパ",
+        "hiragana": "",
+        "romaji": "surippa",
+        "meanings": [
+            "slipper, slippers"
+        ],
+        "page": 46
+    },
+    {
+        "word": "セーター",
+        "hiragana": "",
+        "romaji": "seetaa",
+        "meanings": [
+            "sweater, jumper"
+        ],
+        "page": 46
+    },
+    {
+        "word": "タクシー",
+        "hiragana": "",
+        "romaji": "takushii",
+        "meanings": [
+            "taxi"
+        ],
+        "page": 46
+    },
+    {
+        "word": "テーブル",
+        "hiragana": "",
+        "romaji": "teeburu",
+        "meanings": [
+            "table"
+        ],
+        "page": 46
+    },
+    {
+        "word": "テープ",
+        "hiragana": "",
+        "romaji": "teepu",
+        "meanings": [
+            "tape"
+        ],
+        "page": 46
+    },
+    {
+        "word": "テスト",
+        "hiragana": "",
+        "romaji": "tesuto",
+        "meanings": [
+            "test (of ability, knowledge, etc.), exam, examination, quiz",
+            "test (of performance, quality, etc.), trial",
+            "rehearsal"
+        ],
+        "page": 46
+    },
+    {
+        "word": "テレビ",
+        "hiragana": "",
+        "romaji": "terebi",
+        "meanings": [
+            "television, TV",
+            "TV program, TV programme, TV broadcast"
+        ],
+        "page": 46
+    },
+    {
+        "word": "デパート",
+        "hiragana": "",
+        "romaji": "depaato",
+        "meanings": [
+            "department store",
+            "department"
+        ],
+        "page": 46
+    },
+    {
+        "word": "トイレ",
+        "hiragana": "",
+        "romaji": "toire",
+        "meanings": [
+            "toilet, restroom, bathroom, lavatory",
+            "going to the toilet, relieving oneself"
+        ],
+        "page": 46
+    },
+    {
+        "word": "ドア",
+        "hiragana": "",
+        "romaji": "doa",
+        "meanings": [
+            "door"
+        ],
+        "page": 46
+    },
+    {
+        "word": "ナイフ",
+        "hiragana": "",
+        "romaji": "naifu",
+        "meanings": [
+            "knife"
+        ],
+        "page": 47
+    },
+    {
+        "word": "ニュース",
+        "hiragana": "",
+        "romaji": "nyuusu",
+        "meanings": [
+            "news"
+        ],
+        "page": 47
+    },
+    {
+        "word": "ネクタイ",
+        "hiragana": "",
+        "romaji": "nekutai",
+        "meanings": [
+            "tie, necktie"
+        ],
+        "page": 47
+    },
+    {
+        "word": "ノート",
+        "hiragana": "",
+        "romaji": "nooto",
+        "meanings": [
+            "notebook, copy-book, exercise book",
+            "note, noting down",
+            "(musical) note",
+            "laptop (computer), notebook (computer)"
+        ],
+        "page": 47
+    },
+    {
+        "word": "ハンカチ",
+        "hiragana": "",
+        "romaji": "hankachi",
+        "meanings": [
+            "handkerchief"
+        ],
+        "page": 47
+    },
+    {
+        "word": "バス",
+        "hiragana": "",
+        "romaji": "basu",
+        "meanings": [
+            "bus"
+        ],
+        "page": 47
+    },
+    {
+        "word": "バター",
+        "hiragana": "",
+        "romaji": "bataa",
+        "meanings": [
+            "butter"
+        ],
+        "page": 47
+    },
+    {
+        "word": "パーティー",
+        "hiragana": "",
+        "romaji": "paatii",
+        "meanings": [
+            "party (social gathering)",
+            "party (group of people participating in an activity, esp. mountain climbing)",
+            "(political) party"
+        ],
+        "page": 47
+    },
+    {
+        "word": "パン",
+        "hiragana": "",
+        "romaji": "pan",
+        "meanings": [
+            "bread, (sweet) pastry",
+            "staff of life, one's bread"
+        ],
+        "page": 47
+    },
+    {
+        "word": "フィルム",
+        "hiragana": "",
+        "romaji": "firumu",
+        "meanings": [
+            "film"
+        ],
+        "page": 47
+    },
+    {
+        "word": "フォーク",
+        "hiragana": "",
+        "romaji": "fooku",
+        "meanings": [
+            "fork",
+            "forkball"
+        ],
+        "page": 48
+    },
+    {
+        "word": "プール",
+        "hiragana": "",
+        "romaji": "puuru",
+        "meanings": [
+            "(swimming) pool",
+            "pool (cue sport)",
+            "pooling (money, resources, etc.)",
+            "pool (price ring)"
+        ],
+        "page": 48
+    },
+    {
+        "word": "ベッド",
+        "hiragana": "",
+        "romaji": "beddo",
+        "meanings": [
+            "bed"
+        ],
+        "page": 48
+    },
+    {
+        "word": "頁",
+        "hiragana": "ページ",
+        "romaji": "peeji",
+        "meanings": [
+            "page",
+            "nth page, page ..."
+        ],
+        "page": 48
+    },
+    {
+        "word": "ペン",
+        "hiragana": "",
+        "romaji": "pen",
+        "meanings": [
+            "pen"
+        ],
+        "page": 48
+    },
+    {
+        "word": "ホテル",
+        "hiragana": "",
+        "romaji": "hoteru",
+        "meanings": [
+            "hotel"
+        ],
+        "page": 48
+    },
+    {
+        "word": "ボールペン",
+        "hiragana": "",
+        "romaji": "boorupen",
+        "meanings": [
+            "ball-point pen"
+        ],
+        "page": 48
+    },
+    {
+        "word": "ポケット",
+        "hiragana": "",
+        "romaji": "poketto",
+        "meanings": [
+            "pocket"
+        ],
+        "page": 48
+    },
+    {
+        "word": "ポスト",
+        "hiragana": "",
+        "romaji": "posuto",
+        "meanings": [
+            "postbox, mailbox, mail box, pillar box",
+            "post, position",
+            "post (e.g. goalpost)",
+            "post- (e.g. post-Cold War)"
+        ],
+        "page": 48
+    },
+    {
+        "word": "ラジオ",
+        "hiragana": "",
+        "romaji": "rajio",
+        "meanings": [
+            "radio"
+        ],
+        "page": 48
+    },
+    {
+        "word": "レコード",
+        "hiragana": "",
+        "romaji": "rekoodo",
+        "meanings": [
+            "record (e.g. LP)",
+            "record (e.g. in sports)",
+            "record (data structure)"
+        ],
+        "page": 49
+    },
+    {
+        "word": "レストラン",
+        "hiragana": "",
+        "romaji": "resutoran",
+        "meanings": [
+            "restaurant (esp. Western-style)"
+        ],
+        "page": 49
+    },
+    {
+        "word": "ええ",
+        "hiragana": "",
+        "romaji": "ee",
+        "meanings": [
+            "yes, that is correct, right",
+            "um, errr, well",
+            "huh?",
+            "grrr, gah, must I?",
+            "good"
+        ],
+        "page": 49
+    },
+    {
+        "word": "お菓子",
+        "hiragana": "おかし",
+        "romaji": "okashi",
+        "meanings": [
+            "confections, sweets, candy, cake"
+        ],
+        "page": 49
+    },
+    {
+        "word": "お兄さん",
+        "hiragana": "おにいさん",
+        "romaji": "oniisan",
+        "meanings": [
+            "older brother, elder brother",
+            "young man, buddy, fella, laddie"
+        ],
+        "page": 49
+    },
+    {
+        "word": "お姉さん",
+        "hiragana": "おねえさん",
+        "romaji": "oneesan",
+        "meanings": [
+            "older sister, elder sister",
+            "young lady",
+            "miss",
+            "ma'am",
+            "older girl"
+        ],
+        "page": 49
+    },
+    {
+        "word": "お手洗い",
+        "hiragana": "おてあらい",
+        "romaji": "otearai",
+        "meanings": [
+            "toilet, restroom, lavatory, bathroom"
+        ],
+        "page": 49
+    },
+    {
+        "word": "お祖母さん",
+        "hiragana": "おばあさん",
+        "romaji": "obaasan",
+        "meanings": [
+            "grandmother",
+            "old woman, female senior citizen"
+        ],
+        "page": 49
+    },
+    {
+        "word": "お腹",
+        "hiragana": "おなか",
+        "romaji": "onaka",
+        "meanings": [
+            "belly, abdomen, stomach"
+        ],
+        "page": 49
+    },
+    {
+        "word": "こんな",
+        "hiragana": "",
+        "romaji": "konna",
+        "meanings": [
+            "this sort of, this kind of, like this, such"
+        ],
+        "page": 49
+    },
+    {
+        "word": "さあ",
+        "hiragana": "",
+        "romaji": "saa",
+        "meanings": [
+            "come (on), come now, come along, here",
+            "all right, right, okay, now, here goes",
+            "well, hmm, uh, let's see, I'm not sure",
+            "here, now, there (we go), ah, oh",
+            "about that, ..., actually, ..."
+        ],
+        "page": 50
+    },
+    {
+        "word": "じゃあ",
+        "hiragana": "",
+        "romaji": "jaa",
+        "meanings": [
+            "then, well, so, well then"
+        ],
+        "page": 50
+    },
+    {
+        "word": "詰らない",
+        "hiragana": "つまらない",
+        "romaji": "tsumaranai",
+        "meanings": [
+            "dull, uninteresting, boring, tedious",
+            "insignificant, unimportant, trifling, trivial, worthless",
+            "absurd, foolish, silly, stupid",
+            "useless, pointless, disappointing"
+        ],
+        "page": 50
+    },
+    {
+        "word": "では",
+        "hiragana": "",
+        "romaji": "deha",
+        "meanings": [
+            "then, well, so, well then",
+            "bye then",
+            "at, in, by, with, using",
+            "if not ..., unless ..."
+        ],
+        "page": 50
+    },
+    {
+        "word": "どうも",
+        "hiragana": "",
+        "romaji": "doumo",
+        "meanings": [
+            "thank you, thanks",
+            "much (thanks), very (sorry), quite (regret)",
+            "quite, really, mostly",
+            "somehow",
+            "in spite of oneself, try as one might, no matter how hard one may try (to, not to)",
+            "greetings, hello, goodbye"
+        ],
+        "page": 50
+    },
+    {
+        "word": "もう",
+        "hiragana": "",
+        "romaji": "mou",
+        "meanings": [
+            "already, yet, by now, now, (not) any more, (not) any longer",
+            "soon, shortly, before long, presently",
+            "further, more, again, another, the other",
+            "jeez, geez, gee, boy, come on, damn, seriously"
+        ],
+        "page": 50
+    },
+    {
+        "word": "もっと",
+        "hiragana": "",
+        "romaji": "motto",
+        "meanings": [
+            "(some) more, even more, longer, further"
+        ],
+        "page": 50
+    },
+    {
+        "word": "遣る",
+        "hiragana": "やる",
+        "romaji": "yaru",
+        "meanings": [
+            "to do, to undertake, to perform, to play (a game), to study",
+            "to send, to dispatch, to despatch",
+            "to put, to move, to turn (one's head, glance, etc.)",
+            "to give (esp. to someone of equal or lower status), to let have, to present, to bestow, to confer",
+            "to make (a vehicle) go faster",
+            "to run (a business), to keep, to be engaged in, to practice (law, medicine, etc.), to practise",
+            "to have (food, drink, etc.), to eat, to drink, to smoke",
+            "to hold (a performance), to perform, to show",
+            "to ease (one's mind)",
+            "to harm, to injure, to kill",
+            "to have sex, to fuck, to bang",
+            "to live, to get by, to get along",
+            "to do ... completely",
+            "to do ... broadly, to do ... to a great distance",
+            "to do ... for (someone of equal or lower status), to do ... to",
+            "to make active efforts to ..."
+        ],
+        "page": 50
+    },
+    {
+        "word": "引く",
+        "hiragana": "ひく",
+        "romaji": "hiku",
+        "meanings": [
+            "to pull, to tug, to lead (e.g. a horse)",
+            "to draw (attention, sympathy, etc.), to attract (e.g. interest)",
+            "to draw back (e.g. one's hand), to draw in (one's chin, stomach, etc.), to pull in",
+            "to draw (a card, mahjong tile, etc.)",
+            "to draw (a line, plan, etc.)",
+            "to catch (a cold)",
+            "to play (a stringed or keyboard instrument)",
+            "to look up (in a dictionary, phone book, etc.), to consult, to check",
+            "to haul, to pull (vehicles)",
+            "to subtract, to deduct",
+            "to recede, to ebb, to fade",
+            "to be descend from, to inherit (a characteristic)",
+            "to quote, to cite, to raise (as evidence)",
+            "to lay on (electricity, gas, etc.), to install (e.g. a telephone), to supply (e.g. water)",
+            "to hold (e.g. a note)",
+            "to apply (e.g. lipstick), to oil (e.g. a pan), to wax (e.g. a floor)",
+            "to move back, to draw back, to recede, to fall back, to retreat",
+            "to lessen, to subside, to ebb, to go down (e.g. of swelling)",
+            "to resign, to retire, to quit",
+            "to be put off (by someone's words or behaviour), to be turned off, to recoil (in disgust, etc.), to cringe"
+        ],
+        "page": 50
+    },
+    {
+        "word": "奥さん",
+        "hiragana": "おくさん",
+        "romaji": "okusan",
+        "meanings": [
+            "wife, your wife, his wife, married lady, madam"
+        ],
+        "page": 50
+    },
+    {
+        "word": "温い",
+        "hiragana": "ぬるい",
+        "romaji": "nurui",
+        "meanings": [
+            "lukewarm, tepid",
+            "lenient"
+        ],
+        "page": 51
+    },
+    {
+        "word": "下",
+        "hiragana": "した",
+        "romaji": "shita",
+        "meanings": [
+            "below, down, under, younger (e.g. daughter)",
+            "bottom",
+            "beneath, underneath",
+            "just after, right after",
+            "inferiority, one's inferior (i.e. one's junior)",
+            "trade-in",
+            "preliminary, preparatory"
+        ],
+        "page": 51
+    },
+    {
+        "word": "何時も",
+        "hiragana": "いつも",
+        "romaji": "itsumo",
+        "meanings": [
+            "always, all the time, at all times",
+            "never",
+            "usual, regular, habitual, customary"
+        ],
+        "page": 51
+    },
+    {
+        "word": "どうぞ",
+        "hiragana": "",
+        "romaji": "douzo",
+        "meanings": [
+            "please, kindly, pray, I beg (of you)",
+            "by all means, certainly, of course, (go) ahead, (feel) free (to), (you are) welcome (to), please (help yourself to)",
+            "here you are",
+            "to give"
+        ],
+        "page": 51
+    },
+    {
+        "word": "何方",
+        "hiragana": "どなた",
+        "romaji": "donata",
+        "meanings": [
+            "who"
+        ],
+        "page": 51
+    },
+    {
+        "word": "家",
+        "hiragana": "いえ",
+        "romaji": "ie",
+        "meanings": [
+            "house, residence, dwelling",
+            "family, household",
+            "lineage, family name"
+        ],
+        "page": 51
+    },
+    {
+        "word": "開ける",
+        "hiragana": "あける",
+        "romaji": "akeru",
+        "meanings": [
+            "to open (a door, etc.), to unwrap (e.g. parcel, package), to unlock",
+            "to open (for business, etc.)",
+            "to empty, to remove, to make space, to make room",
+            "to move out, to clear out",
+            "to be away from (e.g. one's house), to leave (temporarily)",
+            "to dawn, to grow light",
+            "to end (of a period, season)",
+            "to begin (of the New Year)",
+            "to leave (one's schedule) open, to make time (for)",
+            "to make (a hole), to open up (a hole)"
+        ],
+        "page": 51
+    },
+    {
+        "word": "他",
+        "hiragana": "ほか",
+        "romaji": "hoka",
+        "meanings": [
+            "another place, some other place, somewhere else, outside",
+            "another (person or thing), other, different, something else, someone else, the rest, et al.",
+            "beyond (one's expectations, imagination, etc.), outside",
+            "except, but, other than, apart from",
+            "besides, in addition to, as well as, on top of"
+        ],
+        "page": 51
+    },
+    {
+        "word": "鞄",
+        "hiragana": "かばん",
+        "romaji": "kaban",
+        "meanings": [
+            "bag, satchel, briefcase, basket"
+        ],
+        "page": 51
+    },
+    {
+        "word": "貴方",
+        "hiragana": "あなた",
+        "romaji": "anata",
+        "meanings": [
+            "you",
+            "dear, honey"
+        ],
+        "page": 51
+    },
+    {
+        "word": "勤める",
+        "hiragana": "つとめる",
+        "romaji": "tsutomeru",
+        "meanings": [
+            "to work (for), to be employed (at), to serve (in)",
+            "to serve (as), to act (as), to fill (the position of), to play the role (of)",
+            "to conduct a religious service"
+        ],
+        "page": 52
+    },
+    {
+        "word": "近く",
+        "hiragana": "ちかく",
+        "romaji": "chikaku",
+        "meanings": [
+            "near, neighbourhood, neighborhood, vicinity",
+            "nearly (e.g. \"it took nearly one year\"), close to",
+            "shortly, soon"
+        ],
+        "page": 52
+    },
+    {
+        "word": "金曜日",
+        "hiragana": "きんようび",
+        "romaji": "kinyoubi",
+        "meanings": [
+            "Friday"
+        ],
+        "page": 52
+    },
+    {
+        "word": "空",
+        "hiragana": "そら",
+        "romaji": "sora",
+        "meanings": [
+            "sky, the air, the heavens",
+            "weather",
+            "far-off place, distant place",
+            "state of mind, feeling",
+            "(from) memory, (by) heart",
+            "falsehood, lie",
+            "somehow, vaguely",
+            "fake"
+        ],
+        "page": 52
+    },
+    {
+        "word": "月曜日",
+        "hiragana": "げつようび",
+        "romaji": "getsuyoubi",
+        "meanings": [
+            "Monday"
+        ],
+        "page": 52
+    },
+    {
+        "word": "ご飯",
+        "hiragana": "ごはん",
+        "romaji": "gohan",
+        "meanings": [
+            "cooked rice",
+            "meal"
+        ],
+        "page": 52
+    },
+    {
+        "word": "好き",
+        "hiragana": "すき",
+        "romaji": "suki",
+        "meanings": [
+            "liking, being fond of, to one's liking, to one's taste, preferred, favourite",
+            "liking (romantically), being in love with, beloved",
+            "faddism, eccentricity",
+            "as one likes, as it suits one",
+            "lecherous, lustful, salacious"
+        ],
+        "page": 52
+    },
+    {
+        "word": "咲く",
+        "hiragana": "さく",
+        "romaji": "saku",
+        "meanings": [
+            "to bloom, to flower, to blossom, to open",
+            "to rise up (of breaking waves)"
+        ],
+        "page": 52
+    },
+    {
+        "word": "字引",
+        "hiragana": "じびき",
+        "romaji": "jibiki",
+        "meanings": [
+            "dictionary"
+        ],
+        "page": 52
+    },
+    {
+        "word": "次",
+        "hiragana": "つぎ",
+        "romaji": "tsugi",
+        "meanings": [
+            "next, following, subsequent",
+            "stage, station"
+        ],
+        "page": 52
+    },
+    {
+        "word": "初めて",
+        "hiragana": "はじめて",
+        "romaji": "hajimete",
+        "meanings": [
+            "for the first time",
+            "only after ... is it ..., only when ... do you ..., not until ... do you ...",
+            "first time, (one's) first"
+        ],
+        "page": 53
+    },
+    {
+        "word": "所",
+        "hiragana": "ところ",
+        "romaji": "tokoro",
+        "meanings": [
+            "place, spot, scene, site",
+            "address",
+            "district, area, locality",
+            "one's house",
+            "point, aspect, side, facet",
+            "passage (in text), part",
+            "space, room",
+            "thing, matter",
+            "whereupon, as a result",
+            "about to, on the verge of",
+            "was just doing, was in the process of doing, have just done, just finished doing",
+            "approximately, around, about"
+        ],
+        "page": 53
+    },
+    {
+        "word": "書く",
+        "hiragana": "かく",
+        "romaji": "kaku",
+        "meanings": [
+            "to write, to compose, to pen",
+            "to draw, to paint"
+        ],
+        "page": 53
+    },
+    {
+        "word": "上",
+        "hiragana": "うえ",
+        "romaji": "ue",
+        "meanings": [
+            "above, over, up",
+            "top, summit, upper part, head (e.g. of a staircase)",
+            "surface, on (top of)",
+            "the above (in a piece of writing), earlier part",
+            "superior, better, higher (position, rank, etc.), upper (class)",
+            "elder, older, senior",
+            "with respect to ..., in terms of, as far as ... is concerned, when (e.g. drunk)",
+            "besides ..., in addition to ..., on top of ..., as well as ...",
+            "after ..., upon ..., on ..., with (e.g. full awareness), as a result of ...",
+            "since ..., now that ..., because ...",
+            "honorable, venerable, dear",
+            "emperor, sovereign, shogun, daimyo"
+        ],
+        "page": 53
+    },
+    {
+        "word": "上る",
+        "hiragana": "のぼる",
+        "romaji": "noboru",
+        "meanings": [
+            "to ascend, to go up, to climb",
+            "to ascend (as a natural process, e.g. the Sun), to rise",
+            "to go to (the capital)",
+            "to be promoted",
+            "to add up to",
+            "to advance (in price)",
+            "to swim up (a river), to sail up",
+            "to come up (on the agenda)"
+        ],
+        "page": 53
+    },
+    {
+        "word": "吹く",
+        "hiragana": "ふく",
+        "romaji": "fuku",
+        "meanings": [
+            "to blow (of the wind)",
+            "to blow (one's breath), to breathe out, to blow on (hot tea, candles, etc.), to puff",
+            "to play (a wind instrument), to blow (a whistle, trumpet, etc.), to whistle (a tune)",
+            "to emit (smoke, fire, etc.), to spout, to spew, to puff out",
+            "to sprout, to put forth (buds)",
+            "to appear (on the surface), to form, to be coated with (powder, rust, etc.)",
+            "to burst out laughing, to burst into laughter",
+            "to brag, to talk big",
+            "to smelt, to mint"
+        ],
+        "page": 53
+    },
+    {
+        "word": "水曜日",
+        "hiragana": "すいようび",
+        "romaji": "suiyoubi",
+        "meanings": [
+            "Wednesday"
+        ],
+        "page": 53
+    },
+    {
+        "word": "生まれる",
+        "hiragana": "うまれる",
+        "romaji": "umareru",
+        "meanings": [
+            "to be born"
+        ],
+        "page": 53
+    },
+    {
+        "word": "先",
+        "hiragana": "さき",
+        "romaji": "saki",
+        "meanings": [
+            "point, tip, end, nozzle",
+            "head (of a line), front",
+            "first, before, ahead (of)",
+            "(the way) ahead, beyond",
+            "future",
+            "previous, prior, former, recent, last",
+            "destination, address, place where you do something",
+            "rest (e.g. of a story), continuation, remaining part",
+            "the other party"
+        ],
+        "page": 53
+    },
+    {
+        "word": "前",
+        "hiragana": "まえ",
+        "romaji": "mae",
+        "meanings": [
+            "in front (of), before (e.g. a building)",
+            "before, earlier, previously, prior, ago, (minutes) to (the hour)",
+            "(the) front, frontal part, fore, head (e.g. of a line)",
+            "forward, ahead",
+            "(in the) presence (of), in front (of someone)",
+            "previous (e.g. page), prior (e.g. engagement), first (e.g. half), former (e.g. example)",
+            "portion, helping",
+            "front (of one's body or clothing), breast (of a coat, kimono, etc.)",
+            "privates, private parts",
+            "criminal record, previous conviction, (a) prior"
+        ],
+        "page": 53
+    },
+    {
+        "word": "誕生日",
+        "hiragana": "たんじょうび",
+        "romaji": "tanjoubi",
+        "meanings": [
+            "birthday"
+        ],
+        "page": 54
+    },
+    {
+        "word": "弾く",
+        "hiragana": "ひく",
+        "romaji": "hiku",
+        "meanings": [
+            "to play (a stringed or keyboard instrument)"
+        ],
+        "page": 54
+    },
+    {
+        "word": "置く",
+        "hiragana": "おく",
+        "romaji": "oku",
+        "meanings": [
+            "to put, to place",
+            "to leave (behind)",
+            "to establish (an organization, a facility, a position, etc.), to set up",
+            "to appoint (someone to a certain position), to hire, to employ",
+            "to place (one's trust, one's faith, etc.), to bear (in mind, etc.)",
+            "to put down a tool (e.g. a pen) hence stopping what one is doing with that tool",
+            "to take in (boarders, etc.), to provide lodging in one's house",
+            "to separate spatially or temporally",
+            "to do something in advance",
+            "to leave something in a certain state, to keep something in a certain state"
+        ],
+        "page": 54
+    },
+    {
+        "word": "着く",
+        "hiragana": "つく",
+        "romaji": "tsuku",
+        "meanings": [
+            "to arrive at, to reach",
+            "to sit on, to sit at (e.g. the table)"
+        ],
+        "page": 54
+    },
+    {
+        "word": "中",
+        "hiragana": "なか",
+        "romaji": "naka",
+        "meanings": [
+            "inside, interior",
+            "among, within",
+            "middle, center, centre",
+            "during, while, middle, midst, amid",
+            "interval, gap",
+            "mean, average",
+            "second (of three, e.g. sons, volumes), middle",
+            "medium grade, medium quality",
+            "red-light district"
+        ],
+        "page": 54
+    },
+    {
+        "word": "丁度",
+        "hiragana": "ちょうど",
+        "romaji": "choudo",
+        "meanings": [
+            "exactly, precisely, just, right, opportunely, fortunately",
+            "just (like), as if, as though"
+        ],
+        "page": 54
+    },
+    {
+        "word": "飛ぶ",
+        "hiragana": "とぶ",
+        "romaji": "tobu",
+        "meanings": [
+            "to fly, to soar",
+            "to jump, to leap, to spring, to bound, to hop",
+            "to spatter, to scatter, to splash, to fly (e.g. of sparks)",
+            "to hurry, to rush",
+            "to flee, to run off, to escape",
+            "to disappear, to vanish, to fade, to thin out",
+            "to break off, to come off, to fall off, to blow (of a fuse)",
+            "to be sent out (of an order), to fly (of false rumours, catcalls, etc.)",
+            "to come flying (of a punch, kick, etc.)",
+            "to be missing (of a page, stitch, etc.), to skip, to jump (e.g. of a conversation)"
+        ],
+        "page": 54
+    },
+    {
+        "word": "土曜日",
+        "hiragana": "どようび",
+        "romaji": "doyoubi",
+        "meanings": [
+            "Saturday"
+        ],
+        "page": 54
+    },
+    {
+        "word": "働く",
+        "hiragana": "はたらく",
+        "romaji": "hataraku",
+        "meanings": [
+            "to work, to labor, to labour",
+            "to function, to operate, to be effective, to work (i.e. ... works), to come into play",
+            "to commit (e.g. a crime), to perpetrate, to do, to act, to practise, to practice",
+            "to be conjugated"
+        ],
+        "page": 54
+    },
+    {
+        "word": "賑やか",
+        "hiragana": "にぎやか",
+        "romaji": "nigiyaka",
+        "meanings": [
+            "bustling, busy, crowded, lively, prosperous, thriving",
+            "lively (party, voices, etc.), loud, noisy, merry, cheerful"
+        ],
+        "page": 54
+    },
+    {
+        "word": "日曜日",
+        "hiragana": "にちようび",
+        "romaji": "nichiyoubi",
+        "meanings": [
+            "Sunday"
+        ],
+        "page": 55
+    },
+    {
+        "word": "入れる",
+        "hiragana": "いれる",
+        "romaji": "ireru",
+        "meanings": [
+            "to put in, to let in, to take in, to bring in, to insert, to install (e.g. software), to set (a jewel, etc.), to ink in (e.g. tattoo)",
+            "to admit, to accept, to employ, to hire",
+            "to accept, to comply, to grant, to adopt (a policy, etc.), to take (advice, etc.), to listen to, to pay attention to",
+            "to include",
+            "to pay (one's rent, etc.)",
+            "to cast (a vote)",
+            "to make (tea, coffee, etc.)",
+            "to turn on (a switch, etc.)",
+            "to send (a fax), to call"
+        ],
+        "page": 55
+    },
+    {
+        "word": "煩い",
+        "hiragana": "うるさい",
+        "romaji": "urusai",
+        "meanings": [
+            "noisy, loud",
+            "annoying, troublesome, tiresome, persistent, importunate",
+            "fussy, finicky, picky, particular, nagging, fastidious, bossy",
+            "shut up, be quiet"
+        ],
+        "page": 55
+    },
+    {
+        "word": "美味しい",
+        "hiragana": "おいしい",
+        "romaji": "oishii",
+        "meanings": [
+            "good(-tasting), nice, delicious, tasty",
+            "attractive (offer, opportunity, etc.), appealing, convenient, favorable, desirable, profitable"
+        ],
+        "page": 55
+    },
+    {
+        "word": "不味い",
+        "hiragana": "まずい",
+        "romaji": "mazui",
+        "meanings": [
+            "bad(-tasting), unpalatable, unsavoury, unsavory, awful, terrible, unpleasant",
+            "poor, unskillful, unskilful, bungling, clumsy",
+            "ugly, unattractive, homely, plain",
+            "awkward, problematic, troublesome, unfavorable, unfavourable, unwise"
+        ],
+        "page": 55
+    },
+    {
+        "word": "風",
+        "hiragana": "かぜ",
+        "romaji": "kaze",
+        "meanings": [
+            "wind, breeze, draught, draft",
+            "manner, behaviour, behavior",
+            "cold, influenza"
+        ],
+        "page": 55
+    },
+    {
+        "word": "物",
+        "hiragana": "もの",
+        "romaji": "mono",
+        "meanings": [
+            "thing, object, article, stuff, substance",
+            "one's things, possessions, property, belongings",
+            "things, something, anything, everything, nothing",
+            "quality",
+            "reason, the way of things",
+            "used to emphasize emotion, judgment, etc., used to indicate a common occurrence in the past (after a verb in past tense), used to indicate a general tendency, used to indicate something that should happen",
+            "item classified as ..., item related to ..., work in the genre of ...",
+            "cause of ..., cause for ...",
+            "somehow, somewhat, for some reason",
+            "really, truly"
+        ],
+        "page": 55
+    },
+    {
+        "word": "並べる",
+        "hiragana": "ならべる",
+        "romaji": "naraberu",
+        "meanings": [
+            "to line up, to set up, to arrange in a line",
+            "to enumerate, to itemize",
+            "to be equal (to), to compare well (with), to be as good (as)"
+        ],
+        "page": 55
+    },
+    {
+        "word": "歩く",
+        "hiragana": "あるく",
+        "romaji": "aruku",
+        "meanings": [
+            "to walk"
+        ],
+        "page": 55
+    },
+    {
+        "word": "方",
+        "hiragana": "かた",
+        "romaji": "kata",
+        "meanings": [
+            "direction, way",
+            "person, lady, gentleman",
+            "method of, manner of, way of",
+            "care of ...",
+            "person in charge of ...",
+            "side (e.g. \"on my mother's side\")"
+        ],
+        "page": 55
+    },
+    {
+        "word": "忘れる",
+        "hiragana": "わすれる",
+        "romaji": "wasureru",
+        "meanings": [
+            "to forget, to leave carelessly, to be forgetful of, to forget about, to forget (an article)"
+        ],
+        "page": 56
+    },
+    {
+        "word": "本",
+        "hiragana": "ほん",
+        "romaji": "hon",
+        "meanings": [
+            "book, volume, script",
+            "this, present, current, ... in question, ... at issue",
+            "main, head, principal",
+            "real, genuine, regular, proper",
+            "counter for long, cylindrical things, counter for films, TV shows, etc., counter for goals, home runs, etc., counter for telephone calls"
+        ],
+        "page": 56
+    },
+    {
+        "word": "磨く",
+        "hiragana": "みがく",
+        "romaji": "migaku",
+        "meanings": [
+            "to polish, to shine, to burnish, to scour, to scrub, to brush (teeth), to grind (e.g. a lens)",
+            "to refine (a skill, etc.), to improve, to hone, to polish (up), to cultivate (one's character)"
+        ],
+        "page": 56
+    },
+    {
+        "word": "未だ",
+        "hiragana": "まだ",
+        "romaji": "mada",
+        "meanings": [
+            "still, as yet, only",
+            "(not) yet",
+            "more, (more) still",
+            "at least, comparatively, relatively",
+            "unfinished, incomplete, not yet done"
+        ],
+        "page": 56
+    },
+    {
+        "word": "無くす",
+        "hiragana": "なくす",
+        "romaji": "nakusu",
+        "meanings": [
+            "to lose (something)",
+            "to get rid of, to eliminate, to remove, to eradicate, to abolish"
+        ],
+        "page": 56
+    },
+    {
+        "word": "鳴く",
+        "hiragana": "なく",
+        "romaji": "naku",
+        "meanings": [
+            "to make sound (of an animal), to call, to cry, to whine, to sing, to chirp",
+            "to make a meld call (e.g. pung, kong)"
+        ],
+        "page": 56
+    },
+    {
+        "word": "木曜日",
+        "hiragana": "もくようび",
+        "romaji": "mokuyoubi",
+        "meanings": [
+            "Thursday"
+        ],
+        "page": 56
+    },
+    {
+        "word": "葉書",
+        "hiragana": "はがき",
+        "romaji": "hagaki",
+        "meanings": [
+            "postcard",
+            "memo, note, card"
+        ],
+        "page": 56
+    },
+    {
+        "word": "何故",
+        "hiragana": "なぜ",
+        "romaji": "naze",
+        "meanings": [
+            "why, how, for what reason"
+        ],
+        "page": 56
+    },
+    {
+        "word": "居る",
+        "hiragana": "いる",
+        "romaji": "iru",
+        "meanings": [
+            "to be (of animate objects), to exist",
+            "to stay",
+            "to be ...-ing, to have been ...-ing"
+        ],
+        "page": 56
+    },
+    {
+        "word": "行く",
+        "hiragana": "いく",
+        "romaji": "iku",
+        "meanings": [
+            "to go, to move (towards), to head (towards), to leave (for)",
+            "to move through, to travel across, to walk along (e.g. a road)",
+            "to go (well, badly, etc.), to proceed, to turn out, to get along",
+            "to do (in a particular way), to go (with; a choice), to try",
+            "to pass (of time, seasons, etc.), to go by",
+            "to stream, to flow",
+            "to die, to pass away",
+            "to reach (a stage, extent, age, etc.), to get to, to go (so far as ...)",
+            "to reach (of information, instructions, wind, etc.), to arrive",
+            "to continue ..., to go on ..., to (progress) steadily, to gradually ..., to progressively ...",
+            "to have an orgasm, to come, to cum",
+            "to trip, to get high, to have a drug-induced hallucination"
+        ],
+        "page": 57
+    },
+    {
+        "word": "真っ直ぐ",
+        "hiragana": "まっすぐ",
+        "romaji": "massugu",
+        "meanings": [
+            "straight (ahead), direct, upright, erect",
+            "straightforward, honest, frank"
+        ],
+        "page": 57
+    },
+    {
+        "word": "人",
+        "hiragana": "ひと",
+        "romaji": "hito",
+        "meanings": [
+            "person, someone, somebody",
+            "human beings, mankind, man, people, humans",
+            "human (Homo sapiens)",
+            "(other) people, others",
+            "character, personality, nature",
+            "capable person, competent person, suitable person, right person",
+            "adult, grown-up",
+            "I, me, one"
+        ],
+        "page": 57
+    },
+    {
+        "word": "店",
+        "hiragana": "みせ",
+        "romaji": "mise",
+        "meanings": [
+            "store, shop, establishment, restaurant"
+        ],
+        "page": 57
+    },
+    {
+        "word": "頭",
+        "hiragana": "あたま",
+        "romaji": "atama",
+        "meanings": [
+            "head",
+            "hair (on one's head)",
+            "mind, brains, intellect",
+            "leader, chief, boss, captain",
+            "top, tip",
+            "beginning, start",
+            "head, person",
+            "down payment, deposit",
+            "top structural component of a kanji",
+            "pair"
+        ],
+        "page": 57
+    },
+    {
+        "word": "八つ",
+        "hiragana": "やっつ",
+        "romaji": "yattsu",
+        "meanings": [
+            "eight",
+            "eight years of age",
+            "two o'clock (old time system)"
+        ],
+        "page": 57
+    },
+    {
+        "word": "万",
+        "hiragana": "まん",
+        "romaji": "man",
+        "meanings": [
+            "10,000, ten thousand",
+            "myriad",
+            "everything, all",
+            "various"
+        ],
+        "page": 57
+    },
+    {
+        "word": "明後日",
+        "hiragana": "あさって",
+        "romaji": "asatte",
+        "meanings": [
+            "day after tomorrow",
+            "wrong (e.g. direction)"
+        ],
+        "page": 57
+    },
+    {
+        "word": "六つ",
+        "hiragana": "むっつ",
+        "romaji": "muttsu",
+        "meanings": [
+            "six",
+            "six years of age",
+            "six o'clock (old time system)"
+        ],
+        "page": 57
+    },
+    {
+        "word": "暖かい",
+        "hiragana": "あたたかい",
+        "romaji": "atatakai",
+        "meanings": [
+            "warm, mild, (pleasantly) hot",
+            "considerate, kind, genial",
+            "warm (of a colour), mellow",
+            "having enough money"
+        ],
+        "page": 57
+    },
+    {
+        "word": "聞く",
+        "hiragana": "きく",
+        "romaji": "kiku",
+        "meanings": [
+            "to hear",
+            "to listen (e.g. to music)",
+            "to ask, to enquire, to query",
+            "to hear about, to hear of, to learn of",
+            "to follow (advice, order, etc.), to obey, to listen to, to comply with",
+            "to hear (e.g. a plea), to grant (a request), to accept (e.g. an argument), to give consideration to",
+            "to smell (esp. incense), to sample (a fragrance)",
+            "to taste (alcohol), to try"
+        ],
+        "page": 58
+    },
+    {
+        "word": "綺麗",
+        "hiragana": "きれい",
+        "romaji": "kirei",
+        "meanings": [
+            "pretty, lovely, beautiful, fair",
+            "clean, clear, pure, tidy, neat",
+            "completely, entirely"
+        ],
+        "page": 58
+    },
+    {
+        "word": "目",
+        "hiragana": "め",
+        "romaji": "me",
+        "meanings": [
+            "eye, eyeball",
+            "eyesight, sight, vision",
+            "look, stare, gaze, glance",
+            "notice, attention, observation, eyes (of the world, public, etc.)",
+            "an experience",
+            "viewpoint",
+            "discrimination, discernment, judgement, eye (e.g. for quality)",
+            "(an) appearance",
+            "chance (of success), possibility (of a good result)",
+            "spacing (between crossed strands of a net, mesh, etc.), opening, stitch, texture, weave",
+            "grain (of wood, paper)",
+            "eye (of a storm, needle, etc.)",
+            "intersection (on a go board), square (on a chessboard)",
+            "dot (on a dice), pip, rolled number",
+            "graduation, division (of a scale)",
+            "tooth (of a saw, comb, etc.)",
+            "ordinal number suffix",
+            "somewhat, -ish",
+            "point (e.g. of change)"
+        ],
+        "page": 58
+    },
+    {
+        "word": "履く",
+        "hiragana": "はく",
+        "romaji": "haku",
+        "meanings": [
+            "to put on (lower-body clothing, e.g. pants, skirt, footwear), to wear",
+            "to affix (a sword to one's hip)",
+            "to affix (a bowstring to a bow)"
+        ],
+        "page": 58
+    },
+    {
+        "word": "点ける",
+        "hiragana": "つける",
+        "romaji": "tsukeru",
+        "meanings": [
+            "to turn on, to switch on, to light up"
+        ],
+        "page": 58
+    },
+    {
+        "word": "いい",
+        "hiragana": "",
+        "romaji": "ii",
+        "meanings": [
+            "good, excellent, fine, nice, pleasant, agreeable",
+            "sufficient, enough, ready, prepared",
+            "profitable (deal, business offer, etc.), beneficial",
+            "OK, all right, fine, no problem"
+        ],
+        "page": 58
+    },
+    {
+        "word": "あの",
+        "hiragana": "",
+        "romaji": "ano",
+        "meanings": [
+            "say, well, um, er"
+        ],
+        "page": 58
+    },
+    {
+        "word": "でも",
+        "hiragana": "",
+        "romaji": "demo",
+        "meanings": [
+            "but, however, though, nevertheless, still, yet, even so, also, as well",
+            "even",
+            "however, no matter how, even if, even though",
+            "... or something",
+            "either ... or ..., neither ... nor ...",
+            "pseudo-, quack, in-name-only",
+            "for lack of anything better to do"
+        ],
+        "page": 58
+    },
+    {
+        "word": "はい",
+        "hiragana": "",
+        "romaji": "hai",
+        "meanings": [
+            "yes, that is correct",
+            "understood, I see, OK, okay",
+            "present, here",
+            "pardon?, what's that?, come again?",
+            "now, here, here you go",
+            "giddy-up, giddap"
+        ],
+        "page": 58
+    },
+    {
+        "word": "一月",
+        "hiragana": "ひとつき",
+        "romaji": "hitotsuki",
+        "meanings": [
+            "one month"
+        ],
+        "page": 58
+    },
+    {
+        "word": "９日",
+        "hiragana": "ここのか",
+        "romaji": "kokonoka",
+        "meanings": [
+            "9th day of the month",
+            "nine days"
+        ],
+        "page": 59
+    },
+    {
+        "word": "５日",
+        "hiragana": "いつか",
+        "romaji": "itsuka",
+        "meanings": [
+            "5th day of the month",
+            "five days"
+        ],
+        "page": 59
+    },
+    {
+        "word": "３日",
+        "hiragana": "みっか",
+        "romaji": "mikka",
+        "meanings": [
+            "3rd day of the month",
+            "three days"
+        ],
+        "page": 59
+    },
+    {
+        "word": "４日",
+        "hiragana": "よっか",
+        "romaji": "yokka",
+        "meanings": [
+            "4th day of the month",
+            "four days"
+        ],
+        "page": 59
+    },
+    {
+        "word": "１０日",
+        "hiragana": "とおか",
+        "romaji": "tooka",
+        "meanings": [
+            "10th day of the month",
+            "ten days"
+        ],
+        "page": 59
+    },
+    {
+        "word": "直ぐに",
+        "hiragana": "すぐに",
+        "romaji": "suguni",
+        "meanings": [
+            "immediately, right away, at once, instantly"
+        ],
+        "page": 59
+    },
+    {
+        "word": "２日",
+        "hiragana": "ふつか",
+        "romaji": "futsuka",
+        "meanings": [
+            "2nd day of the month",
+            "two days"
+        ],
+        "page": 59
+    },
+    {
+        "word": "８日",
+        "hiragana": "ようか",
+        "romaji": "youka",
+        "meanings": [
+            "8th day of the month",
+            "eight days"
+        ],
+        "page": 59
+    },
+    {
+        "word": "お弁当",
+        "hiragana": "おべんとう",
+        "romaji": "obentou",
+        "meanings": [
+            "bento, Japanese box lunch"
+        ],
+        "page": 59
+    },
+    {
+        "word": "６日",
+        "hiragana": "むいか",
+        "romaji": "muika",
+        "meanings": [
+            "6th day of the month",
+            "six days"
+        ],
+        "page": 59
+    },
+    {
+        "word": "７日",
+        "hiragana": "なのか",
+        "romaji": "nanoka",
+        "meanings": [
+            "7th day of the month",
+            "seven days"
+        ],
+        "page": 60
+    },
+    {
+        "word": "等",
+        "hiragana": "など",
+        "romaji": "nado",
+        "meanings": [
+            "et cetera, etc., and the like, and so forth",
+            "or something",
+            "the likes of",
+            "for example, for instance, for one"
+        ],
+        "page": 60
+    },
+    {
+        "word": "開く",
+        "hiragana": "あく",
+        "romaji": "aku",
+        "meanings": [
+            "to open (e.g. doors)",
+            "to open (e.g. business, etc.)",
+            "to be empty",
+            "to be vacant, to be available, to be free",
+            "to be open (e.g. neckline, etc.)",
+            "to have been opened (of one's eyes, mouth, etc.)",
+            "to come to an end",
+            "to open (one's eyes, mouth, etc.)",
+            "to have a hole, to form a gap, to have an interval (between events)"
+        ],
+        "page": 60
+    },
+    {
+        "word": "朝ご飯",
+        "hiragana": "あさごはん",
+        "romaji": "asagohan",
+        "meanings": [
+            "breakfast"
+        ],
+        "page": 60
+    },
+    {
+        "word": "茶碗",
+        "hiragana": "ちゃわん",
+        "romaji": "chawan",
+        "meanings": [
+            "rice bowl, tea cup, teacup"
+        ],
+        "page": 60
+    },
+    {
+        "word": "出かける",
+        "hiragana": "でかける",
+        "romaji": "dekakeru",
+        "meanings": [
+            "to go out (e.g. on an excursion or outing), to leave, to depart, to start, to set out",
+            "to be about to leave, to be just going out"
+        ],
+        "page": 60
+    },
+    {
+        "word": "２０日",
+        "hiragana": "はつか",
+        "romaji": "hatsuka",
+        "meanings": [
+            "20th day of the month",
+            "20 days"
+        ],
+        "page": 60
+    },
+    {
+        "word": "晩御飯",
+        "hiragana": "ばんごはん",
+        "romaji": "bangohan",
+        "meanings": [
+            "dinner, evening meal"
+        ],
+        "page": 60
+    },
+    {
+        "word": "昼ご飯",
+        "hiragana": "ひるごはん",
+        "romaji": "hirugohan",
+        "meanings": [
+            "lunch, midday meal"
+        ],
+        "page": 60
+    },
+    {
+        "word": "良く",
+        "hiragana": "よく",
+        "romaji": "yoku",
+        "meanings": [
+            "nicely, properly, well, skillfully, skilfully",
+            "frequently, often",
+            "I'm glad that you ..., thank you for ...",
+            "(you have) quite the nerve to, I don't know how you can ..."
+        ],
+        "page": 60
+    },
+    {
+        "word": "もう一度",
+        "hiragana": "もういちど",
+        "romaji": "mouichido",
+        "meanings": [
+            "once more, again"
+        ],
+        "page": 61
+    },
+    {
+        "word": "赤",
+        "hiragana": "あか",
+        "romaji": "aka",
+        "meanings": [
+            "red, crimson, scarlet",
+            "red-containing colour (e.g. brown, pink, orange)",
+            "Red (i.e. communist)",
+            "red light (traffic)",
+            "red ink (i.e. in finance or proof-reading), (in) the red",
+            "complete, total, perfect, obvious",
+            "copper",
+            "red 5-point card"
+        ],
+        "page": 61
+    },
+    {
+        "word": "小さな",
+        "hiragana": "ちいさな",
+        "romaji": "chiisana",
+        "meanings": [
+            "small, little, tiny"
+        ],
+        "page": 61
+    },
+    {
+        "word": "背",
+        "hiragana": "せ",
+        "romaji": "se",
+        "meanings": [
+            "back",
+            "reverse, rear side, back (e.g. of a chair), spine (of a book)",
+            "height, stature",
+            "ridge (of a mountain)"
+        ],
+        "page": 61
+    },
+    {
+        "word": "お風呂",
+        "hiragana": "おふろ",
+        "romaji": "ofuro",
+        "meanings": [
+            "bath"
+        ],
+        "page": 61
+    },
+    {
+        "word": "１日",
+        "hiragana": "ついたち",
+        "romaji": "tsuitachi",
+        "meanings": [
+            "first day of the month"
+        ],
+        "page": 61
+    },
+    {
+        "word": "０",
+        "hiragana": "ゼロ",
+        "romaji": "zero",
+        "meanings": [
+            "zero, 0, nought, nil",
+            "nothing, zilch"
+        ],
+        "page": 61
+    },
+    {
+        "word": "如何",
+        "hiragana": "いかが",
+        "romaji": "ikaga",
+        "meanings": [
+            "how, in what way, how about",
+            "questionable"
+        ],
+        "page": 61
+    },
+    {
+        "word": "ペット",
+        "hiragana": "",
+        "romaji": "petto",
+        "meanings": [
+            "pet",
+            "trumpet"
+        ],
+        "page": 61
+    },
+    {
+        "word": "ラジカセ",
+        "hiragana": "",
+        "romaji": "rajikase",
+        "meanings": [
+            "radio-cassette player"
+        ],
+        "page": 61
+    },
+    {
+        "word": "テープレコーダー",
+        "hiragana": "",
+        "romaji": "teepurekoodaa",
+        "meanings": [
+            "tape recorder"
+        ],
+        "page": 62
+    },
+    {
+        "word": "彼処",
+        "hiragana": "あそこ",
+        "romaji": "asoko",
+        "meanings": [
+            "there, over there, that place, yonder, you-know-where",
+            "genitals, private parts, nether regions",
+            "that far, that much, that point"
+        ],
+        "page": 62
+    },
+    {
+        "word": "彼",
+        "hiragana": "あれ",
+        "romaji": "are",
+        "meanings": [
+            "that, that thing",
+            "that person",
+            "then, that time",
+            "that place (over there)",
+            "down there (i.e. one's genitals)",
+            "period, menses"
+        ],
+        "page": 62
+    },
+    {
+        "word": "此方",
+        "hiragana": "こちら",
+        "romaji": "kochira",
+        "meanings": [
+            "this way, this direction",
+            "here",
+            "this (one)",
+            "I, me, we, us",
+            "this person"
+        ],
+        "page": 62
+    },
+    {
+        "word": "其処",
+        "hiragana": "そこ",
+        "romaji": "soko",
+        "meanings": [
+            "there (place relatively near listener)",
+            "there (place just mentioned), that place",
+            "then (of some incident just spoken of), that (of point just raised)",
+            "you"
+        ],
+        "page": 62
+    },
+    {
+        "word": "其方",
+        "hiragana": "そちら",
+        "romaji": "sochira",
+        "meanings": [
+            "that way, that direction",
+            "there",
+            "that (one)",
+            "you, your family, your company",
+            "that person"
+        ],
+        "page": 62
+    },
+    {
+        "word": "其の",
+        "hiragana": "その",
+        "romaji": "sono",
+        "meanings": [
+            "that, the",
+            "part (as in \"part two\")",
+            "um ..., er ..., uh ..."
+        ],
+        "page": 62
+    },
+    {
+        "word": "其れ",
+        "hiragana": "それ",
+        "romaji": "sore",
+        "meanings": [
+            "that, it",
+            "then, that point (in time), that time",
+            "there",
+            "you"
+        ],
+        "page": 62
+    },
+    {
+        "word": "其れから",
+        "hiragana": "それから",
+        "romaji": "sorekara",
+        "meanings": [
+            "and then, after that"
+        ],
+        "page": 62
+    },
+    {
+        "word": "迚も",
+        "hiragana": "とても",
+        "romaji": "totemo",
+        "meanings": [
+            "very, awfully, exceedingly",
+            "(not) at all, by no means, simply (cannot)"
+        ],
+        "page": 62
+    },
+    {
+        "word": "如何",
+        "hiragana": "どう",
+        "romaji": "dou",
+        "meanings": [
+            "how, in what way, how about"
+        ],
+        "page": 63
+    },
+    {
+        "word": "何れ",
+        "hiragana": "どれ",
+        "romaji": "dore",
+        "meanings": [
+            "which (of three or more)",
+            "well, now, c'mon"
+        ],
+        "page": 63
+    },
+    {
+        "word": "咖哩",
+        "hiragana": "カレー",
+        "romaji": "karee",
+        "meanings": [
+            "curry (esp. Japanese curry)",
+            "rice and curry"
+        ],
+        "page": 63
+    },
+    {
+        "word": "瓦",
+        "hiragana": "グラム",
+        "romaji": "guramu",
+        "meanings": [
+            "gram, gramme"
+        ],
+        "page": 63
+    },
+    {
+        "word": "珈琲",
+        "hiragana": "コーヒー",
+        "romaji": "koohii",
+        "meanings": [
+            "coffee"
+        ],
+        "page": 63
+    },
+    {
+        "word": "洋杯",
+        "hiragana": "コップ",
+        "romaji": "koppu",
+        "meanings": [
+            "glass (drinking vessel), tumbler",
+            "cups (suit)"
+        ],
+        "page": 63
+    },
+    {
+        "word": "洋袴",
+        "hiragana": "ズボン",
+        "romaji": "zubon",
+        "meanings": [
+            "trousers, pants"
+        ],
+        "page": 63
+    },
+    {
+        "word": "釦",
+        "hiragana": "ボタン",
+        "romaji": "botan",
+        "meanings": [
+            "button (clothing)",
+            "push-button, button"
+        ],
+        "page": 63
+    },
+    {
+        "word": "米",
+        "hiragana": "メートル",
+        "romaji": "meetoru",
+        "meanings": [
+            "metre (unit of length), meter",
+            "meter, gauge"
+        ],
+        "page": 63
+    },
+    {
+        "word": "為る",
+        "hiragana": "する",
+        "romaji": "suru",
+        "meanings": [
+            "to do, to carry out, to perform",
+            "to cause to become, to make (into), to turn (into)",
+            "to serve as, to act as, to work as",
+            "to wear (clothes, a facial expression, etc.)",
+            "to judge as being, to view as being, to think of as, to treat as, to use as",
+            "to decide on, to choose",
+            "to be sensed (of a smell, noise, etc.)",
+            "to be (in a state, condition, etc.)",
+            "to be worth, to cost",
+            "to pass (of time), to elapse",
+            "to place, or raise, person A to a post or status B",
+            "to transform A to B, to make A into B, to exchange A for B",
+            "to make use of A for B, to view A as B, to handle A as if it were B",
+            "to feel A about B",
+            "verbalizing suffix (applies to nouns noted in this dictionary with the part of speech \"vs\")",
+            "creates a humble verb (after a noun prefixed with \"o\" or \"go\")",
+            "to be just about to, to be just starting to, to try to, to attempt to"
+        ],
+        "page": 63
+    },
+    {
+        "word": "一寸",
+        "hiragana": "ちょっと",
+        "romaji": "chotto",
+        "meanings": [
+            "a little, a bit, slightly",
+            "just a minute, for a moment, briefly",
+            "somewhat, rather, fairly, pretty, quite",
+            "(not) easily, (not) readily",
+            "hey!, come on, excuse me",
+            "thanks, but no, not feasible, not possible"
+        ],
+        "page": 64
+    },
+    {
+        "word": "何方",
+        "hiragana": "どちら",
+        "romaji": "dochira",
+        "meanings": [
+            "which way, which direction, where",
+            "which one (esp. of two alternatives)",
+            "who"
+        ],
+        "page": 64
+    },
+    {
+        "word": "此処",
+        "hiragana": "ここ",
+        "romaji": "koko",
+        "meanings": [
+            "here, this place",
+            "this point, here, now",
+            "these past ... (e.g. three years), these last ...",
+            "the next ... (e.g. few days), these next ..."
+        ],
+        "page": 64
+    },
+    {
+        "word": "お皿",
+        "hiragana": "おさら",
+        "romaji": "osara",
+        "meanings": [
+            "plate, dish"
+        ],
+        "page": 64
+    },
+    {
+        "word": "お酒",
+        "hiragana": "おさけ",
+        "romaji": "osake",
+        "meanings": [
+            "alcohol, sake"
+        ],
+        "page": 64
+    },
+    {
+        "word": "其れでは",
+        "hiragana": "それでは",
+        "romaji": "soredeha",
+        "meanings": [
+            "well, ..., right, ..., now, ...",
+            "so, then",
+            "that way (would mean ...), if that is the case, in that case",
+            "bye then"
+        ],
+        "page": 64
+    },
+    {
+        "word": "如何して",
+        "hiragana": "どうして",
+        "romaji": "doushite",
+        "meanings": [
+            "how, in what way, by what means",
+            "why, for what reason, for what purpose, what for",
+            "cannot possibly",
+            "no way"
+        ],
+        "page": 64
+    },
+    {
+        "word": "彼方",
+        "hiragana": "あちら",
+        "romaji": "achira",
+        "meanings": [
+            "that way, that direction, over there, yonder",
+            "that (one)",
+            "that person",
+            "there, over there, foreign country (esp. a Western nation)"
+        ],
+        "page": 64
+    },
+    {
+        "word": "然し",
+        "hiragana": "しかし",
+        "romaji": "shikashi",
+        "meanings": [
+            "however, but"
+        ],
+        "page": 64
+    },
+    {
+        "word": "又",
+        "hiragana": "また",
+        "romaji": "mata",
+        "meanings": [
+            "again, once more, once again, another time, some other time",
+            "also, too, as well, likewise",
+            "on the other hand, while",
+            "and, in addition, besides, moreover, furthermore",
+            "or, otherwise",
+            "really, how, (what, why) on earth",
+            "some time (in the future)",
+            "indirect"
+        ],
+        "page": 64
+    },
+    {
+        "word": "此の",
+        "hiragana": "この",
+        "romaji": "kono",
+        "meanings": [
+            "this",
+            "last (couple of years, etc.), these, past, this",
+            "you (as in \"you liar\")"
+        ],
+        "page": 65
+    },
+    {
+        "word": "２０歳",
+        "hiragana": "はたち",
+        "romaji": "hatachi",
+        "meanings": [
+            "20 years old",
+            "twenty"
+        ],
+        "page": 65
+    },
+    {
+        "word": "然うして",
+        "hiragana": "そうして",
+        "romaji": "soushite",
+        "meanings": [
+            "and, like that"
+        ],
+        "page": 65
+    },
+    {
+        "word": "此れ",
+        "hiragana": "これ",
+        "romaji": "kore",
+        "meanings": [
+            "this, this one",
+            "this person",
+            "now, this point (in time)",
+            "here",
+            "used to stress the subject of a sentence",
+            "I, me"
+        ],
+        "page": 65
+    },
+    {
+        "word": "何の",
+        "hiragana": "どの",
+        "romaji": "dono",
+        "meanings": [
+            "which, what (way)"
+        ],
+        "page": 65
+    },
+    {
+        "word": "伯母さん",
+        "hiragana": "おばさん",
+        "romaji": "obasan",
+        "meanings": [
+            "aunt"
+        ],
+        "page": 65
+    },
+    {
+        "word": "マッチ",
+        "hiragana": "",
+        "romaji": "matchi",
+        "meanings": [
+            "match (contest)",
+            "matching (with), going well (with)"
+        ],
+        "page": 65
+    }
+]

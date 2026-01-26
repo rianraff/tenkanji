@@ -1,0 +1,466 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* Double lock */
+  position: relative;
+}
+
+.dashboard-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  flex: 1;
+}
+
+.carousel-sidebar {
+  height: 550px;
+  width: 80px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  -webkit-mask-image: none;
+  mask-image: none;
+  border: 1px dashed red;
+  /* DEBUG */
+}
+
+.carousel-track {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  animation: slide-down 40s linear infinite;
+}
+
+.carousel-track.reverse {
+  animation: slide-down 45s linear infinite reverse;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.carousel-card {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--card-border);
+  flex-shrink: 0;
+}
+
+.carousel-card.learnt {
+  border-color: #22c55e;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.carousel-card.not-learnt {
+  opacity: 0.3;
+  color: var(--text-secondary);
+}
+
+/* Flashcard */
+/* Flashcard */
+/* Flashcard Container (Perspective) */
+.flashcard {
+  width: 500px;
+  height: 275px;
+  perspective: 1000px;
+  /* Essential for 3D effect */
+  background: transparent;
+  /* Container is transparent */
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* The Moving Part */
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Hover Effect (only elevate the whole unit, don't flip yet) */
+/* REMOVED: .flashcard:hover { transform: translateY(-4px); } - Per user request for dashboard stability */
+
+.flashcard:hover .flashcard-inner {
+  /* Optional: keep shadow or remove? User "only the button". 
+      Let's keep shadow for depth but no movement. */
+  /* box-shadow: var(--shadow-hover); */
+}
+
+/* JS toggles this class to flip */
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+/* Common Face Styles */
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* Front: The "Question" - Large Kanji */
+.flashcard-front {
+  /* Default state: facing user */
+}
+
+/* Back: The "Answer" - Details */
+.flashcard-back {
+  transform: rotateY(180deg);
+  /* Facing away initially */
+}
+
+/* Decor Line only on Back? or Both? User wants large kanji on front. */
+.flashcard-back::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), #c084fc);
+}
+
+.word-heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+  line-height: 1.1;
+  /* Retro typography often solid, no gradient text unless specific */
+}
+
+.sub-heading {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.divider {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 0;
+  /* Square dots for retro */
+  opacity: 1;
+}
+
+.meanings-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.meaning-item {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  opacity: 0.9;
+}
+
+.see-more-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--col-black);
+  border: 2px solid var(--col-black);
+  border-radius: 999px;
+  /* Pill shape */
+  background: var(--accent);
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 0px 0px var(--col-black);
+}
+
+.see-more-btn:hover {
+  background: var(--accent-hover);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px 0px var(--col-black);
+}
+
+.see-more-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px var(--col-black);
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  justify-content: space-between;
+  /* Position absolute to align with card center or just strictly below? User said "right and left chevron to go to the next kanji". 
+     Usually flanking the card is intuitive.
+  */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  max-width: 1350px;
+  /* Wider than card */
+  pointer-events: none;
+  /* Let clicks pass through to body if valid */
+  z-index: 10;
+}
+
+.nav-button {
+  pointer-events: auto;
+  background: var(--col-white);
+  border: 2px solid var(--col-black);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--col-black);
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 0px 0px var(--col-black);
+}
+
+.nav-button:hover {
+  background: var(--col-orange);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px var(--col-black);
+  color: var(--col-black);
+}
+
+.nav-button:active {
+  transform: translate(0px, 0px);
+  box-shadow: 0px 0px 0px 0px var(--col-black);
+}
+
+/* Kanji Breakdown */
+.kanji-breakdown {
+  width: 100%;
+}
+
+.breakdown-title {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.kanji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Card Slide Animation */
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-enter {
+  animation: scale-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Kanji Card Flip */
+.kanji-card {
+  width: 150px;
+  height: 150px;
+  perspective: 600px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.kanji-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.kanji-card:hover .kanji-card-inner {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.kanji-card.flipped .kanji-card-inner {
+  transform: rotateY(180deg);
+}
+
+.kanji-card-front,
+.kanji-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 2px solid var(--col-black);
+  border-radius: 12px;
+  background: var(--col-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 0.6rem;
+  box-sizing: border-box;
+}
+
+.kanji-card-front {
+  /* Default */
+}
+
+.kanji-card-back {
+  transform: rotateY(180deg);
+  background: var(--col-white);
+  overflow-y: auto;
+  /* Allow scrolling for long descriptions if needed */
+  padding: 0.5rem;
+}
+
+/* Revisit inner elements for front face */
+.kanji-char {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--col-black);
+  background: var(--col-orange);
+  border: 2px solid var(--col-black);
+  border-radius: 8px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kanji-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.kanji-desc {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .flashcard {
+    width: 90vw;
+    height: auto;
+    min-height: 380px;
+    padding: 2rem;
+  }
+
+  .word-heading {
+    font-size: 3.5rem;
+  }
+
+  .controls {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    margin-top: -1rem;
+    pointer-events: auto;
+    max-width: none;
+    justify-content: center;
+  }
+}

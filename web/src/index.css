@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+:root {
+  /* Branding Palette */
+  --col-black: #000000;
+  --col-blue: #14213d;
+  --col-orange: #fca311;
+  --col-gray: #e5e5e5;
+  --col-white: #ffffff;
+
+  /* Semantic Variables */
+  --bg-app: var(--col-gray);
+  --card-bg: var(--col-white);
+  --card-border: var(--col-black);
+
+  --text-primary: var(--col-black);
+  --text-secondary: var(--col-blue);
+
+  --accent: var(--col-orange);
+  --accent-hover: #e5940e;
+  /* Slightly darker orange */
+
+  --shadow: 4px 4px 0px 0px var(--col-black);
+  --shadow-hover: 6px 6px 0px 0px var(--col-black);
+  --radius: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-app);
+  color: var(--text-primary);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  /* No scroll on body */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  /* Ensure root behaves as a flex container if needed */
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
