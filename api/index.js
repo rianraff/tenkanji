@@ -3,19 +3,22 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
-const { supabase } = require('./database'); // Relative to api/ folder now
+const { supabase } = require('./database');
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
 
-// Load words dictionary from the SAME folder
+// Load words dictionary
 const wordsPath = path.join(__dirname, 'words.json');
 const wordsData = JSON.parse(fs.readFileSync(wordsPath, 'utf8'));
 
-// API Routes
-app.post('/api/login', async (req, res) => {
+const router = express.Router();
+
+router.get('/health', (req, res) => res.json({ status: 'ok', time: new Date() }));
+
+router.post('/login', async (req, res) => {
     const { initials } = req.body;
     if (!initials || initials.length !== 3) return res.status(400).json({ error: 'Initials must be 3 characters' });
     const upperInitials = initials.toUpperCase();
@@ -30,7 +33,7 @@ app.post('/api/login', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-app.get('/api/user/:initials', async (req, res) => {
+router.get('/user/:initials', async (req, res) => {
     const { initials } = req.params;
     const upperInitials = initials.toUpperCase();
     try {
@@ -42,7 +45,7 @@ app.get('/api/user/:initials', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-app.put('/api/user/:initials/settings', async (req, res) => {
+router.put('/user/:initials/settings', async (req, res) => {
     const { initials } = req.params;
     const { chunkSize } = req.body;
     try {
@@ -52,7 +55,7 @@ app.put('/api/user/:initials/settings', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-app.get('/api/words/chunk', async (req, res) => {
+router.get('/words/chunk', async (req, res) => {
     const { initials, size, mode } = req.query;
     const chunkSize = parseInt(size) || 10;
     const userInitials = initials.toUpperCase();
@@ -80,7 +83,7 @@ app.get('/api/words/chunk', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-app.get('/api/words/status', async (req, res) => {
+router.get('/words/status', async (req, res) => {
     const { initials } = req.query;
     const userInitials = initials.toUpperCase();
     try {
@@ -93,7 +96,7 @@ app.get('/api/words/status', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-app.post('/api/progress', async (req, res) => {
+router.post('/progress', async (req, res) => {
     const { initials, results } = req.body;
     const userInitials = initials.toUpperCase();
     try {
@@ -115,6 +118,19 @@ app.post('/api/progress', async (req, res) => {
         }
         res.json({ success: true });
     } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// Use the router for ANY path that hits this function
+app.use('/api', router);
+app.use('/', router);
+
+// Catch-all for Express 404s
+app.use((req, res) => {
+    res.status(404).json({
+        error: 'Backend route not found',
+        url: req.url,
+        path: req.path
+    });
 });
 
 module.exports = app;
