@@ -2,6 +2,7 @@ import { useState, useEffect, useContext, useMemo } from 'react';
 import { UserContext } from '../context/UserContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, RotateCw, Check, X } from 'lucide-react';
+import Loading from '../components/Loading';
 import kanjiDataRaw from '../data/jlpt-kanji.json';
 
 // Ensure kanjiData is accessible
@@ -144,8 +145,15 @@ export default function Session() {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [phase, currentIndex, words, sessionResults, isFlipped]);
 
-    if (loading) return <div>Loading Session...</div>;
-    if (!currentWord) return <div>No words loaded! <button onClick={() => navigate('/dashboard')}>Back</button></div>;
+    if (loading) return <Loading message="Preparing Session..." />;
+    if (!currentWord) return (
+        <div className="app-container">
+            <div className="flashcard" style={{ height: 'auto', textAlign: 'center' }}>
+                <p style={{ fontWeight: 'bold' }}>No words loaded!</p>
+                <button className="nav-button" onClick={() => navigate('/dashboard')} style={{ width: 'auto', padding: '0 2rem', borderRadius: '12px', marginTop: '1rem' }}>Back to Dashboard</button>
+            </div>
+        </div>
+    );
 
     return (
         <div className="app-container">

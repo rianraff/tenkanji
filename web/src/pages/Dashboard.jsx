@@ -2,12 +2,14 @@ import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { BookOpen, RotateCcw } from 'lucide-react';
+import Loading from '../components/Loading';
 
 export default function Dashboard() {
     const { user, updateSettings } = useContext(UserContext);
     const navigate = useNavigate();
     const [mode, setMode] = useState('new'); // 'new' | 'review'
     const [masteredCount, setMasteredCount] = useState(0);
+    const [loadingStats, setLoadingStats] = useState(true);
 
     // Forced chunk size 10 per requirements
     const chunkSize = 10;
@@ -25,12 +27,14 @@ export default function Dashboard() {
                 }
             } catch (err) {
                 console.error(err);
+            } finally {
+                setLoadingStats(false);
             }
         };
         fetchStats();
     }, [user]);
 
-    if (!user) return <div>Loading...</div>;
+    if (!user || loadingStats) return <Loading />;
 
     // Hardcoded logic for now as requested
     // "Force user to use 10 chunking method" -> We just use 10 when starting session

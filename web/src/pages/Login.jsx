@@ -84,10 +84,21 @@ export default function Login() {
                                 fontSize: '1.2rem',
                                 marginTop: '0.5rem',
                                 opacity: (initials.length === 3 && status !== 'checking') ? 1 : 0.5,
-                                cursor: (initials.length === 3 && status !== 'checking') ? 'pointer' : 'not-allowed'
+                                cursor: (initials.length === 3 && status !== 'checking') ? 'pointer' : 'not-allowed',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '0.5rem'
                             }}
                         >
-                            {status === 'checking' ? 'Checking...' : 'Continue →'}
+                            {status === 'checking' ? (
+                                <>
+                                    <div className="spinner" style={{ width: '20px', height: '20px', borderWidth: '3px', boxShadow: 'none' }}></div>
+                                    CHECKING...
+                                </>
+                            ) : (
+                                'Continue →'
+                            )}
                         </button>
                         {initials.length > 0 && initials.length < 3 && (
                             <p style={{ color: '#ef4444', fontSize: '0.8rem', fontWeight: 'bold', margin: 0 }}>
@@ -110,16 +121,40 @@ export default function Login() {
                             <button
                                 onClick={reset}
                                 className="nav-button"
-                                style={{ borderRadius: '12px', width: 'auto', padding: '0 1rem', fontSize: '1rem', height: '50px' }}
+                                disabled={status === 'logging_in'}
+                                style={{ borderRadius: '12px', width: 'auto', padding: '0 1rem', fontSize: '1rem', height: '50px', opacity: status === 'logging_in' ? 0.5 : 1 }}
                             >
                                 Back
                             </button>
                             <button
-                                onClick={handleLogin}
+                                onClick={async () => {
+                                    setStatus('logging_in');
+                                    await handleLogin();
+                                }}
                                 className="see-more-btn"
-                                style={{ flex: 1, marginTop: 0, fontSize: '1.2rem', background: status === 'confirm_login' ? '#22c55e' : 'var(--col-orange)', border: '2px solid var(--col-black)', color: status === 'confirm_login' ? 'white' : 'black' }}
+                                disabled={status === 'logging_in'}
+                                style={{
+                                    flex: 1,
+                                    marginTop: 0,
+                                    fontSize: '1.2rem',
+                                    background: status === 'confirm_login' ? '#22c55e' : 'var(--col-orange)',
+                                    border: '2px solid var(--col-black)',
+                                    color: status === 'confirm_login' ? 'white' : 'black',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: '0.5rem',
+                                    opacity: status === 'logging_in' ? 0.8 : 1
+                                }}
                             >
-                                {status === 'confirm_login' ? 'Login' : 'Create & Start'}
+                                {status === 'logging_in' ? (
+                                    <>
+                                        <div className="spinner" style={{ width: '20px', height: '20px', borderWidth: '3px', boxShadow: 'none', borderTopColor: 'white', borderRightColor: 'white' }}></div>
+                                        STARTING...
+                                    </>
+                                ) : (
+                                    status === 'confirm_login' ? 'Login' : 'Create & Start'
+                                )}
                             </button>
                         </div>
                     </div>

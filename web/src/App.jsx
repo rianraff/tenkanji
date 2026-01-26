@@ -5,11 +5,12 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Session from './pages/Session';
 import Summary from './pages/Summary';
+import Loading from './components/Loading';
 import './App.css';
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useContext(UserContext);
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   if (!user) return <Navigate to="/" />;
   return children;
 }

@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import Loading from '../components/Loading';
 import { UserContext } from '../context/UserContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Check, X } from 'lucide-react';
@@ -9,6 +10,7 @@ export default function Summary() {
     const location = useLocation();
 
     const { results, words, mode } = location.state || { results: [], words: [], mode: 'new' };
+    const [saving, setSaving] = useState(false);
 
     if (results.length === 0) return <div>No results found. <button onClick={() => navigate('/dashboard')}>Home</button></div>;
 
@@ -18,6 +20,7 @@ export default function Summary() {
 
     const saveProgress = async () => {
         try {
+            setSaving(true);
             await fetch('/api/progress', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -30,6 +33,8 @@ export default function Summary() {
         } catch (err) {
             console.error(err);
             return false;
+        } finally {
+            setSaving(false);
         }
     };
 
@@ -61,6 +66,20 @@ export default function Summary() {
 
     return (
         <div className="app-container">
+            {saving && (
+                <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'rgba(229, 229, 229, 0.8)',
+                    zIndex: 100,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backdropFilter: 'blur(4px)'
+                }}>
+                    <Loading message="Saving Progress..." />
+                </div>
+            )}
             <div className="flashcard" style={{ height: 'auto', gap: '2rem', width: '1200px', maxWidth: '95vw', padding: '3rem' }}>
 
                 {/* Header Section: Horizontal Layout */}
