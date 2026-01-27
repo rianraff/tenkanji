@@ -425,7 +425,7 @@ export default function TenKanji() {
                                     <div className="kanji-card-back">
                                         <div style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{kanji.kanji}</div>
                                         <p className="kanji-desc" style={{ fontSize: '0.95rem', marginTop: '0.2rem', lineHeight: '1.2' }}>
-                                            {kanji.description.split(' means ')[1]?.split('.')[0] || kanji.description}
+                                            {(kanji.description.split(' means ')[1] || kanji.description).split(';')[0].split('.')[0]}
                                         </p>
                                     </div>
                                 </div>
