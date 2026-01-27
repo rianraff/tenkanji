@@ -19,7 +19,13 @@ export default function Summary() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    if (results.length === 0) return <div>No results found. <button onClick={() => navigate('/dashboard')}>Home</button></div>;
+    useEffect(() => {
+        if (results.length === 0) {
+            navigate('/dashboard');
+        }
+    }, [results, navigate]);
+
+    if (results.length === 0) return null;
 
     const correctCount = results.filter(r => r.isCorrect).length;
     const accuracy = Math.round((correctCount / results.length) * 100);

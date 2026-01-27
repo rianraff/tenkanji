@@ -12,7 +12,14 @@ export default function Session() {
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('Session mounted with state:', location.state);
+
+    useEffect(() => {
+        if (!location.state) {
+            navigate('/dashboard');
+        }
+    }, [location, navigate]);
+
+    if (!location.state) return null;
 
     // State
     const [words, setWords] = useState([]);
@@ -228,7 +235,34 @@ export default function Session() {
 
             <div key={currentIndex} className="animate-enter" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
-                {/* FLASHCARD */}
+                {/* KANJI BREAKDOWN */}
+                <div className="kanji-grid">
+                    {kanjiDetails.map((kanji) => {
+                        const isKanjiFlipped = phase === 'learning' || isFlipped;
+                        return (
+                            <div
+                                key={kanji.id}
+                                className={`kanji-card ${isKanjiFlipped ? 'flipped' : ''}`}
+                            >
+                                <div className="kanji-card-inner">
+                                    {/* Front: Character */}
+                                    <div className="kanji-card-front" style={{ background: 'var(--col-orange)' }}>
+                                        <h2 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--col-black)' }}>{kanji.kanji}</h2>
+                                    </div>
+
+                                    {/* Back: Info */}
+                                    <div className="kanji-card-back">
+                                        <div style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{kanji.kanji}</div>
+                                        <p className="kanji-desc" style={{ fontSize: '0.95rem', marginTop: '0.2rem', lineHeight: '1.2' }}>
+                                            {(kanji.description.split(' means ')[1] || kanji.description).split(';')[0].split('.')[0]}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+
                 {/* FLASHCARD */}
                 <div
                     className={`flashcard ${phase === 'learning' || isFlipped ? 'flipped' : ''}`}
@@ -237,7 +271,7 @@ export default function Session() {
                     }}
                     onTouchStart={handleTouchStart}
                     onTouchEnd={handleTouchEnd}
-                    style={{ cursor: phase === 'practice' ? 'pointer' : 'default' }}
+                    style={{ cursor: phase === 'practice' ? 'pointer' : 'default', marginTop: '3.5rem' }}
                 >
                     <div className="flashcard-inner">
                         {/* FRONT FACE: The Question (Large Kanji) */}
@@ -287,34 +321,6 @@ export default function Session() {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                {/* KANJI BREAKDOWN */}
-                <div className="kanji-grid" style={{ marginTop: '3.5rem' }}>
-                    {kanjiDetails.map((kanji) => {
-                        const isKanjiFlipped = phase === 'learning' || isFlipped;
-                        return (
-                            <div
-                                key={kanji.id}
-                                className={`kanji-card ${isKanjiFlipped ? 'flipped' : ''}`}
-                            >
-                                <div className="kanji-card-inner">
-                                    {/* Front: Character */}
-                                    <div className="kanji-card-front" style={{ background: 'var(--col-orange)' }}>
-                                        <h2 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--col-black)' }}>{kanji.kanji}</h2>
-                                    </div>
-
-                                    {/* Back: Info */}
-                                    <div className="kanji-card-back">
-                                        <div style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{kanji.kanji}</div>
-                                        <p className="kanji-desc" style={{ fontSize: '0.95rem', marginTop: '0.2rem', lineHeight: '1.2' }}>
-                                            {(kanji.description.split(' means ')[1] || kanji.description).split(';')[0].split('.')[0]}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
                 </div>
 
             </div>

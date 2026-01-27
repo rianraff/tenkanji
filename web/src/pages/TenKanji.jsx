@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext, useMemo } from 'react';
 import { UserContext } from '../context/UserContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Check, X, Share2, Trophy, Calendar } from 'lucide-react';
 import Loading from '../components/Loading';
 import kanjiDataRaw from '../data/jlpt-kanji.json';
@@ -10,6 +10,15 @@ const kanjiData = kanjiDataRaw;
 export default function TenKanji() {
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        if (!location.state?.fromDashboard) {
+            navigate('/dashboard');
+        }
+    }, [location, navigate]);
+
+    if (!location.state?.fromDashboard) return null;
 
     // State
     const [words, setWords] = useState([]);
@@ -376,6 +385,27 @@ export default function TenKanji() {
             </div>
 
             <div key={currentIndex} className="animate-enter" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '2rem' }}>
+                <div className="kanji-grid" style={{ marginBottom: '3.5rem' }}>
+                    {kanjiDetails.map((kanji) => {
+                        const isKanjiFlipped = phase === 'learning' || isFlipped;
+                        return (
+                            <div key={kanji.id} className={`kanji-card ${isKanjiFlipped ? 'flipped' : ''}`}>
+                                <div className="kanji-card-inner">
+                                    <div className="kanji-card-front" style={{ background: 'var(--col-orange)' }}>
+                                        <h2 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--col-black)' }}>{kanji.kanji}</h2>
+                                    </div>
+                                    <div className="kanji-card-back">
+                                        <div style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{kanji.kanji}</div>
+                                        <p className="kanji-desc" style={{ fontSize: '0.95rem', marginTop: '0.2rem', lineHeight: '1.2' }}>
+                                            {(kanji.description.split(' means ')[1] || kanji.description).split(';')[0].split('.')[0]}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+
                 <div
                     className={`flashcard ${phase === 'learning' || isFlipped ? 'flipped' : ''}`}
                     onClick={() => {
@@ -411,27 +441,6 @@ export default function TenKanji() {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="kanji-grid" style={{ marginTop: '3.5rem' }}>
-                    {kanjiDetails.map((kanji) => {
-                        const isKanjiFlipped = phase === 'learning' || isFlipped;
-                        return (
-                            <div key={kanji.id} className={`kanji-card ${isKanjiFlipped ? 'flipped' : ''}`}>
-                                <div className="kanji-card-inner">
-                                    <div className="kanji-card-front" style={{ background: 'var(--col-orange)' }}>
-                                        <h2 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--col-black)' }}>{kanji.kanji}</h2>
-                                    </div>
-                                    <div className="kanji-card-back">
-                                        <div style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{kanji.kanji}</div>
-                                        <p className="kanji-desc" style={{ fontSize: '0.95rem', marginTop: '0.2rem', lineHeight: '1.2' }}>
-                                            {(kanji.description.split(' means ')[1] || kanji.description).split(';')[0].split('.')[0]}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
                 </div>
             </div>
 

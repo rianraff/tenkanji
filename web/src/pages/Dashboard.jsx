@@ -192,7 +192,7 @@ export default function Dashboard() {
                     <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                         <p style={{ margin: 0, fontWeight: '800', fontSize: '1.2rem', textTransform: 'uppercase' }}>Daily Challenge</p>
                         <button
-                            onClick={() => navigate('/ten-kanji')}
+                            onClick={() => navigate('/ten-kanji', { state: { fromDashboard: true } })}
                             style={{
                                 width: '100%',
                                 height: 'clamp(60px, 15vw, 80px)',
@@ -221,6 +221,6 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
