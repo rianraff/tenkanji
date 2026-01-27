@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, RotateCw, Check, X, ArrowLeft, ArrowRight } from 'lucide-react';
 import Loading from '../components/Loading';
 import kanjiDataRaw from '../data/jlpt-kanji.json';
+import clickSound from '../assets/click-sound.mp3';
 
 // Ensure kanjiData is accessible
 const kanjiData = kanjiDataRaw;
@@ -12,6 +13,12 @@ export default function Session() {
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
     const location = useLocation();
+
+    const playClick = () => {
+        const audio = new Audio(clickSound);
+        audio.currentTime = 0.55;
+        audio.play().catch(e => console.error("Audio play failed:", e));
+    };
 
     useEffect(() => {
         if (!location.state) {
@@ -26,7 +33,9 @@ export default function Session() {
     const [loading, setLoading] = useState(true);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [phase, setPhase] = useState('learning'); // 'learning' | 'practice'
-    const [isFlipped, setIsFlipped] = useState(false);
+    const [flipState, setFlipState] = useState('none'); // 'none' | 'up' | 'down'
+    const [animState, setAnimState] = useState('idle'); // 'idle' | 'exiting-left' | 'exiting-right' | 'entering-left' | 'entering-right'
+    const [isTransitioning, setIsTransitioning] = useState(false);
     const [sessionResults, setSessionResults] = useState([]); // [{ word: '...', isCorrect: true }]
     const [touchStartX, setTouchStartX] = useState(null);
     const [touchStartY, setTouchStartY] = useState(null);
@@ -95,40 +104,126 @@ export default function Session() {
     // Derived State
     const currentWord = words[currentIndex];
 
-    // Helper: Get Kanji Breakdown
-    const kanjiDetails = useMemo(() => {
-        if (!currentWord || !currentWord.word) return [];
-        const chars = currentWord.word.split('');
+    // Helper: Get Kanji Breakdown for a specific word
+    const getKanjiDetails = (wordObj) => {
+        if (!wordObj || !wordObj.word) return [];
+        const chars = wordObj.word.split('');
         const details = chars
             .map((char) => kanjiData.find((k) => k.kanji === char))
             .filter((item) => item !== undefined);
         const uniqueDetails = Array.from(new Set(details.map(d => d.id)))
             .map(id => details.find(d => d.id === id));
         return uniqueDetails;
-    }, [currentWord]);
+    };
+
+    const kanjiDetails = useMemo(() => getKanjiDetails(currentWord), [currentWord]);
+    const nextKanjiDetails = useMemo(() => words[currentIndex + 1] ? getKanjiDetails(words[currentIndex + 1]) : [], [words, currentIndex]);
 
     // Handlers
+    const renderCardContent = (word, details, isNext = false) => (
+        <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            {/* KANJI BREAKDOWN */}
+            <div className="kanji-grid">
+                {details.map((kanji) => {
+                    const kanjiFlipClass = phase === 'learning' ? 'k-flipped-up' :
+                        (isNext ? '' : (flipState === 'up' ? 'k-flipped-up' : flipState === 'down' ? 'k-flipped-down' : ''));
+                    return (
+                        <div key={kanji.id} className={`kanji-card ${kanjiFlipClass}`}>
+                            <div className="kanji-card-inner">
+                                <div className="kanji-card-front" style={{ background: 'var(--col-orange)' }}>
+                                    <h2 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--col-black)' }}>{kanji.kanji}</h2>
+                                </div>
+                                <div className="kanji-card-back">
+                                    <div style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{kanji.kanji}</div>
+                                    <p className="kanji-desc" style={{ fontSize: '0.95rem', marginTop: '0.2rem', lineHeight: '1.2' }}>
+                                        {(kanji.description.split(' means ')[1] || kanji.description).split(';')[0].split('.')[0]}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+
+            {/* FLASHCARD */}
+            <div
+                className={`flashcard ${phase === 'learning' ? 'flipped-up' :
+                    (isNext ? '' : (flipState === 'up' ? 'flipped-up' : flipState === 'down' ? 'flipped-down' : ''))}`}
+                onClick={() => {
+                    if (!isNext && phase === 'practice') setFlipState(prev => prev === 'none' ? 'up' : 'none');
+                }}
+                onTouchStart={isNext ? null : handleTouchStart}
+                onTouchEnd={isNext ? null : handleTouchEnd}
+                style={{ cursor: !isNext && phase === 'practice' ? 'pointer' : 'default', marginTop: '3.5rem' }}
+            >
+                <div className="flashcard-inner">
+                    <div className="flashcard-front">
+                        <h1 style={{ fontSize: 'clamp(4rem, 20vw, 8rem)', margin: 0, lineHeight: 1, fontWeight: '800' }}>
+                            {word.word}
+                        </h1>
+                        {!isNext && phase === 'practice' && (
+                            <div style={{ marginTop: '1.5rem', color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: 'bold' }}>
+                                {windowWidth < 450 ? 'SWIPE UP TO FLIP' : 'CLICK OR SPACE TO FLIP'}
+                            </div>
+                        )}
+                    </div>
+                    <div className="flashcard-back">
+                        <h1 className="word-heading">{word.word}</h1>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+                            <div className="sub-heading">
+                                <span>{word.hiragana}</span>
+                                <span className="divider"></span>
+                                <span>{word.romaji}</span>
+                            </div>
+                            <ul className="meanings-list">
+                                {word.meanings.slice(0, 2).map((meaning, idx) => (
+                                    <li key={idx} className="meaning-item">{meaning}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+
     const handleNext = () => {
-        if (currentIndex < words.length - 1) {
+        if (isTransitioning || currentIndex >= words.length - 1) return;
+        setIsTransitioning(true);
+        setAnimState('exiting-left');
+        setTimeout(() => {
             setCurrentIndex((prev) => prev + 1);
-            setIsFlipped(false);
-        }
+            setFlipState('none');
+            setAnimState('entering-right');
+            setTimeout(() => {
+                setIsTransitioning(false);
+            }, 300);
+        }, 300);
     };
 
     const handlePrev = () => {
-        if (currentIndex > 0) {
+        if (isTransitioning || currentIndex <= 0) return;
+        setIsTransitioning(true);
+        setAnimState('exiting-right');
+        setTimeout(() => {
             setCurrentIndex((prev) => prev - 1);
-            setIsFlipped(false);
-        }
+            setFlipState('none');
+            setAnimState('entering-left');
+            setTimeout(() => {
+                setIsTransitioning(false);
+            }, 300);
+        }, 300);
     };
 
     const startPractice = () => {
+        playClick();
         // Shuffle words for practice
         const shuffled = [...words].sort(() => Math.random() - 0.5);
         setWords(shuffled);
         setPhase('practice');
         setCurrentIndex(0);
-        setIsFlipped(false);
+        setFlipState('none');
+        setAnimState('idle'); // Reset animation
     };
 
 
@@ -147,7 +242,13 @@ export default function Session() {
 
         // Vertical Swipe -> Flip (Practice Mode)
         if (phase === 'practice' && Math.abs(diffY) > 50 && Math.abs(diffX) < 50) {
-            setIsFlipped(prev => !prev);
+            // Swipe Down (diffY < -50) -> Flip Downside
+            // Swipe Up (diffY > 50) -> Flip Upside (or toggle)
+            if (diffY < -50) {
+                setFlipState(prev => prev === 'none' ? 'down' : 'none');
+            } else {
+                setFlipState(prev => prev === 'none' ? 'up' : 'none');
+            }
         }
 
         // Horizontal Swipe
@@ -166,16 +267,33 @@ export default function Session() {
     };
 
     const handlePracticeAnswer = (isCorrect) => {
+        if (isTransitioning || currentIndex >= words.length) return;
+        setIsTransitioning(true);
+
         const result = { word: currentWord.word, isCorrect };
         const newResults = [...sessionResults, result];
         setSessionResults(newResults);
 
         if (currentIndex >= words.length - 1) {
             const mode = location.state?.mode || 'new';
-            navigate('/summary', { state: { results: newResults, words, mode } });
+            // Reset transition state before navigating or state change to avoid stuckness
+            setTimeout(() => {
+                navigate('/summary', { state: { results: newResults, words, mode } });
+                setIsTransitioning(false);
+            }, 300);
         } else {
-            setCurrentIndex(prev => prev + 1);
-            setIsFlipped(false);
+            // Correct -> Slide Right (Inverted for practice flow), Wrong -> Slide Left
+            // Actually user said: "one card move to right" for learning, maybe they want the same for practice
+            // Let's stick to: Practice Wrong -> Left, Practice Correct -> Right
+            setAnimState(isCorrect ? 'exiting-right' : 'exiting-left');
+            setTimeout(() => {
+                setCurrentIndex(prev => prev + 1);
+                setFlipState('none');
+                setAnimState('idle');
+                setTimeout(() => {
+                    setIsTransitioning(false);
+                }, 300);
+            }, 300);
         }
     };
 
@@ -189,7 +307,7 @@ export default function Session() {
             } else {
                 if (e.code === 'Space') {
                     e.preventDefault();
-                    setIsFlipped(prev => !prev);
+                    if (!isTransitioning) setFlipState(prev => prev === 'none' ? 'up' : 'none');
                 }
                 if (e.key === 'd' || e.key === 'D') handlePracticeAnswer(true);
                 if (e.key === 'a' || e.key === 'A') handlePracticeAnswer(false);
@@ -197,14 +315,14 @@ export default function Session() {
         };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [phase, currentIndex, words, sessionResults, isFlipped]);
+    }, [phase, currentIndex, words, sessionResults, flipState, isTransitioning]);
 
     if (loading) return <Loading message="Preparing Session..." />;
     if (!currentWord) return (
         <div className="app-container">
             <div className="flashcard" style={{ height: 'auto', textAlign: 'center' }}>
                 <p style={{ fontWeight: 'bold' }}>No words loaded!</p>
-                <button className="nav-button" onClick={() => navigate('/dashboard')} style={{ width: 'auto', padding: '0 2rem', borderRadius: '12px', marginTop: '1rem' }}>Back to Dashboard</button>
+                <button className="nav-button" onClick={() => { playClick(); navigate('/dashboard'); }} style={{ width: 'auto', padding: '0 2rem', borderRadius: '12px', marginTop: '1rem' }}>Back to Dashboard</button>
             </div>
         </div>
     );
@@ -230,100 +348,39 @@ export default function Session() {
                 marginBottom: '2rem',
                 letterSpacing: '0.1em'
             }}>
-                {phase === 'learning' ? 'LEARNING MODE' : `PRACTICE: ${currentIndex + 1} / ${words.length}`}
+                {phase === 'learning' ? `LEARNING: ${currentIndex + 1} / ${words.length}` : `PRACTICE: ${currentIndex + 1} / ${words.length}`}
             </div>
 
-            <div key={currentIndex} className="animate-enter" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-
-                {/* KANJI BREAKDOWN */}
-                <div className="kanji-grid">
-                    {kanjiDetails.map((kanji) => {
-                        const isKanjiFlipped = phase === 'learning' || isFlipped;
-                        return (
-                            <div
-                                key={kanji.id}
-                                className={`kanji-card ${isKanjiFlipped ? 'flipped' : ''}`}
-                            >
-                                <div className="kanji-card-inner">
-                                    {/* Front: Character */}
-                                    <div className="kanji-card-front" style={{ background: 'var(--col-orange)' }}>
-                                        <h2 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--col-black)' }}>{kanji.kanji}</h2>
-                                    </div>
-
-                                    {/* Back: Info */}
-                                    <div className="kanji-card-back">
-                                        <div style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{kanji.kanji}</div>
-                                        <p className="kanji-desc" style={{ fontSize: '0.95rem', marginTop: '0.2rem', lineHeight: '1.2' }}>
-                                            {(kanji.description.split(' means ')[1] || kanji.description).split(';')[0].split('.')[0]}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
+            {phase === 'learning' ? (
+                <div key={currentIndex} className={
+                    animState === 'exiting-left' ? 'animate-exit-left' :
+                        animState === 'exiting-right' ? 'animate-exit-right' :
+                            animState === 'entering-left' ? 'animate-enter-left' :
+                                animState === 'entering-right' ? 'animate-enter-right' :
+                                    'animate-enter'
+                } style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    {renderCardContent(currentWord, kanjiDetails)}
                 </div>
-
-                {/* FLASHCARD */}
-                <div
-                    className={`flashcard ${phase === 'learning' || isFlipped ? 'flipped' : ''}`}
-                    onClick={() => {
-                        if (phase === 'practice') setIsFlipped(prev => !prev);
-                    }}
-                    onTouchStart={handleTouchStart}
-                    onTouchEnd={handleTouchEnd}
-                    style={{ cursor: phase === 'practice' ? 'pointer' : 'default', marginTop: '3.5rem' }}
-                >
-                    <div className="flashcard-inner">
-                        {/* FRONT FACE: The Question (Large Kanji) */}
-                        <div className="flashcard-front">
-                            <h1 style={{
-                                fontSize: 'clamp(4rem, 20vw, 8rem)',
-                                margin: 0,
-                                lineHeight: 1,
-                                fontWeight: '800'
-                            }}>
-                                {currentWord.word}
-                            </h1>
-                            {phase === 'practice' && (
-                                <div style={{
-                                    marginTop: '1.5rem',
-                                    color: 'var(--text-secondary)',
-                                    fontSize: '0.9rem',
-                                    fontWeight: 'bold'
-                                }}>
-                                    {windowWidth < 450 ? 'SWIPE UP TO FLIP' : 'CLICK OR SPACE TO FLIP'}
-                                </div>
-                            )}
+            ) : (
+                <div className="card-stack">
+                    {/* Next Card (Underneath) */}
+                    {currentIndex < words.length - 1 && (
+                        <div className="stacked-card next">
+                            {renderCardContent(words[currentIndex + 1], nextKanjiDetails, true)}
                         </div>
+                    )}
 
-                        {/* BACK FACE: The Answer (Detailed Info) */}
-                        <div className="flashcard-back">
-                            <h1 className="word-heading">
-                                {currentWord.word}
-                            </h1>
-
-                            <div style={{
-                                display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'
-                            }}>
-                                <div className="sub-heading">
-                                    <span>{currentWord.hiragana}</span>
-                                    <span className="divider"></span>
-                                    <span>{currentWord.romaji}</span>
-                                </div>
-
-                                <ul className="meanings-list">
-                                    {currentWord.meanings.slice(0, 2).map((meaning, idx) => (
-                                        <li key={idx} className="meaning-item">
-                                            {meaning}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
+                    {/* Current Card (Top) */}
+                    <div key={currentIndex} className={`stacked-card current ${animState === 'exiting-left' ? 'animate-exit-left' :
+                        animState === 'exiting-right' ? 'animate-exit-right' :
+                            animState === 'entering-left' ? 'animate-enter-left' :
+                                animState === 'entering-right' ? 'animate-enter-right' :
+                                    'animate-practice-reveal'
+                        }`}>
+                        {renderCardContent(currentWord, kanjiDetails)}
                     </div>
                 </div>
-
-            </div>
+            )}
 
             {/* STATIC CONTROLS */}
             {phase === 'learning' && (

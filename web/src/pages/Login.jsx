@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
+import clickSound from '../assets/click-sound.mp3';
 
 export default function Login() {
     const [initials, setInitials] = useState('');
@@ -9,8 +10,14 @@ export default function Login() {
     const { login } = useContext(UserContext);
     const navigate = useNavigate();
 
+    const playClick = () => {
+        const audio = new Audio(clickSound);
+        audio.currentTime = 0.55;
+        audio.play().catch(e => console.error("Audio play failed:", e));
+    };
     const handleCheck = async (e) => {
         e.preventDefault();
+        playClick();
         if (initials.length !== 3) return;
         setStatus('checking');
 
@@ -132,7 +139,10 @@ export default function Login() {
 
                         <div style={{ display: 'flex', gap: '1rem' }}>
                             <button
-                                onClick={reset}
+                                onClick={() => {
+                                    playClick();
+                                    reset();
+                                }}
                                 className="nav-button"
                                 disabled={status === 'logging_in'}
                                 style={{ borderRadius: '12px', width: 'auto', padding: '0 1rem', fontSize: '1rem', height: '50px', opacity: status === 'logging_in' ? 0.5 : 1 }}
@@ -141,6 +151,7 @@ export default function Login() {
                             </button>
                             <button
                                 onClick={async () => {
+                                    playClick();
                                     setStatus('logging_in');
                                     await handleLogin();
                                 }}

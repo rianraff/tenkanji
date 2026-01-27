@@ -3,11 +3,18 @@ import Loading from '../components/Loading';
 import { UserContext } from '../context/UserContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Check, X } from 'lucide-react';
+import clickSound from '../assets/click-sound.mp3';
 
 export default function Summary() {
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
     const location = useLocation();
+
+    const playClick = () => {
+        const audio = new Audio(clickSound);
+        audio.currentTime = 0.55;
+        audio.play().catch(e => console.error("Audio play failed:", e));
+    };
 
     const { results, words, mode } = location.state || { results: [], words: [], mode: 'new' };
     const [saving, setSaving] = useState(false);
@@ -198,7 +205,10 @@ export default function Summary() {
                     {!isPerfect && (
                         <button
                             className="see-more-btn"
-                            onClick={handleRetry}
+                            onClick={() => {
+                                playClick();
+                                handleRetry();
+                            }}
                             style={{
                                 background: '#ffe4e6',
                                 borderColor: 'var(--col-black)',
@@ -215,7 +225,10 @@ export default function Summary() {
                     {isPerfect ? (
                         <>
                             <button
-                                onClick={handleFinish}
+                                onClick={() => {
+                                    playClick();
+                                    handleFinish();
+                                }}
                                 className="see-more-btn"
                                 style={{
                                     borderRadius: '999px',
@@ -232,7 +245,10 @@ export default function Summary() {
                                 Dashboard
                             </button>
                             <button
-                                onClick={saveAndNext}
+                                onClick={() => {
+                                    playClick();
+                                    saveAndNext();
+                                }}
                                 className="see-more-btn"
                                 style={{
                                     marginTop: 0,
@@ -253,7 +269,10 @@ export default function Summary() {
                         </>
                     ) : (
                         <button
-                            onClick={handleFinish}
+                            onClick={() => {
+                                playClick();
+                                handleFinish();
+                            }}
                             className="see-more-btn"
                             style={{
                                 width: '100%',

@@ -3,16 +3,23 @@ import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { BookOpen, RotateCcw, Calendar, Flame } from 'lucide-react';
 import Loading from '../components/Loading';
+import clickSound from '../assets/click-sound.mp3';
 
 export default function Dashboard() {
     const { user, logout, updateSettings } = useContext(UserContext);
     const navigate = useNavigate();
-    const [mode, setMode] = useState('new'); // 'new' | 'review'
+    const [mode, setMode] = useState(null); // null | 'new' | 'review'
     const [masteredCount, setMasteredCount] = useState(0);
     const [loadingStats, setLoadingStats] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
     const [dailyCompleted, setDailyCompleted] = useState(false);
     const [streak, setStreak] = useState(0);
+
+    const playClick = () => {
+        const audio = new Audio(clickSound);
+        audio.currentTime = 0.55; // Skip initial silence
+        audio.play().catch(e => console.error("Audio play failed:", e));
+    };
 
     // Forced chunk size 10 per requirements
     const chunkSize = 10;
@@ -56,6 +63,7 @@ export default function Dashboard() {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => {
+                    playClick();
                     logout();
                     navigate('/');
                 }}
@@ -98,7 +106,7 @@ export default function Dashboard() {
             }}>
                 {/* Controls Container */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%' }}>
-                    <p style={{ margin: 0, fontWeight: '800', fontSize: '1.2rem', textTransform: 'uppercase' }}>Session Controls</p>
+                    <p style={{ margin: 0, fontWeight: '800', fontSize: '1.2rem', textTransform: 'uppercase' }}>Modes</p>
 
                     <div style={{
                         display: 'flex',
@@ -108,7 +116,10 @@ export default function Dashboard() {
                         {/* Mode Selectors */}
                         <div style={{ flex: 2, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             <button
-                                onClick={() => setMode('new')}
+                                onClick={() => {
+                                    playClick();
+                                    setMode('new');
+                                }}
                                 style={{
                                     flex: 1,
                                     padding: '1rem',
@@ -129,7 +140,10 @@ export default function Dashboard() {
                                 <BookOpen size={20} /> NEW WORDS
                             </button>
                             <button
-                                onClick={() => setMode('review')}
+                                onClick={() => {
+                                    playClick();
+                                    setMode('review');
+                                }}
                                 disabled={masteredCount === 0}
                                 style={{
                                     flex: 1,
@@ -157,7 +171,9 @@ export default function Dashboard() {
                         {/* Start Button */}
                         <button
                             className="see-more-btn"
+                            disabled={!mode}
                             onClick={() => {
+                                playClick();
                                 updateSettings(10);
                                 navigate('/session', {
                                     state: {
@@ -172,27 +188,36 @@ export default function Dashboard() {
                                 height: '100%',
                                 padding: '0.5rem',
                                 marginTop: 0,
-                                fontSize: 'clamp(1.5rem, 5vw, 2rem)',
+                                fontSize: 'clamp(1.2rem, 4vw, 1.8rem)',
                                 borderRadius: '12px',
-                                boxShadow: '4px 4px 0px 0px var(--col-black)',
+                                boxShadow: !mode ? 'none' : '4px 4px 0px 0px var(--col-black)',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
                                 alignItems: 'center',
                                 gap: '0.2rem',
-                                background: 'var(--col-black)',
-                                color: 'var(--col-white)'
+                                background: !mode ? '#94a3b8' : '#14213d',
+                                color: 'var(--col-white)',
+                                cursor: !mode ? 'not-allowed' : 'pointer',
+                                opacity: !mode ? 0.7 : 1,
+                                transition: 'all 0.3s ease',
+                                border: '2px solid var(--col-black)'
                             }}
                         >
-                            <span>START</span>
-                            <span style={{ fontSize: 'clamp(0.65rem, 2.5vw, 0.9rem)', fontWeight: 'normal' }}>{mode === 'new' ? 'NEW WORDS' : 'FLASHBACK'}</span>
+                            <span style={{ fontWeight: '800' }}>START</span>
+                            <span style={{ fontSize: 'clamp(0.6rem, 2vw, 0.8rem)', fontWeight: 'bold' }}>
+                                {mode === 'new' ? 'NEW WORDS' : mode === 'review' ? 'FLASHBACK' : 'SELECT MODE'}
+                            </span>
                         </button>
                     </div>
 
                     <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                         <p style={{ margin: 0, fontWeight: '800', fontSize: '1.2rem', textTransform: 'uppercase' }}>Daily Challenge</p>
                         <button
-                            onClick={() => navigate('/ten-kanji', { state: { fromDashboard: true } })}
+                            onClick={() => {
+                                playClick();
+                                navigate('/ten-kanji', { state: { fromDashboard: true } });
+                            }}
                             style={{
                                 width: '100%',
                                 height: 'clamp(60px, 15vw, 80px)',
@@ -221,6 +246,6 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 }

@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: kanji-backend
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: npm run dev
+    environment:
+      - PORT=3000
+    env_file:
+      - .env
+    restart: always
+
+  frontend:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      target: builder
+    container_name: kanji-frontend
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    ports:
+      - "8080:5173"
+    command: npm run dev
+    depends_on:
+      - backend
+    restart: always

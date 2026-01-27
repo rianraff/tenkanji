@@ -85,7 +85,7 @@
 /* Flashcard */
 /* Flashcard Container (Perspective) */
 .flashcard {
-  width: 500px;
+  width: 600px;
   height: 275px;
   perspective: 1000px;
   /* Essential for 3D effect */
@@ -116,8 +116,12 @@
 /* REMOVED: .flashcard:hover { transform: translateY(-4px); } - Per user request for dashboard stability */
 
 /* JS toggles this class to flip */
-.flashcard.flipped .flashcard-inner {
-  transform: rotateY(180deg);
+.flashcard.flipped-up .flashcard-inner {
+  transform: rotateX(180deg);
+}
+
+.flashcard.flipped-down .flashcard-inner {
+  transform: rotateX(-180deg);
 }
 
 /* Common Face Styles */
@@ -141,9 +145,8 @@
   overflow: hidden;
 }
 
-/* Back: The "Answer" - Details */
 .flashcard-back {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
   /* Facing away initially */
 }
 
@@ -303,12 +306,48 @@
 @keyframes slide-in-right {
   0% {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(100vw);
   }
 
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes slide-out-left {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-100vw);
   }
 }
 
@@ -326,6 +365,76 @@
 
 .animate-enter {
   animation: scale-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-practice-reveal {
+  animation: practice-reveal 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes practice-reveal {
+  0% {
+    opacity: 0.5;
+    transform: translateY(20px) scale(0.92);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-enter-right {
+  animation: slide-in-right 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-enter-left {
+  animation: slide-in-left 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-exit-right {
+  animation: slide-out-right 0.3s cubic-bezier(0.5, 0, 1, 0.5) forwards;
+}
+
+.animate-exit-left {
+  animation: slide-out-left 0.3s cubic-bezier(0.5, 0, 1, 0.5) forwards;
+}
+
+/* Practice Stack Styles */
+.card-stack {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.stacked-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+}
+
+.stacked-card.next {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px) scale(0.92);
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.stacked-card.current {
+  position: relative;
+  z-index: 2;
+}
+
+.stacked-card.next .flashcard-inner {
+  box-shadow: none;
+  /* Next card has less prominence */
 }
 
 /* Kanji Card Flip */
@@ -359,8 +468,20 @@
   box-shadow: var(--shadow-hover);
 }
 
-.kanji-card.flipped .kanji-card-inner {
-  transform: rotateY(180deg);
+.kanji-card.k-flipped-up .kanji-card-inner {
+  transform: rotateX(180deg);
+}
+
+.kanji-card.k-flipped-down .kanji-card-inner {
+  transform: rotateX(-180deg);
+}
+
+.kanji-card.k-flipped-up:hover .kanji-card-inner {
+  transform: translateY(-2px) rotateX(180deg);
+}
+
+.kanji-card.k-flipped-down:hover .kanji-card-inner {
+  transform: translateY(-2px) rotateX(-180deg);
 }
 
 .kanji-card-front,
@@ -383,7 +504,7 @@
 }
 
 .kanji-card-back {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
   background: var(--col-white);
   overflow-y: auto;
   /* Allow scrolling for long descriptions if needed */

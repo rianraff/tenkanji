@@ -75,3 +75,19 @@ npm run dev
 ## 📦 Deployment
 The project is configured for **Vercel**.
 - `vercel.json` handles the routing, directing `/api` requests to the backend and other requests to the frontend.
+
+### 5. Running with Docker 🐳
+
+To run the entire application (frontend + backend) using Docker:
+
+1.  Ensure you have Docker and Docker Compose installed.
+2.  Make sure your `.env` file is set up with valid Supabase credentials.
+3.  Run the following command:
+
+```bash
+docker-compose up --build
+```
+
+-   **Frontend:** http://localhost:8080
+-   **Backend:** http://localhost:3000
+
