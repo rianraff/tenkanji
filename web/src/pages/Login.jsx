@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
     const [initials, setInitials] = useState('');
-    const [status, setStatus] = useState('idle'); // idle, checking, confirm_login, confirm_register
+    const [status, setStatus] = useState('idle'); // idle, checking, confirm_login, confirm_register, logging_in
+    const [userExists, setUserExists] = useState(false);
     const { login } = useContext(UserContext);
     const navigate = useNavigate();
 
@@ -16,8 +17,10 @@ export default function Login() {
         try {
             const res = await fetch(`/api/user/${initials}`);
             if (res.ok) {
+                setUserExists(true);
                 setStatus('confirm_login'); // User exists
             } else if (res.status === 404) {
+                setUserExists(false);
                 setStatus('confirm_register'); // User does not exist
             } else {
                 alert('Error checking user');
@@ -37,6 +40,7 @@ export default function Login() {
     const reset = () => {
         setStatus('idle');
         setInitials('');
+        setUserExists(false);
     };
 
     return (
@@ -57,8 +61,8 @@ export default function Login() {
                 {status === 'idle' || status === 'checking' ? (
                     <form onSubmit={handleCheck} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center', width: '100%' }}>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%', alignItems: 'center' }}>
-                            <label style={{ fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
-                                Enter 3 Initials
+                            <label style={{ fontSize: '0.8rem', fontWeight: 'bold', color: 'var(--text-secondary)' }}>
+                                Characters that represent you. Anything, really.
                             </label>
                             <input
                                 type="text"
@@ -117,12 +121,12 @@ export default function Login() {
                     </form>
                 ) : (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%', animation: 'scale-in 0.2s ease' }}>
-                        <div style={{ padding: '1rem', background: status === 'confirm_login' ? '#dcfce7' : '#fff7ed', border: '2px solid var(--col-black)', borderRadius: '12px', textAlign: 'center' }}>
+                        <div style={{ padding: '1rem', background: userExists ? '#dcfce7' : '#fff7ed', border: '2px solid var(--col-black)', borderRadius: '12px', textAlign: 'center' }}>
                             <p style={{ margin: 0, fontWeight: 'bold', fontSize: '1.1rem' }}>
-                                {status === 'confirm_login' ? `Welcome back, ${initials}!` : `New Account: ${initials}`}
+                                {userExists ? `Welcome back, ${initials}!` : `New Account: ${initials}`}
                             </p>
                             <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem' }}>
-                                {status === 'confirm_login' ? 'This account already exists.' : 'This account is available.'}
+                                {userExists ? 'This account already exists.' : 'This account is available.'}
                             </p>
                         </div>
 
@@ -146,9 +150,9 @@ export default function Login() {
                                     flex: 1,
                                     marginTop: 0,
                                     fontSize: '1.2rem',
-                                    background: status === 'confirm_login' ? '#22c55e' : 'var(--col-orange)',
+                                    background: userExists ? '#22c55e' : 'var(--col-orange)',
                                     border: '2px solid var(--col-black)',
-                                    color: status === 'confirm_login' ? 'white' : 'black',
+                                    color: userExists ? 'white' : 'black',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
@@ -162,7 +166,7 @@ export default function Login() {
                                         STARTING...
                                     </>
                                 ) : (
-                                    status === 'confirm_login' ? 'Login' : 'Create & Start'
+                                    userExists ? 'Login' : 'Create & Start'
                                 )}
                             </button>
                         </div>

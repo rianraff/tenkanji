@@ -17,9 +17,11 @@ export default function TenKanji() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [phase, setPhase] = useState('learning'); // 'learning' | 'practice' | 'complete'
     const [isFlipped, setIsFlipped] = useState(false);
+    const [sessionResults, setSessionResults] = useState([]); // [{ word: '...', isCorrect: true }]
     const [dailyDate, setDailyDate] = useState('');
     const [touchStartX, setTouchStartX] = useState(null);
     const [touchStartY, setTouchStartY] = useState(null);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     // Load Daily Words
     useEffect(() => {
@@ -31,16 +33,23 @@ export default function TenKanji() {
                 if (!res.ok) throw new Error('Failed to fetch daily words');
                 const data = await res.json();
 
-                // Filter out words without kanji breakdown
-                const filtered = data.chunk.filter(wordObj => {
-                    if (!wordObj.word) return false;
-                    return wordObj.word.split('').some(char =>
-                        kanjiData.some(k => k.kanji === char)
-                    );
-                });
+                if (data.completed && data.completedData) {
+                    setSessionResults(data.completedData.results || []);
+                    setPhase('complete');
+                    setDailyDate(data.date);
+                    setWords(data.chunk || []);
+                } else {
+                    // Filter out words without kanji breakdown
+                    const filtered = data.chunk.filter(wordObj => {
+                        if (!wordObj.word) return false;
+                        return wordObj.word.split('').some(char =>
+                            kanjiData.some(k => k.kanji === char)
+                        );
+                    });
 
-                setWords(filtered);
-                setDailyDate(data.date);
+                    setWords(filtered);
+                    setDailyDate(data.date);
+                }
             } catch (err) {
                 console.error(err);
             } finally {
@@ -50,6 +59,13 @@ export default function TenKanji() {
 
         fetchDaily();
     }, [user]);
+
+    // Window Resize Listener
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     // Derived State
     const currentWord = words[currentIndex];
@@ -80,6 +96,9 @@ export default function TenKanji() {
     };
 
     const startPractice = () => {
+        // Shuffle words for practice session
+        const shuffled = [...words].sort(() => Math.random() - 0.5);
+        setWords(shuffled);
         setPhase('practice');
         setCurrentIndex(0);
         setIsFlipped(false);
@@ -98,17 +117,19 @@ export default function TenKanji() {
         const diffX = touchStartX - touchEndX;
         const diffY = touchStartY - touchEndY;
 
-        // Vertical Swipe (Practice Mode)
-        if (phase === 'practice' && diffY > 50 && Math.abs(diffX) < 50) {
+        // Vertical Swipe -> Flip (Practice Mode)
+        if (phase === 'practice' && Math.abs(diffY) > 50 && Math.abs(diffX) < 50) {
             setIsFlipped(prev => !prev);
         }
 
-        // Horizontal Swipe (Learning Mode)
-        if (phase === 'learning' && Math.abs(diffX) > 50) {
-            if (diffX > 0) {
-                handleNext();
-            } else {
-                handlePrev();
+        // Horizontal Swipe
+        if (Math.abs(diffX) > 50 && Math.abs(diffY) < 50) {
+            if (phase === 'learning') {
+                if (diffX > 0) handleNext(); // Left swipe -> Next
+                else handlePrev(); // Right swipe -> Previous
+            } else if (phase === 'practice') {
+                if (diffX > 0) handlePracticeAnswer(false); // Left swipe -> Wrong
+                else handlePracticeAnswer(true); // Right swipe -> Correct
             }
         }
 
@@ -123,12 +144,37 @@ export default function TenKanji() {
 
         if (currentIndex >= words.length - 1) {
             setPhase('complete');
-            // Save progress to backend
+            const score = newResults.filter(r => r.isCorrect).length;
+
+            // Save word-by-word progress
             fetch('/api/progress', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ initials: user.initials, results: newResults })
-            });
+            }).catch(err => console.error('Failed to save progress:', err));
+
+            // Mark daily challenge as complete
+            const recordCompletion = async () => {
+                try {
+                    const res = await fetch('/api/daily/complete', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            initials: user.initials,
+                            score: score,
+                            results: newResults
+                        })
+                    });
+                    if (!res.ok) {
+                        const errorData = await res.json();
+                        console.error('Failed to record daily challenge:', errorData);
+                        alert(`Warning: Could not save daily challenge result. ${errorData.error || ''}`);
+                    }
+                } catch (err) {
+                    console.error('Network error recording daily challenge:', err);
+                }
+            };
+            recordCompletion();
         } else {
             setCurrentIndex(prev => prev + 1);
             setIsFlipped(false);
@@ -189,111 +235,116 @@ export default function TenKanji() {
         const streak = 1; // Placeholder for future streak logic
 
         return (
-            <div className="app-container" style={{ textAlign: 'center', background: 'linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)' }}>
+            <div className="app-container" style={{ textAlign: 'center', background: 'linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)', padding: '1rem' }}>
                 <div className="animate-enter" style={{
                     background: 'white',
-                    padding: '3rem',
+                    padding: 'clamp(1rem, 3vw, 2rem)',
                     borderRadius: '24px',
                     border: '4px solid var(--col-black)',
                     boxShadow: '8px 8px 0px 0px var(--col-black)',
                     maxWidth: '500px',
-                    width: '90%',
+                    width: '100%',
+                    height: 'min(800px, 85vh)',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    gap: '1.5rem',
+                    gap: 'clamp(0.5rem, 2vw, 1rem)',
                     position: 'relative',
-                    overflow: 'hidden'
+                    overflow: 'hidden',
+                    boxSizing: 'border-box'
                 }}>
                     <div style={{
                         position: 'absolute',
                         top: 0,
                         left: 0,
                         right: 0,
-                        height: '8px',
+                        height: '6px',
                         background: 'linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff)',
                         backgroundSize: '200% 100%',
-                        animation: 'gradient-move 3s linear infinite'
+                        animation: 'gradient-move 3s linear infinite',
+                        zIndex: 10
                     }} />
 
-                    <Trophy size={64} color="var(--col-orange)" />
-
-                    <h1 style={{ fontSize: '3rem', margin: 0, fontFamily: 'Noto Sans JP' }}>お疲れ様！</h1>
-                    <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', fontWeight: 'bold', margin: 0 }}>
-                        DAILY TENKANJI COMPLETED
-                    </p>
-
-                    <div style={{ display: 'flex', gap: '2rem', margin: '1rem 0' }}>
-                        <div style={{ textAlign: 'center' }}>
-                            <div style={{ fontSize: '2rem', fontWeight: '800' }}>{score}/10</div>
-                            <div style={{ fontSize: '0.8rem', fontWeight: 'bold', opacity: 0.6 }}>SCORE</div>
-                        </div>
-                        <div style={{ width: '2px', background: 'var(--col-gray)' }} />
-                        <div style={{ textAlign: 'center' }}>
-                            <div style={{ fontSize: '2rem', fontWeight: '800' }}>{streak}</div>
-                            <div style={{ fontSize: '0.8rem', fontWeight: 'bold', opacity: 0.6 }}>STREAK</div>
-                        </div>
+                    <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.3rem', marginTop: '0rem' }}>
+                        <p style={{ margin: '0 0 0.3rem 0', fontSize: '0.8rem', fontWeight: 'bold', color: 'var(--text-secondary)', letterSpacing: '0.05em' }}>
+                            {dailyDate}
+                        </p>
+                        <Trophy size={windowWidth < 450 ? 50 : 70} color="var(--col-orange)" />
+                        <h1 style={{ fontSize: 'clamp(1.8rem, 7vw, 2.5rem)', margin: 0, fontFamily: 'Noto Sans JP' }}>お疲れ様！</h1>
                     </div>
 
                     <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(5, 1fr)',
-                        gap: '0.75rem',
-                        padding: '1.5rem',
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        justifyContent: 'center',
+                        gap: 'clamp(0.5rem, 1.5vw, 0.8rem)',
+                        padding: '1rem',
                         background: '#f9fafb',
                         borderRadius: '16px',
-                        border: '2px solid var(--col-gray)'
+                        border: '2px solid var(--col-gray)',
+                        width: '100%',
+                        boxSizing: 'border-box',
+                        overflowY: 'auto',
+                        flex: 1,
+                        alignContent: 'start'
                     }}>
                         {sessionResults.map((res, i) => (
                             <div key={i} style={{
-                                width: '45px',
-                                height: '45px',
-                                background: res.isCorrect ? '#22c55e' : '#ef4444',
+                                width: 'clamp(6rem, 20vw, 5rem)',
+                                height: 'clamp(3rem, 10vw, 2.5rem)',
+                                flex: '0 0 auto',
+                                background: 'white',
                                 borderRadius: '10px',
-                                border: '2px solid var(--col-black)',
-                                boxShadow: '2px 2px 0px 0px var(--col-black)',
+                                border: `2px solid ${res.isCorrect ? '#22c55e' : '#ef4444'}`,
+                                color: res.isCorrect ? '#22c55e' : '#ef4444',
+                                boxShadow: `3px 3px 0px 0px ${res.isCorrect ? '#16a34a' : '#dc2626'}`,
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                color: 'white',
-                                fontWeight: '900',
-                                fontSize: '1.2rem'
+                                fontWeight: '750',
+                                fontSize: 'clamp(0.8rem, 3.5vw, 1.2rem)',
+                                padding: '0.5rem',
+                                boxSizing: 'border-box',
+                                textAlign: 'center'
                             }}>
-                                {res.isCorrect ? '✓' : '✗'}
+                                {res.word}
                             </div>
                         ))}
                     </div>
 
-                    <button
-                        className="see-more-btn"
-                        onClick={handleShare}
-                        style={{
-                            width: '100%',
-                            height: '60px',
-                            fontSize: '1.2rem',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '0.75rem',
-                            marginTop: '1rem'
-                        }}
-                    >
-                        <Share2 size={24} /> SHARE RESULTS
-                    </button>
+                    <div style={{ width: '100%', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.5rem' }}>
+                        <button
+                            className="see-more-btn"
+                            onClick={handleShare}
+                            style={{
+                                width: '100%',
+                                height: '50px',
+                                fontSize: '1rem',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '0.75rem',
+                                margin: 0
+                            }}
+                        >
+                            <Share2 size={20} /> SHARE RESULTS
+                        </button>
 
-                    <button
-                        onClick={() => navigate('/dashboard')}
-                        style={{
-                            background: 'transparent',
-                            border: 'none',
-                            textDecoration: 'underline',
-                            cursor: 'pointer',
-                            fontWeight: 'bold',
-                            color: 'var(--text-secondary)'
-                        }}
-                    >
-                        Back to Dashboard
-                    </button>
+                        <button
+                            onClick={() => navigate('/dashboard')}
+                            style={{
+                                background: 'transparent',
+                                border: 'none',
+                                textDecoration: 'underline',
+                                cursor: 'pointer',
+                                fontWeight: 'bold',
+                                color: 'var(--text-secondary)',
+                                padding: '0.5rem'
+                            }}
+                        >
+                            Back to Dashboard
+                        </button>
+                    </div>
                 </div>
 
                 <style>{`
@@ -307,8 +358,24 @@ export default function TenKanji() {
     }
 
     return (
-        <div className="app-container">
-            <div key={currentIndex} className="animate-enter" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div className="app-container" style={{ padding: '1rem', overflowY: 'auto', justifyContent: 'center' }}>
+            {/* Header / Progress */}
+            <div style={{
+                position: 'absolute',
+                top: '2rem',
+                right: '1rem',
+                left: '1rem',
+                display: 'flex',
+                justifyContent: 'center',
+                color: 'var(--text-secondary)',
+                fontWeight: 'bold',
+                fontSize: '0.8rem',
+                zIndex: 20
+            }}>
+                {phase === 'learning' ? 'LEARNING MODE' : `DAILY PROGRESS: ${currentIndex + 1} / ${words.length}`}
+            </div>
+
+            <div key={currentIndex} className="animate-enter" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '2rem' }}>
                 <div
                     className={`flashcard ${phase === 'learning' || isFlipped ? 'flipped' : ''}`}
                     onClick={() => {
@@ -320,42 +387,44 @@ export default function TenKanji() {
                 >
                     <div className="flashcard-inner">
                         <div className="flashcard-front">
-                            <h1 className="main-kanji-display" style={{ fontSize: '8rem', margin: 0, fontWeight: '800' }}>{currentWord.word}</h1>
+                            <h1 style={{ fontSize: 'clamp(4rem, 20vw, 8rem)', margin: 0, fontWeight: '800', lineHeight: 1 }}>{currentWord.word}</h1>
                             {phase === 'practice' && (
                                 <div style={{ marginTop: '1.5rem', color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: 'bold' }}>
-                                    CLICK TO FLIP
+                                    {windowWidth < 450 ? 'SWIPE UP TO FLIP' : 'CLICK OR SPACE TO FLIP'}
                                 </div>
                             )}
                         </div>
 
                         <div className="flashcard-back">
                             <h1 className="word-heading">{currentWord.word}</h1>
-                            <div className="sub-heading">
-                                <span>{currentWord.hiragana}</span>
-                                <span className="divider"></span>
-                                <span>{currentWord.romaji}</span>
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+                                <div className="sub-heading">
+                                    <span>{currentWord.hiragana}</span>
+                                    <span className="divider"></span>
+                                    <span>{currentWord.romaji}</span>
+                                </div>
+                                <ul className="meanings-list">
+                                    {currentWord.meanings.slice(0, 2).map((meaning, idx) => (
+                                        <li key={idx} className="meaning-item">{meaning}</li>
+                                    ))}
+                                </ul>
                             </div>
-                            <ul className="meanings-list">
-                                {currentWord.meanings.slice(0, 2).map((meaning, idx) => (
-                                    <li key={idx} className="meaning-item">{meaning}</li>
-                                ))}
-                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <div className="kanji-grid" style={{ marginTop: '1.5rem' }}>
+                <div className="kanji-grid" style={{ marginTop: '3.5rem' }}>
                     {kanjiDetails.map((kanji) => {
                         const isKanjiFlipped = phase === 'learning' || isFlipped;
                         return (
                             <div key={kanji.id} className={`kanji-card ${isKanjiFlipped ? 'flipped' : ''}`}>
                                 <div className="kanji-card-inner">
                                     <div className="kanji-card-front" style={{ background: 'var(--col-orange)' }}>
-                                        <h2 style={{ fontSize: '4.5rem', margin: 0 }}>{kanji.kanji}</h2>
+                                        <h2 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--col-black)' }}>{kanji.kanji}</h2>
                                     </div>
                                     <div className="kanji-card-back">
                                         <div style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{kanji.kanji}</div>
-                                        <p className="kanji-desc" style={{ fontSize: '0.95rem', marginTop: '0.2rem' }}>
+                                        <p className="kanji-desc" style={{ fontSize: '0.95rem', marginTop: '0.2rem', lineHeight: '1.2' }}>
                                             {kanji.description.split(' means ')[1]?.split('.')[0] || kanji.description}
                                         </p>
                                     </div>
@@ -377,56 +446,44 @@ export default function TenKanji() {
                 maxWidth: '500px'
             }}>
                 {phase === 'learning' ? (
-                    <>
-                        <div style={{ display: 'flex', gap: '1rem', width: '100%' }}>
-                            <button
-                                className="nav-button"
-                                onClick={handlePrev}
-                                disabled={currentIndex === 0}
-                                style={{ flex: 1, opacity: currentIndex === 0 ? 0.4 : 1, borderRadius: '12px' }}
-                            >
-                                <ChevronLeft /> PREV
-                            </button>
-                            <button
-                                className="nav-button"
-                                onClick={handleNext}
-                                disabled={currentIndex === words.length - 1}
-                                style={{ flex: 1, opacity: currentIndex === words.length - 1 ? 0.4 : 1, borderRadius: '12px' }}
-                            >
-                                NEXT <ChevronRight />
-                            </button>
-                        </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
                         <button
                             className="see-more-btn"
                             onClick={startPractice}
                             disabled={currentIndex !== words.length - 1}
                             style={{
-                                width: '100%',
+                                width: 'auto',
+                                padding: '0.75rem 2rem',
                                 opacity: currentIndex === words.length - 1 ? 1 : 0.5,
                                 cursor: currentIndex === words.length - 1 ? 'pointer' : 'not-allowed',
                                 filter: currentIndex === words.length - 1 ? 'none' : 'grayscale(1)',
-                                transition: 'all 0.3s ease'
+                                transition: 'all 0.3s ease',
+                                fontSize: '1.2rem'
                             }}
                         >
-                            START PRACTICE
+                            Start Practice Mode
                         </button>
-                    </>
+                        <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 'bold' }}>
+                            {windowWidth < 450 ? 'SWIPE LEFT/RIGHT TO NAVIGATE' : 'USE KEYS A/D OR ARROWS TO NAVIGATE'}
+                        </p>
+                    </div>
                 ) : (
-                    <div style={{ display: 'flex', gap: '1rem', width: '100%' }}>
-                        <button
-                            className="nav-button"
-                            onClick={() => handlePracticeAnswer(false)}
-                            style={{ flex: 1, background: '#fee2e2', color: '#ef4444', borderRadius: '12px' }}
-                        >
-                            <X /> WRONG
-                        </button>
-                        <button
-                            className="nav-button"
-                            onClick={() => handlePracticeAnswer(true)}
-                            style={{ flex: 1, background: '#dcfce7', color: '#22c55e', borderRadius: '12px' }}
-                        >
-                            <Check /> CORRECT
-                        </button>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', width: '100%', padding: '0 1rem' }}>
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            gap: '0.8rem',
+                            fontSize: '0.9rem',
+                            fontWeight: 'bold',
+                            color: 'var(--text-secondary)',
+                            textAlign: 'center'
+                        }}>
+                            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                                <span><span style={{ color: '#ef4444' }}>{windowWidth < 450 ? '← SWIPE LEFT' : 'KEY A / ←'}</span> : WRONG</span>
+                                <span><span style={{ color: '#22c55e' }}>{windowWidth < 450 ? 'SWIPE RIGHT →' : 'KEY D / →'}</span> : CORRECT</span>
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext, useMemo } from 'react';
 import { UserContext } from '../context/UserContext';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, RotateCw, Check, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, RotateCw, Check, X, ArrowLeft, ArrowRight } from 'lucide-react';
 import Loading from '../components/Loading';
 import kanjiDataRaw from '../data/jlpt-kanji.json';
 
@@ -23,6 +23,7 @@ export default function Session() {
     const [sessionResults, setSessionResults] = useState([]); // [{ word: '...', isCorrect: true }]
     const [touchStartX, setTouchStartX] = useState(null);
     const [touchStartY, setTouchStartY] = useState(null);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     // Load Words on Mount
     useEffect(() => {
@@ -77,6 +78,12 @@ export default function Session() {
 
         fetchWords();
     }, [user, location.state]);
+    // Window Resize Listener
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     // Derived State
     const currentWord = words[currentIndex];
@@ -95,13 +102,17 @@ export default function Session() {
 
     // Handlers
     const handleNext = () => {
-        setCurrentIndex((prev) => (prev + 1) % words.length);
-        setIsFlipped(false);
+        if (currentIndex < words.length - 1) {
+            setCurrentIndex((prev) => prev + 1);
+            setIsFlipped(false);
+        }
     };
 
     const handlePrev = () => {
-        setCurrentIndex((prev) => (prev - 1 + words.length) % words.length);
-        setIsFlipped(false);
+        if (currentIndex > 0) {
+            setCurrentIndex((prev) => prev - 1);
+            setIsFlipped(false);
+        }
     };
 
     const startPractice = () => {
@@ -127,17 +138,19 @@ export default function Session() {
         const diffX = touchStartX - touchEndX;
         const diffY = touchStartY - touchEndY;
 
-        // Vertical Swipe (Practice Mode)
-        if (phase === 'practice' && diffY > 50 && Math.abs(diffX) < 50) {
+        // Vertical Swipe -> Flip (Practice Mode)
+        if (phase === 'practice' && Math.abs(diffY) > 50 && Math.abs(diffX) < 50) {
             setIsFlipped(prev => !prev);
         }
 
-        // Horizontal Swipe (Learning Mode)
-        if (phase === 'learning' && Math.abs(diffX) > 50) {
-            if (diffX > 0) {
-                handleNext();
-            } else {
-                handlePrev();
+        // Horizontal Swipe
+        if (Math.abs(diffX) > 50 && Math.abs(diffY) < 50) {
+            if (phase === 'learning') {
+                if (diffX > 0) handleNext(); // Left swipe -> Next
+                else handlePrev(); // Right swipe -> Previous
+            } else if (phase === 'practice') {
+                if (diffX > 0) handlePracticeAnswer(false); // Left swipe -> Wrong
+                else handlePracticeAnswer(true); // Right swipe -> Correct
             }
         }
 
@@ -165,7 +178,7 @@ export default function Session() {
             if (phase === 'learning') {
                 if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') handleNext();
                 if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') handlePrev();
-                if (e.key === ' ') startPractice();
+                if (e.key === ' ' && currentIndex === words.length - 1) startPractice();
             } else {
                 if (e.code === 'Space') {
                     e.preventDefault();
@@ -190,19 +203,25 @@ export default function Session() {
     );
 
     return (
-        <div className="app-container" style={{ padding: '1rem', overflowY: 'auto', justifyContent: 'center' }}>
-            {/* Header / Progress */}
+        <div className="app-container" style={{
+            padding: '4rem 1.5rem',
+            overflowY: 'auto',
+            justifyContent: 'flex-start',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        }}>
+            {/* Header / Progress - Now part of the flow */}
             <div style={{
-                position: 'absolute',
-                top: '2rem',
-                right: '1rem',
-                left: '1rem',
+                width: '100%',
+                maxWidth: '800px',
                 display: 'flex',
                 justifyContent: 'center',
                 color: 'var(--text-secondary)',
                 fontWeight: 'bold',
-                fontSize: '0.8rem',
-                zIndex: 20
+                fontSize: '0.9rem',
+                marginBottom: '2rem',
+                letterSpacing: '0.1em'
             }}>
                 {phase === 'learning' ? 'LEARNING MODE' : `PRACTICE: ${currentIndex + 1} / ${words.length}`}
             </div>
@@ -238,7 +257,7 @@ export default function Session() {
                                     fontSize: '0.9rem',
                                     fontWeight: 'bold'
                                 }}>
-                                    CLICK OR SPACE TO FLIP
+                                    {windowWidth < 450 ? 'SWIPE UP TO FLIP' : 'CLICK OR SPACE TO FLIP'}
                                 </div>
                             )}
                         </div>
@@ -278,7 +297,6 @@ export default function Session() {
                             <div
                                 key={kanji.id}
                                 className={`kanji-card ${isKanjiFlipped ? 'flipped' : ''}`}
-                                onClick={() => { /* Optional: Allow individual flip? For now just sync with main card */ }}
                             >
                                 <div className="kanji-card-inner">
                                     {/* Front: Character */}
@@ -307,21 +325,48 @@ export default function Session() {
                     <button
                         className="see-more-btn"
                         onClick={startPractice}
-                        style={{ fontSize: '1.2rem', padding: '0.75rem 2rem' }}
+                        disabled={currentIndex !== words.length - 1}
+                        style={{
+                            fontSize: '1.2rem',
+                            padding: '0.75rem 2rem',
+                            opacity: currentIndex === words.length - 1 ? 1 : 0.5,
+                            cursor: currentIndex === words.length - 1 ? 'pointer' : 'not-allowed',
+                            filter: currentIndex === words.length - 1 ? 'none' : 'grayscale(1)',
+                            transition: 'all 0.3s ease'
+                        }}
                     >
                         Start Practice Mode
                     </button>
                     <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 'bold' }}>
-                        USE KEYS 'A' AND 'D' OR ARROWS TO NAVIGATE
+                        {windowWidth < 450 ? 'SWIPE LEFT/RIGHT TO NAVIGATE' : 'USE KEYS A/D OR ARROWS TO NAVIGATE'}
                     </p>
                 </div>
             )}
 
             {phase === 'practice' && (
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
-                    <div style={{ display: 'flex', gap: '2rem', fontSize: '1rem', fontWeight: 'bold', color: 'var(--text-secondary)' }}>
-                        <span><span style={{ color: '#ef4444' }}>A / ←</span> : INCORRECT</span>
-                        <span><span style={{ color: '#22c55e' }}>D / →</span> : CORRECT</span>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', width: '100%', padding: '0 1rem' }}>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: '0.8rem',
+                        fontSize: '0.9rem',
+                        fontWeight: 'bold',
+                        color: 'var(--text-secondary)',
+                        textAlign: 'center'
+                    }}>
+                        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                <span style={{ color: '#ef4444', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                                    <ArrowLeft size={16} strokeWidth={3} /> {windowWidth < 450 ? 'LEFT' : 'KEY A'}
+                                </span> : WRONG
+                            </span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                <span style={{ color: '#22c55e', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                                    {windowWidth < 450 ? 'RIGHT' : 'KEY D'} <ArrowRight size={16} strokeWidth={3} />
+                                </span> : CORRECT
+                            </span>
+                        </div>
                     </div>
                 </div>
             )}

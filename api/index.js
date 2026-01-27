@@ -107,6 +107,12 @@ router.post('/progress', async (req, res) => {
             const wCount = (currentStatus?.wrong_count || 0) + (result.isCorrect ? 0 : 1);
             await supabase.from('word_status').upsert({ user_initials: userInitials, word: result.word, status: result.isCorrect ? 2 : 1, correct_count: cCount, wrong_count: wCount, last_reviewed: new Date().toISOString() }, { onConflict: 'user_initials, word' });
         }
+        // Log study session for streak
+        await supabase.from('study_logs').insert({
+            user_initials: userInitials,
+            date: new Date().toISOString().split('T')[0],
+            activity_type: 'normal_session'
+        });
         res.json({ success: true });
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
@@ -137,38 +143,156 @@ router.get('/daily', async (req, res) => {
     const { initials } = req.query;
     if (!initials) return res.status(400).json({ error: 'Initials required' });
 
+    const userInitials = initials.toUpperCase();
     const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 
-    // Simple deterministic seed from date
-    let hash = 0;
-    for (let i = 0; i < today.length; i++) {
-        hash = ((hash << 5) - hash) + today.charCodeAt(i);
-        hash |= 0;
+    try {
+        // Check if already completed today
+        let completedData = null;
+        let streak = 0;
+
+        if (supabase) {
+            // Fetch today's status
+            const { data, error } = await supabase
+                .from('daily_challenges')
+                .select('*')
+                .eq('user_initials', userInitials)
+                .eq('date', today)
+                .maybeSingle();
+
+            if (error) {
+                console.error('Supabase error fetching daily challenge:', error);
+            } else if (data) {
+                completedData = data;
+            }
+
+            // Calculate Streak - Merge sources
+            const { data: challengeDates, error: cError } = await supabase
+                .from('daily_challenges')
+                .select('date')
+                .eq('user_initials', userInitials);
+
+            const { data: logDates, error: lError } = await supabase
+                .from('study_logs')
+                .select('date')
+                .eq('user_initials', userInitials);
+
+            if (!cError && !lError) {
+                const combinedDates = [
+                    ...(challengeDates?.map(d => d.date) || []),
+                    ...(logDates?.map(d => d.date) || [])
+                ];
+                const uniqueDates = [...new Set(combinedDates)];
+
+                // Sort descending
+                uniqueDates.sort((a, b) => new Date(b) - new Date(a));
+
+                let checkDate = new Date();
+                let checkStr = checkDate.toISOString().split('T')[0];
+
+                // If not done today, allowed to continue from yesterday
+                if (!uniqueDates.includes(checkStr)) {
+                    checkDate.setDate(checkDate.getDate() - 1);
+                    checkStr = checkDate.toISOString().split('T')[0];
+                }
+
+                while (uniqueDates.includes(checkStr)) {
+                    streak++;
+                    checkDate.setDate(checkDate.getDate() - 1);
+                    checkStr = checkDate.toISOString().split('T')[0];
+                }
+            }
+        }
+
+        // Robust deterministic seed from date (YYYYMMDD to integer)
+        const dateStr = today.replace(/-/g, '');
+        const seedBase = parseInt(dateStr, 10);
+
+        // Linear Congruential Generator (LCG) for better distribution
+        // Constants from Numerical Recipes
+        const m = 4294967296; // 2^32
+        const a = 1664525;
+        const c = 1013904223;
+
+        // Helper function for next random number
+        let z = seedBase;
+        const nextRand = () => {
+            z = (a * z + c) % m;
+            return z / m;
+        };
+
+        // Filter words that have at least one kanji in our database
+        // Sort first to ensure absolute identical starting state across servers/restarts
+        const validWords = wordsData
+            .filter(wordObj => {
+                if (!wordObj.word) return false;
+                return wordObj.word.split('').some(char =>
+                    kanjiData.some(k => k.kanji === char)
+                );
+            })
+            .sort((a, b) => a.word.localeCompare(b.word));
+
+        // Deterministic Fisher-Yates shuffle using LCG
+        const shuffled = [...validWords];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(nextRand() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+
+        // Take first 10
+        const chunk = shuffled.slice(0, 10).map((w, i) => ({ ...w, id: i, index: i }));
+
+        res.json({
+            date: today,
+            chunk,
+            totalWords: validWords.length,
+            completed: !!completedData,
+            completedData: completedData,
+            streak: streak
+        });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
-    const seed = Math.abs(hash);
+});
 
-    // Filter words that have at least one kanji in our database
-    const validWords = wordsData.filter(wordObj => {
-        if (!wordObj.word) return false;
-        return wordObj.word.split('').some(char =>
-            kanjiData.some(k => k.kanji === char)
-        );
-    });
+// Record Daily Challenge Completion
+router.post('/daily/complete', async (req, res) => {
+    if (!supabase) return res.status(500).json({ error: 'Database client not initialized.' });
 
-    // Deterministic shuffle
-    const shuffled = [...validWords];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = (seed + i) % (i + 1);
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    const { initials, score, results } = req.body;
+    if (!initials) return res.status(400).json({ error: 'Initials required' });
+
+    const userInitials = initials.toUpperCase();
+    const today = new Date().toISOString().split('T')[0];
+
+    try {
+        console.log(`Recording daily completion for ${userInitials} on ${today} with score ${score}`);
+        const { data, error } = await supabase
+            .from('daily_challenges')
+            .upsert({
+                user_initials: userInitials,
+                date: today,
+                score: score,
+                results: results,
+                completed_at: new Date().toISOString()
+            }, { onConflict: 'user_initials, date' });
+
+        if (error) {
+            console.error('Supabase error recording daily challenge:', error);
+            throw error;
+        }
+        res.json({ success: true, data });
+
+        // Also log to study_logs for consolidated streak tracking
+        await supabase.from('study_logs').insert({
+            user_initials: userInitials,
+            date: today,
+            activity_type: 'daily_challenge'
+        });
+    } catch (err) {
+        console.error('API /daily/complete error:', err.message);
+        res.status(500).json({ error: err.message });
     }
-
-    const chunk = shuffled.slice(0, 10).map((w, i) => ({ ...w, id: i, index: i }));
-
-    res.json({
-        date: today,
-        chunk,
-        totalWords: validWords.length
-    });
 });
 
 app.use('/api', router);

@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, RotateCcw, Calendar } from 'lucide-react';
+import { BookOpen, RotateCcw, Calendar, Flame } from 'lucide-react';
 import Loading from '../components/Loading';
 
 export default function Dashboard() {
@@ -11,6 +11,8 @@ export default function Dashboard() {
     const [masteredCount, setMasteredCount] = useState(0);
     const [loadingStats, setLoadingStats] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
+    const [dailyCompleted, setDailyCompleted] = useState(false);
+    const [streak, setStreak] = useState(0);
 
     // Forced chunk size 10 per requirements
     const chunkSize = 10;
@@ -19,12 +21,19 @@ export default function Dashboard() {
         if (!user) return;
         // Logic kept for potential future use or if needed for "Flashback" validation
         const fetchStats = async () => {
-            // ... data fetching logic ...
             try {
                 const res = await fetch(`/api/user/${user.initials}`);
                 if (res.ok) {
                     const data = await res.json();
                     setMasteredCount(data.masteredCount);
+                }
+
+                // Check daily completion
+                const dailyRes = await fetch(`/api/daily?initials=${user.initials}`);
+                if (dailyRes.ok) {
+                    const dailyData = await dailyRes.json();
+                    setDailyCompleted(dailyData.completed);
+                    setStreak(dailyData.streak || 0);
                 }
             } catch (err) {
                 console.error(err);
@@ -189,7 +198,7 @@ export default function Dashboard() {
                                 height: 'clamp(60px, 15vw, 80px)',
                                 borderRadius: '12px',
                                 border: '2px solid var(--col-black)',
-                                background: '#a855f7',
+                                background: dailyCompleted ? '#22c55e' : '#a855f7',
                                 color: 'white',
                                 fontWeight: '800',
                                 fontSize: 'clamp(1rem, 5vw, 1.5rem)',
@@ -202,7 +211,12 @@ export default function Dashboard() {
                                 cursor: 'pointer'
                             }}
                         >
-                            <Calendar size={28} /> DAILY CHALLENGE
+                            <Calendar size={28} />
+                            <span>{dailyCompleted ? 'DAILY COMPLETED' : 'DAILY CHALLENGE'}</span>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', marginLeft: '0.5rem', background: 'rgba(0,0,0,0.2)', padding: '0.2rem 0.6rem', borderRadius: '16px' }}>
+                                <Flame size={20} fill={dailyCompleted ? "#fbbf24" : "#cbd5e1"} color={dailyCompleted ? "#fbbf24" : "#cbd5e1"} strokeWidth={2.5} />
+                                <span style={{ fontSize: '1.2rem' }}>{streak}</span>
+                            </div>
                         </button>
                     </div>
                 </div>

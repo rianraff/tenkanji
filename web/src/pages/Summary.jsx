@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import Loading from '../components/Loading';
 import { UserContext } from '../context/UserContext';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -11,6 +11,13 @@ export default function Summary() {
 
     const { results, words, mode } = location.state || { results: [], words: [], mode: 'new' };
     const [saving, setSaving] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     if (results.length === 0) return <div>No results found. <button onClick={() => navigate('/dashboard')}>Home</button></div>;
 
@@ -80,22 +87,56 @@ export default function Summary() {
                     <Loading message="Saving Progress..." />
                 </div>
             )}
-            <div className="flashcard" style={{ height: 'auto', gap: '2rem', width: 'min(1200px, 95vw)', padding: 'min(3rem, 5vw)', margin: '2rem 0' }}>
+            <div style={{
+                height: 'auto',
+                minHeight: '400px',
+                width: 'min(800px, 95vw)',
+                padding: windowWidth < 600 ? '1.5rem' : '3rem',
+                margin: '2rem 0',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: windowWidth < 600 ? '1.5rem' : '2.5rem',
+                background: 'var(--col-white)',
+                border: '2px solid var(--col-black)',
+                borderRadius: '24px',
+                boxShadow: 'var(--shadow)',
+                position: 'relative',
+                boxSizing: 'border-box'
+            }}>
 
                 {/* Header Section: Horizontal Layout */}
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', flexWrap: 'wrap', gap: '1rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: '1 1 300px' }}>
-                        <h1 className="word-heading" style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)', margin: 0 }}>
+                <div style={{
+                    display: 'flex',
+                    alignItems: windowWidth < 600 ? 'center' : 'center',
+                    justifyContent: 'space-between',
+                    width: '100%',
+                    flexDirection: windowWidth < 600 ? 'column' : 'row',
+                    gap: '1rem',
+                    textAlign: windowWidth < 600 ? 'center' : 'left'
+                }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        <h1 className="word-heading" style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', margin: 0 }}>
                             {isPerfect ? 'Perfect!' : 'Complete!'}
                         </h1>
-                        {isPerfect && <span style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)' }}>🎉</span>}
+                        {isPerfect && <span style={{ fontSize: 'clamp(2rem, 8vw, 3rem)' }}>🎉</span>}
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-end', gap: '1rem' }}>
-                        <p className="sub-heading" style={{ fontSize: 'clamp(1rem, 4vw, 1.5rem)', margin: 0, justifyContent: 'flex-end' }}>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        gap: '0.8rem',
+                        justifyContent: windowWidth < 600 ? 'center' : 'flex-end'
+                    }}>
+                        <p className="sub-heading" style={{ fontSize: 'clamp(1rem, 4vw, 1.3rem)', margin: 0 }}>
                             SCORE: {correctCount} / {results.length}
                         </p>
-                        <p className="sub-heading" style={{ fontSize: 'clamp(1rem, 4vw, 1.5rem)', margin: 0, fontWeight: '800', justifyContent: 'flex-end', color: isPerfect ? '#22c55e' : 'var(--text-secondary)' }}>
+                        <p className="sub-heading" style={{
+                            fontSize: 'clamp(1rem, 4vw, 1.3rem)',
+                            margin: 0,
+                            fontWeight: '800',
+                            color: isPerfect ? '#22c55e' : 'var(--text-secondary)'
+                        }}>
                             ({accuracy}%)
                         </p>
                     </div>
@@ -104,13 +145,14 @@ export default function Summary() {
                 {/* List Section */}
                 <div style={{
                     width: '100%',
-                    maxHeight: '400px',
+                    maxHeight: '40vh',
                     overflowY: 'auto',
-                    background: 'var(--col-white)',
+                    background: '#f8fafc',
                     border: '2px solid var(--col-black)',
-                    padding: '1rem',
-                    borderRadius: '12px',
-                    boxShadow: 'inset 4px 4px 0px 0px rgba(0,0,0,0.05)'
+                    padding: '0.5rem',
+                    borderRadius: '16px',
+                    boxShadow: 'inset 4px 4px 0px 0px rgba(0,0,0,0.05)',
+                    boxSizing: 'border-box'
                 }}>
                     {words.map((word, idx) => {
                         const result = results.find(r => r.word === word.word);
@@ -124,12 +166,12 @@ export default function Summary() {
                                 padding: '1rem',
                                 borderBottom: idx === words.length - 1 ? 'none' : '1px solid var(--col-gray)'
                             }}>
-                                <div style={{ display: 'flex', alignItems: 'baseline', gap: '1.5rem' }}>
-                                    <span style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{word.word}</span>
-                                    <span style={{ fontSize: '1.1rem', color: 'var(--text-secondary)' }}>{word.hiragana}</span>
+                                <div style={{ display: 'flex', alignItems: 'baseline', gap: windowWidth < 600 ? '0.8rem' : '1.5rem' }}>
+                                    <span style={{ fontSize: windowWidth < 600 ? '1.4rem' : '1.8rem', fontWeight: 'bold' }}>{word.word}</span>
+                                    <span style={{ fontSize: windowWidth < 600 ? '0.9rem' : '1.1rem', color: 'var(--text-secondary)' }}>{word.hiragana}</span>
                                 </div>
                                 <div>
-                                    {isCorrect ? <Check color="#22c55e" size={28} strokeWidth={3} /> : <X color="#ef4444" size={28} strokeWidth={3} />}
+                                    {isCorrect ? <Check color="#22c55e" size={windowWidth < 600 ? 20 : 28} strokeWidth={3} /> : <X color="#ef4444" size={windowWidth < 600 ? 20 : 28} strokeWidth={3} />}
                                 </div>
                             </div>
                         );
@@ -137,7 +179,16 @@ export default function Summary() {
                 </div>
 
                 {/* Footer Buttons Section */}
-                <div style={{ display: 'flex', gap: '2rem', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{
+                    display: 'flex',
+                    gap: windowWidth < 600 ? '1rem' : '1.5rem',
+                    width: '100%',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: windowWidth < 600 ? 'column' : 'row',
+                    marginTop: '0.5rem',
+                    boxSizing: 'border-box'
+                }}>
                     {!isPerfect && (
                         <button
                             className="see-more-btn"
@@ -146,7 +197,9 @@ export default function Summary() {
                                 background: '#ffe4e6',
                                 borderColor: 'var(--col-black)',
                                 color: '#ef4444',
-                                flex: 2
+                                flex: 1,
+                                width: '100%',
+                                marginTop: 0
                             }}
                         >
                             Retry Missed Words
@@ -157,15 +210,17 @@ export default function Summary() {
                         <>
                             <button
                                 onClick={handleFinish}
-                                className="nav-button"
+                                className="see-more-btn"
                                 style={{
-                                    borderRadius: '12px',
-                                    width: 'auto',
-                                    fontSize: '1.2rem',
+                                    borderRadius: '999px',
+                                    width: '100%',
+                                    fontSize: '1.1rem',
                                     fontWeight: 'bold',
-                                    padding: '1rem 2rem',
+                                    padding: '0.75rem 2rem',
                                     height: 'auto',
-                                    flex: 1
+                                    flex: 1,
+                                    marginTop: 0,
+                                    background: 'var(--col-white)'
                                 }}
                             >
                                 Dashboard
@@ -175,14 +230,15 @@ export default function Summary() {
                                 className="see-more-btn"
                                 style={{
                                     marginTop: 0,
-                                    fontSize: '1.2rem',
+                                    fontSize: '1.1rem',
                                     flex: 1,
+                                    width: '100%',
                                     display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center',
                                     gap: '0.8rem',
                                     height: 'auto',
-                                    padding: '1rem 2rem'
+                                    padding: '0.75rem 2rem'
                                 }}
                             >
                                 <span>Next Set</span>
@@ -193,7 +249,15 @@ export default function Summary() {
                         <button
                             onClick={handleFinish}
                             className="see-more-btn"
-                            style={{ width: 'auto', borderRadius: '12px', fontSize: '1.2rem', background: 'var(--col-white)', padding: '1rem 2rem', flex: 1 }}
+                            style={{
+                                width: '100%',
+                                borderRadius: '999px',
+                                fontSize: '1.1rem',
+                                background: 'var(--col-white)',
+                                padding: '0.75rem 2rem',
+                                flex: 1,
+                                marginTop: 0
+                            }}
                         >
                             Finish
                         </button>
