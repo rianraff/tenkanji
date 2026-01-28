@@ -5,7 +5,15 @@
             "destination": "/api/index.js"
         },
         {
-            "source": "/[^.]+",
+            "source": "/assets/(.*)",
+            "destination": "/web/dist/assets/$1"
+        },
+        {
+            "source": "/(.*)\\.(.*)",
+            "destination": "/web/dist/$1.$2"
+        },
+        {
+            "source": "/(.*)",
             "destination": "/web/dist/index.html"
         }
     ]
