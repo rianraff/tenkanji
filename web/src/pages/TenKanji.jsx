@@ -1,8 +1,9 @@
-import { useState, useEffect, useContext, useMemo } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Check, X, Share2, Trophy, Calendar } from 'lucide-react';
+import { Share2, Trophy } from 'lucide-react';
 import Loading from '../components/Loading';
+import StudySession from '../components/StudySession';
 import kanjiDataRaw from '../data/jlpt-kanji.json';
 import clickSound from '../assets/click-sound.mp3';
 
@@ -25,25 +26,19 @@ export default function TenKanji() {
         }
     }, [location, navigate]);
 
-    if (!location.state?.fromDashboard) return null;
-
     // State
     const [words, setWords] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [phase, setPhase] = useState('learning'); // 'learning' | 'practice' | 'complete'
-    const [flipState, setFlipState] = useState('none'); // 'none' | 'up' | 'down'
-    const [animState, setAnimState] = useState('idle'); // 'idle' | 'exiting-left' | 'exiting-right' | 'entering-left' | 'entering-right'
-    const [isTransitioning, setIsTransitioning] = useState(false);
     const [sessionResults, setSessionResults] = useState([]); // [{ word: '...', isCorrect: true }]
     const [dailyDate, setDailyDate] = useState('');
-    const [touchStartX, setTouchStartX] = useState(null);
-    const [touchStartY, setTouchStartY] = useState(null);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    // UI State
+    const [isCompleted, setIsCompleted] = useState(false);
 
     // Load Daily Words
     useEffect(() => {
-        if (!user) return;
+        if (!user || !location.state?.fromDashboard) return;
 
         const fetchDaily = async () => {
             try {
@@ -53,7 +48,7 @@ export default function TenKanji() {
 
                 if (data.completed && data.completedData) {
                     setSessionResults(data.completedData.results || []);
-                    setPhase('complete');
+                    setIsCompleted(true);
                     setDailyDate(data.date);
                     setWords(data.chunk || []);
                 } else {
@@ -76,7 +71,7 @@ export default function TenKanji() {
         };
 
         fetchDaily();
-    }, [user]);
+    }, [user, location.state]);
 
     // Window Resize Listener
     useEffect(() => {
@@ -85,221 +80,41 @@ export default function TenKanji() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Derived State
-    const currentWord = words[currentIndex];
-    // Helper: Get Kanji Breakdown for a specific word
-    const getKanjiDetails = (wordObj) => {
-        if (!wordObj || !wordObj.word) return [];
-        const chars = wordObj.word.split('');
-        const details = chars
-            .map((char) => kanjiData.find((k) => k.kanji === char))
-            .filter((item) => item !== undefined);
-        const uniqueDetails = Array.from(new Set(details.map(d => d.id)))
-            .map(id => details.find(d => d.id === id));
-        return uniqueDetails;
-    };
+    const handleComplete = (results, finalWords) => {
+        setSessionResults(results);
+        setIsCompleted(true);
 
-    const kanjiDetails = useMemo(() => getKanjiDetails(currentWord), [currentWord]);
-    const nextKanjiDetails = useMemo(() => words[currentIndex + 1] ? getKanjiDetails(words[currentIndex + 1]) : [], [words, currentIndex]);
+        const score = results.filter(r => r.isCorrect).length;
 
-    // Handlers
-    const renderCardContent = (word, details, isNext = false) => (
-        <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            {/* KANJI BREAKDOWN */}
-            <div className="kanji-grid" style={{ marginBottom: isNext ? '3.5rem' : '3.5rem' }}>
-                {details.map((kanji) => {
-                    const kanjiFlipClass = phase === 'learning' ? 'k-flipped-up' :
-                        (isNext ? '' : (flipState === 'up' ? 'k-flipped-up' : flipState === 'down' ? 'k-flipped-down' : ''));
-                    return (
-                        <div key={kanji.id} className={`kanji-card ${kanjiFlipClass}`}>
-                            <div className="kanji-card-inner">
-                                <div className="kanji-card-front" style={{ background: 'var(--col-orange)' }}>
-                                    <h2 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--col-black)' }}>{kanji.kanji}</h2>
-                                </div>
-                                <div className="kanji-card-back">
-                                    <div style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{kanji.kanji}</div>
-                                    <p className="kanji-desc" style={{ fontSize: '0.95rem', marginTop: '0.2rem', lineHeight: '1.2' }}>
-                                        {(kanji.description.split(' means ')[1] || kanji.description).split(';')[0].split('.')[0]}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
+        // Save word-by-word progress
+        fetch('/api/progress', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ initials: user.initials, results: results })
+        }).catch(err => console.error('Failed to save progress:', err));
 
-            {/* FLASHCARD */}
-            <div
-                className={`flashcard ${phase === 'learning' ? 'flipped-up' :
-                    (isNext ? '' : (flipState === 'up' ? 'flipped-up' : flipState === 'down' ? 'flipped-down' : ''))}`}
-                onClick={() => {
-                    if (!isNext && phase === 'practice') setFlipState(prev => prev === 'none' ? 'up' : 'none');
-                }}
-                onTouchStart={isNext ? null : handleTouchStart}
-                onTouchEnd={isNext ? null : handleTouchEnd}
-                style={{ cursor: !isNext && phase === 'practice' ? 'pointer' : 'default' }}
-            >
-                <div className="flashcard-inner">
-                    <div className="flashcard-front">
-                        <h1 style={{ fontSize: 'clamp(4rem, 20vw, 8rem)', margin: 0, fontWeight: '800', lineHeight: 1 }}>{word.word}</h1>
-                        {!isNext && phase === 'practice' && (
-                            <div style={{ marginTop: '1.5rem', color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: 'bold' }}>
-                                {windowWidth < 450 ? 'SWIPE UP TO FLIP' : 'CLICK OR SPACE TO FLIP'}
-                            </div>
-                        )}
-                    </div>
-
-                    <div className="flashcard-back">
-                        <h1 className="word-heading">{word.word}</h1>
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-                            <div className="sub-heading">
-                                <span>{word.hiragana}</span>
-                                <span className="divider"></span>
-                                <span>{word.romaji}</span>
-                            </div>
-                            <ul className="meanings-list">
-                                {word.meanings.slice(0, 2).map((meaning, idx) => (
-                                    <li key={idx} className="meaning-item">{meaning}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-
-    const handleNext = () => {
-        if (isTransitioning || currentIndex >= words.length - 1) return;
-        setIsTransitioning(true);
-        setAnimState('exiting-left');
-        setTimeout(() => {
-            setCurrentIndex(prev => prev + 1);
-            setFlipState('none');
-            setAnimState('entering-right');
-            setTimeout(() => {
-                setIsTransitioning(false);
-            }, 300);
-        }, 300);
-    };
-
-    const handlePrev = () => {
-        if (isTransitioning || currentIndex <= 0) return;
-        setIsTransitioning(true);
-        setAnimState('exiting-right');
-        setTimeout(() => {
-            setCurrentIndex(prev => prev - 1);
-            setFlipState('none');
-            setAnimState('entering-left');
-            setTimeout(() => {
-                setIsTransitioning(false);
-            }, 300);
-        }, 300);
-    };
-
-    const startPractice = () => {
-        playClick();
-        // Shuffle words for practice session
-        const shuffled = [...words].sort(() => Math.random() - 0.5);
-        setWords(shuffled);
-        setPhase('practice');
-        setCurrentIndex(0);
-        setFlipState('none');
-        setAnimState('idle');
-    };
-
-    const handleTouchStart = (e) => {
-        setTouchStartX(e.targetTouches[0].clientX);
-        setTouchStartY(e.targetTouches[0].clientY);
-    };
-
-    const handleTouchEnd = (e) => {
-        if (!touchStartX || !touchStartY) return;
-        const touchEndX = e.changedTouches[0].clientX;
-        const touchEndY = e.changedTouches[0].clientY;
-
-        const diffX = touchStartX - touchEndX;
-        const diffY = touchStartY - touchEndY;
-
-        // Vertical Swipe -> Flip (Practice Mode)
-        if (phase === 'practice' && Math.abs(diffY) > 50 && Math.abs(diffX) < 50) {
-            // Swipe Down (diffY < -50) -> Flip Downside
-            // Swipe Up (diffY > 50) -> Flip Upside (or toggle)
-            if (diffY < -50) {
-                setFlipState(prev => prev === 'none' ? 'down' : 'none');
-            } else {
-                setFlipState(prev => prev === 'none' ? 'up' : 'none');
-            }
-        }
-
-        // Horizontal Swipe
-        if (Math.abs(diffX) > 50 && Math.abs(diffY) < 50) {
-            if (phase === 'learning') {
-                if (diffX > 0) handleNext(); // Left swipe -> Next
-                else handlePrev(); // Right swipe -> Previous
-            } else if (phase === 'practice') {
-                if (diffX > 0) handlePracticeAnswer(false); // Left swipe -> Wrong
-                else handlePracticeAnswer(true); // Right swipe -> Correct
-            }
-        }
-
-        setTouchStartX(null);
-        setTouchStartY(null);
-    };
-
-    const handlePracticeAnswer = (isCorrect) => {
-        if (isTransitioning || currentIndex >= words.length) return;
-        setIsTransitioning(true);
-
-        const result = { word: currentWord.word, isCorrect };
-        const newResults = [...sessionResults, result];
-        setSessionResults(newResults);
-
-        if (currentIndex >= words.length - 1) {
-            setPhase('complete');
-            const score = newResults.filter(r => r.isCorrect).length;
-
-            // Save word-by-word progress
-            fetch('/api/progress', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ initials: user.initials, results: newResults })
-            }).catch(err => console.error('Failed to save progress:', err));
-
-            // Mark daily challenge as complete
-            const recordCompletion = async () => {
-                try {
-                    const res = await fetch('/api/daily/complete', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            initials: user.initials,
-                            score: score,
-                            results: newResults
-                        })
-                    });
-                    if (!res.ok) {
-                        const errorData = await res.json();
-                        console.error('Failed to record daily challenge:', errorData);
-                        alert(`Warning: Could not save daily challenge result. ${errorData.error || ''}`);
-                    }
-                    setIsTransitioning(false);
-                } catch (err) {
-                    console.error('Network error recording daily challenge:', err);
-                    setIsTransitioning(false);
+        // Mark daily challenge as complete
+        const recordCompletion = async () => {
+            try {
+                const res = await fetch('/api/daily/complete', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        initials: user.initials,
+                        score: score,
+                        results: results
+                    })
+                });
+                if (!res.ok) {
+                    const errorData = await res.json();
+                    console.error('Failed to record daily challenge:', errorData);
+                    alert(`Warning: Could not save daily challenge result. ${errorData.error || ''}`);
                 }
-            };
-            recordCompletion();
-        } else {
-            // Correct -> Slide Right, Wrong -> Slide Left
-            setAnimState(isCorrect ? 'exiting-right' : 'exiting-left');
-            setTimeout(() => {
-                setCurrentIndex(prev => prev + 1);
-                setFlipState('none');
-                setAnimState('idle');
-                setIsTransitioning(false);
-            }, 300);
-        }
+            } catch (err) {
+                console.error('Network error recording daily challenge:', err);
+            }
+        };
+        recordCompletion();
     };
 
     const handleShare = () => {
@@ -318,40 +133,28 @@ export default function TenKanji() {
         }
     };
 
-    // Keyboard Listeners
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if (phase === 'learning') {
-                if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') handleNext();
-                if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') handlePrev();
-                if (e.key === ' ' && currentIndex === words.length - 1) startPractice();
-            } else if (phase === 'practice') {
-                if (e.code === 'Space') {
-                    e.preventDefault();
-                    if (!isTransitioning) setFlipState(prev => prev === 'none' ? 'up' : 'none');
-                }
-                if (e.key === 'd' || e.key === 'D') handlePracticeAnswer(true);
-                if (e.key === 'a' || e.key === 'A') handlePracticeAnswer(false);
-            }
-        };
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [phase, currentIndex, words, sessionResults, flipState, isTransitioning]);
+    const handleExit = () => {
+        playClick();
+        navigate('/dashboard');
+    };
 
+    if (!location.state?.fromDashboard) return null;
     if (loading) return <Loading message="Loading Today's TenKanji..." />;
 
-    if (!currentWord) {
+    // Show "No Content" if not completed but no words
+    if (!isCompleted && (!words || words.length === 0)) {
         return (
             <div className="app-container" style={{ textAlign: 'center' }}>
                 <div className="flashcard" style={{ height: 'auto', textAlign: 'center' }}>
                     <p style={{ fontWeight: 'bold' }}>No words found for today!</p>
-                    <button className="nav-button" onClick={() => { playClick(); navigate('/dashboard'); }} style={{ width: 'auto', padding: '0 2rem', borderRadius: '12px', marginTop: '1rem' }}>Back to Dashboard</button>
+                    <button className="nav-button" onClick={handleExit} style={{ width: 'auto', padding: '0 2rem', borderRadius: '12px', marginTop: '1rem' }}>Back to Dashboard</button>
                 </div>
             </div>
         );
     }
 
-    if (phase === 'complete') {
+    if (isCompleted) {
+        // Reuse the exact completion UI from before
         const score = sessionResults.filter(r => r.isCorrect).length;
         const streak = 1; // Placeholder for future streak logic
 
@@ -452,7 +255,7 @@ export default function TenKanji() {
                         </button>
 
                         <button
-                            onClick={() => { playClick(); navigate('/dashboard'); }}
+                            onClick={handleExit}
                             style={{
                                 background: 'transparent',
                                 border: 'none',
@@ -479,106 +282,27 @@ export default function TenKanji() {
     }
 
     return (
-        <div className="app-container" style={{ padding: '1rem', overflowY: 'auto', justifyContent: 'center' }}>
-            {/* Header / Progress */}
-            <div style={{
-                position: 'absolute',
-                top: '2rem',
-                right: '1rem',
-                left: '1rem',
-                display: 'flex',
-                justifyContent: 'center',
-                color: 'var(--text-secondary)',
-                fontWeight: 'bold',
-                fontSize: '0.8rem',
-                zIndex: 20
-            }}>
-                {phase === 'learning' ? `LEARNING: ${currentIndex + 1} / ${words.length}` : `PRACTICE: ${currentIndex + 1} / ${words.length}`}
-            </div>
-
-            {phase === 'learning' ? (
-                <div key={currentIndex} className={
-                    animState === 'exiting-left' ? 'animate-exit-left' :
-                        animState === 'exiting-right' ? 'animate-exit-right' :
-                            animState === 'entering-left' ? 'animate-enter-left' :
-                                animState === 'entering-right' ? 'animate-enter-right' :
-                                    'animate-enter'
-                } style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '2rem' }}>
-                    {renderCardContent(currentWord, kanjiDetails)}
-                </div>
-            ) : (
-                <div className="card-stack" style={{ marginTop: '2rem' }}>
-                    {/* Next Card (Underneath) */}
-                    {currentIndex < words.length - 1 && (
-                        <div className="stacked-card next">
-                            {renderCardContent(words[currentIndex + 1], nextKanjiDetails, true)}
-                        </div>
-                    )}
-
-                    {/* Current Card (Top) */}
-                    <div key={currentIndex} className={`stacked-card current ${animState === 'exiting-left' ? 'animate-exit-left' :
-                        animState === 'exiting-right' ? 'animate-exit-right' :
-                            animState === 'entering-left' ? 'animate-enter-left' :
-                                animState === 'entering-right' ? 'animate-enter-right' :
-                                    'animate-practice-reveal'
-                        }`}>
-                        {renderCardContent(currentWord, kanjiDetails)}
-                    </div>
+        <StudySession
+            words={words}
+            initialPhase="learning"
+            onComplete={handleComplete}
+            onExit={handleExit}
+            headerRenderer={(phase, currentIndex, total) => (
+                <div style={{
+                    position: 'absolute',
+                    top: '2rem',
+                    right: '1rem',
+                    left: '1rem',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    color: 'var(--text-secondary)',
+                    fontWeight: 'bold',
+                    fontSize: '0.8rem',
+                    zIndex: 20
+                }}>
+                    {phase === 'learning' ? `LEARNING: ${currentIndex + 1} / ${total}` : `PRACTICE: ${currentIndex + 1} / ${total}`}
                 </div>
             )}
-
-            {/* Controls */}
-            <div style={{
-                marginTop: '1rem',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '0.75rem',
-                width: '100%',
-                maxWidth: '500px'
-            }}>
-                {phase === 'learning' ? (
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-                        <button
-                            className="see-more-btn"
-                            onClick={startPractice}
-                            disabled={currentIndex !== words.length - 1}
-                            style={{
-                                width: 'auto',
-                                padding: '0.75rem 2rem',
-                                opacity: currentIndex === words.length - 1 ? 1 : 0.5,
-                                cursor: currentIndex === words.length - 1 ? 'pointer' : 'not-allowed',
-                                filter: currentIndex === words.length - 1 ? 'none' : 'grayscale(1)',
-                                transition: 'all 0.3s ease',
-                                fontSize: '1.2rem'
-                            }}
-                        >
-                            Start Practice Mode
-                        </button>
-                        <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 'bold' }}>
-                            {windowWidth < 450 ? 'SWIPE LEFT/RIGHT TO NAVIGATE' : 'USE KEYS A/D OR ARROWS TO NAVIGATE'}
-                        </p>
-                    </div>
-                ) : (
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', width: '100%', padding: '0 1rem' }}>
-                        <div style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            gap: '0.8rem',
-                            fontSize: '0.9rem',
-                            fontWeight: 'bold',
-                            color: 'var(--text-secondary)',
-                            textAlign: 'center'
-                        }}>
-                            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                                <span><span style={{ color: '#ef4444' }}>{windowWidth < 450 ? '← LEFT' : 'KEY A / ←'}</span> : WRONG</span>
-                                <span><span style={{ color: '#22c55e' }}>{windowWidth < 450 ? 'RIGHT →' : 'KEY D / →'}</span> : CORRECT</span>
-                            </div>
-                        </div>
-                    </div>
-                )}
-            </div>
-        </div>
+        />
     );
 }

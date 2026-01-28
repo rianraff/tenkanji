@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import clickSound from '../assets/click-sound.mp3';
+import Loading from '../components/Loading';
 
 export default function Login() {
     const [initials, setInitials] = useState('');
@@ -9,7 +10,7 @@ export default function Login() {
     const [status, setStatus] = useState('idle'); // idle, checking, confirm_login (ask pass), confirm_register (create pass), logging_in
     const [userExists, setUserExists] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
-    const { user, loginLegacy, loginWithGoogle } = useContext(UserContext);
+    const { user, loginLegacy, loginWithGoogle, loading } = useContext(UserContext);
     const navigate = useNavigate();
 
     // Auto-redirect if already logged in (e.g. after Google OAuth redirect)
@@ -89,7 +90,9 @@ export default function Login() {
                     <p className="sub-heading" style={{ justifyContent: 'center', fontSize: '1rem', fontWeight: 'bold' }}>てんかんじ</p>
                 </div>
 
-                {status === 'idle' || status === 'checking' ? (
+                {loading ? (
+                    <Loading message="AUTHENTICATING..." />
+                ) : status === 'idle' || status === 'checking' ? (
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', gap: '1.5rem' }}>
                         <form onSubmit={handleCheck} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center', width: '100%' }}>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%', alignItems: 'center' }}>
