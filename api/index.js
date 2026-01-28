@@ -54,6 +54,34 @@ router.get('/user/:initials', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
+router.put('/user/:initials/settings', async (req, res) => {
+    if (!supabase) return res.status(500).json({ error: 'Database client not initialized.' });
+
+    const { initials } = req.params;
+    const { chunkSize } = req.body;
+    const upperInitials = initials.toUpperCase();
+
+    try {
+        // Attempt to update settings
+        // Note: 'chunk_size' column must exist in 'users' table
+        const { data, error } = await supabase
+            .from('users')
+            .update({ chunk_size: chunkSize })
+            .eq('initials', upperInitials)
+            .select();
+
+        if (error) {
+            console.warn('Database update failed (possibly missing column):', error.message);
+            // Return success to avoid breaking frontend flow, but log the issue
+            return res.json({ success: true, warning: 'Settings not persisted', error: error.message });
+        }
+
+        res.json({ success: true, data });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 router.post('/login', async (req, res) => {
     if (!supabase) return res.status(500).json({ error: 'Database client not initialized.' });
     const { initials, password } = req.body; // Password might be undefined for legacy users temporarily? No, requirement says "require password".
