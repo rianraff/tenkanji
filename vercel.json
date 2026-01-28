@@ -3,18 +3,13 @@
         {
             "source": "/api/(.*)",
             "destination": "/api/index.js"
-        },
+        }
+    ],
+    "redirects": [
         {
-            "source": "/assets/(.*)",
-            "destination": "/web/dist/assets/$1"
-        },
-        {
-            "source": "/(.*)\\.(.*)",
-            "destination": "/web/dist/$1.$2"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/web/dist/index.html"
+            "source": "/:path((?!api|assets|favicon.ico).+)",
+            "destination": "/",
+            "permanent": false
         }
     ]
 }
