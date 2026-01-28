@@ -36,7 +36,7 @@ export default function Dashboard() {
                 }
 
                 // Check daily completion
-                const dailyRes = await fetch(`/api/daily?initials=${user.initials}`);
+                const dailyRes = await fetch(`/api/daily?initials=${user.initials}&t=${Date.now()}`);
                 if (dailyRes.ok) {
                     const dailyData = await dailyRes.json();
                     setDailyCompleted(dailyData.completed);

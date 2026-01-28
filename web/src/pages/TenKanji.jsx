@@ -571,42 +571,6 @@ export default function TenKanji() {
                             color: 'var(--text-secondary)',
                             textAlign: 'center'
                         }}>
-                            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
-                                <button
-                                    onClick={() => { playClick(); handlePracticeAnswer(false); }}
-                                    style={{
-                                        background: 'white',
-                                        border: '2px solid var(--col-black)',
-                                        borderRadius: '50%',
-                                        width: '60px',
-                                        height: '60px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        boxShadow: '4px 4px 0px 0px var(--col-black)',
-                                        cursor: 'pointer'
-                                    }}
-                                >
-                                    <X color="#ef4444" size={32} strokeWidth={3} />
-                                </button>
-                                <button
-                                    onClick={() => { playClick(); handlePracticeAnswer(true); }}
-                                    style={{
-                                        background: 'white',
-                                        border: '2px solid var(--col-black)',
-                                        borderRadius: '50%',
-                                        width: '60px',
-                                        height: '60px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        boxShadow: '4px 4px 0px 0px var(--col-black)',
-                                        cursor: 'pointer'
-                                    }}
-                                >
-                                    <Check color="#22c55e" size={32} strokeWidth={3} />
-                                </button>
-                            </div>
                             <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                                 <span><span style={{ color: '#ef4444' }}>{windowWidth < 450 ? '← LEFT' : 'KEY A / ←'}</span> : WRONG</span>
                                 <span><span style={{ color: '#22c55e' }}>{windowWidth < 450 ? 'RIGHT →' : 'KEY D / →'}</span> : CORRECT</span>

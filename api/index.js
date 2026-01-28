@@ -56,17 +56,126 @@ router.get('/user/:initials', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     if (!supabase) return res.status(500).json({ error: 'Database client not initialized.' });
-    const { initials } = req.body;
+    const { initials, password } = req.body; // Password might be undefined for legacy users temporarily? No, requirement says "require password".
+
     if (!initials || initials.length !== 3) return res.status(400).json({ error: 'Initials must be 3 characters' });
     const upperInitials = initials.toUpperCase();
+
     try {
+        // Fetch user
         const { data: user, error: fetchError } = await supabase.from('users').select('*').eq('initials', upperInitials).single();
+
+        // If user doesn't exist, Create New Account
         if (fetchError && fetchError.code === 'PGRST116') {
-            await supabase.from('users').insert({ initials: upperInitials });
+            if (!password) return res.status(400).json({ error: 'Password required for new account' });
+
+            const { data: newUser, error: createError } = await supabase
+                .from('users')
+                .insert({ initials: upperInitials, password: password }) // Ensure 'password' column exists in Supabase
+                .select()
+                .single();
+
+            if (createError) throw createError;
+            return res.json(newUser);
         }
-        const { data: updatedUser, error: finalFetchError } = await supabase.from('users').select('*').eq('initials', upperInitials).single();
-        res.json(updatedUser);
-    } catch (err) { res.status(500).json({ error: err.message }); }
+
+        // User Exists - Check Password
+        if (user) {
+            // If user has a password set, check it
+            if (user.password && user.password !== password) {
+                return res.status(401).json({ error: 'Incorrect password' });
+            }
+            // If user exists but has NO password (legacy), maybe allow login and ask to set it? 
+            // Or enforcing "Require password" means we mandate it.
+            // For now, if provided password matches or user has no password (first migration login?), update it?
+            if (!user.password && password) {
+                await supabase.from('users').update({ password }).eq('initials', upperInitials);
+                user.password = password;
+            } else if (!user.password && !password) {
+                return res.status(400).json({ error: 'Legacy account detected. Please set a password.' });
+            }
+
+            return res.json(user);
+        }
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// Helper for Initials Generation
+const generateInitials = (fullName) => {
+    if (!fullName) return 'ABC';
+    const words = fullName.trim().toUpperCase().split(/\s+/);
+    let raw = '';
+    if (words.length >= 3) {
+        raw = words[0][0] + words[1][0] + words[2][0];
+    } else if (words.length === 2) {
+        raw = words[0][0] + words[1][0] + words[1][0]; // Reuse 2nd word's first letter
+    } else if (words.length === 1) {
+        raw = words[0][0] + words[0][0] + words[0][0]; // Reuse 3 times
+    } else {
+        return 'ABC';
+    }
+    return raw;
+};
+
+router.post('/auth/google-sync', async (req, res) => {
+    if (!supabase) return res.status(500).json({ error: 'Database client not initialized.' });
+    const { email, full_name, avatar_url } = req.body;
+
+    try {
+        // 1. Check if user with this email already exists
+        // Need 'email' column in users table. If not present, we rely on metadata or assume legacy users don't have email.
+        // Assuming user creates 'email' column alongside 'password'.
+        const { data: existingUser } = await supabase.from('users').select('*').eq('email', email).maybeSingle();
+
+        if (existingUser) {
+            return res.json(existingUser);
+        }
+
+        // 2. Generate Initials
+        let baseInitials = generateInitials(full_name);
+        let finalInitials = baseInitials;
+
+        // 3. Uniqueness Check & Collision Resolution
+        // Try up to 10 times (suffix 0-9)
+        let isUnique = false;
+        let suffix = 0;
+
+        while (!isUnique && suffix <= 10) {
+            const { data: collision } = await supabase.from('users').select('initials').eq('initials', finalInitials).maybeSingle();
+            if (!collision) {
+                isUnique = true;
+            } else {
+                // Collision! Modify 3rd char to be a digit
+                finalInitials = baseInitials.substring(0, 2) + suffix.toString();
+                suffix++;
+            }
+        }
+
+        if (!isUnique) throw new Error('Could not generate unique initials after 10 retries.');
+
+        // 4. Create User
+        // Note: Google users don't necessarily need a password for this flow, 
+        // OR we set a random one, OR we leave it null.
+        const { data: newUser, error: insertError } = await supabase
+            .from('users')
+            .insert({
+                initials: finalInitials,
+                email: email,
+                full_name: full_name,
+                // avatar_url: avatar_url // if column exists
+            })
+            .select()
+            .single();
+
+        if (insertError) throw insertError;
+        res.json(newUser);
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 router.get('/words/chunk', async (req, res) => {
@@ -140,6 +249,7 @@ const kanjiData = getKanjiData();
 
 // Daily Challenge Endpoint
 router.get('/daily', async (req, res) => {
+    res.set('Cache-Control', 'no-store');
     const { initials } = req.query;
     if (!initials) return res.status(400).json({ error: 'Initials required' });
 
@@ -147,11 +257,25 @@ router.get('/daily', async (req, res) => {
     const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 
     try {
+        // Variables for debug scope
+        let uniqueDates = [];
+
+        // Get Current Date YYYY-MM-DD (Universal-ish)
+        const now = new Date();
+        let todayStr = now.toISOString().split('T')[0];
+        const yesterday = new Date(now);
+        yesterday.setDate(yesterday.getDate() - 1);
+        let yesterdayStr = yesterday.toISOString().split('T')[0];
+
+        let currentCheck = '';
+        let debugError = null;
+
         // Check if already completed today
         let completedData = null;
         let streak = 0;
 
         if (supabase) {
+            // ... (keep existing fetch logic)
             // Fetch today's status
             const { data, error } = await supabase
                 .from('daily_challenges')
@@ -177,32 +301,40 @@ router.get('/daily', async (req, res) => {
                 .select('date')
                 .eq('user_initials', userInitials);
 
-            if (!cError && !lError) {
+
+            if (cError) debugError = `Challenge Error: ${cError.message}`;
+            if (lError) debugError = `Log Error (Ignored): ${lError.message}`;
+
+            if (!cError) {
                 const combinedDates = [
                     ...(challengeDates?.map(d => d.date) || []),
-                    ...(logDates?.map(d => d.date) || [])
+                    ...(lError ? [] : (logDates?.map(d => d.date) || []))
                 ];
-                const uniqueDates = [...new Set(combinedDates)];
+                uniqueDates = [...new Set(combinedDates)].sort().reverse();
 
-                // Sort descending
-                uniqueDates.sort((a, b) => new Date(b) - new Date(a));
+                // If user hasn't done today, streak continues if they did yesterday
+                currentCheck = uniqueDates.includes(todayStr) ? todayStr : yesterdayStr;
 
-                let checkDate = new Date();
-                let checkStr = checkDate.toISOString().split('T')[0];
+                // If user didn't do today OR yesterday, streak is broken -> 0
+                if (uniqueDates.includes(currentCheck)) {
+                    // Start counting
+                    streak = 0;
+                    let checkDate = new Date(currentCheck);
 
-                // If not done today, allowed to continue from yesterday
-                if (!uniqueDates.includes(checkStr)) {
-                    checkDate.setDate(checkDate.getDate() - 1);
-                    checkStr = checkDate.toISOString().split('T')[0];
-                }
+                    // Helper to format Date to YYYY-MM-DD
+                    const toIsoDate = (d) => d.toISOString().split('T')[0];
 
-                while (uniqueDates.includes(checkStr)) {
-                    streak++;
-                    checkDate.setDate(checkDate.getDate() - 1);
-                    checkStr = checkDate.toISOString().split('T')[0];
+                    while (uniqueDates.includes(toIsoDate(checkDate))) {
+                        streak++;
+                        checkDate.setDate(checkDate.getDate() - 1);
+                    }
+                } else {
+                    streak = 0;
                 }
             }
         }
+
+
 
         // Robust deterministic seed from date (YYYYMMDD to integer)
         const dateStr = today.replace(/-/g, '');
