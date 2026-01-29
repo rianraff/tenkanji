@@ -373,7 +373,7 @@
 
 @keyframes practice-reveal {
   0% {
-    opacity: 0.5;
+    opacity: 1;
     transform: translateY(20px) scale(0.92);
   }
 
@@ -397,6 +397,21 @@
 
 .animate-exit-left {
   animation: slide-out-left 0.3s cubic-bezier(0.5, 0, 1, 0.5) forwards;
+}
+
+/* New: Fade In for Next Card */
+.animate-fade-in {
+  animation: simple-fade-in 0.4s ease forwards;
+}
+
+@keyframes simple-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Practice Stack Styles */
@@ -425,7 +440,7 @@
   height: 100%;
   transform: translateY(20px) scale(0.92);
   transform-origin: top center;
-  opacity: 0.5;
+  opacity: 1;
   z-index: 1;
   pointer-events: none;
 }

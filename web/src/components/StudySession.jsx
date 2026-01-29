@@ -341,7 +341,7 @@ export default function StudySession({
                 <div className="card-stack">
                     {/* Next Card (Underneath) */}
                     {currentIndex < localWords.length - 1 && (
-                        <div className="stacked-card next">
+                        <div key={currentIndex + 1} className="stacked-card next animate-fade-in">
                             {renderCardContent(localWords[currentIndex + 1], nextKanjiDetails, true)}
                         </div>
                     )}
